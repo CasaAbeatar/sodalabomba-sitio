@@ -103,6 +103,7 @@ button.btn.line{background:transparent;color:var(--fg);cursor:pointer;font-famil
 .pay{margin:2px 0 6px;border:2px solid var(--gold);background:rgba(243,166,44,.12);border-radius:14px;padding:14px 16px;text-align:center}
 .pay[hidden]{display:none}
 .pay .pl{display:block;font-weight:800;letter-spacing:.06em;text-transform:uppercase;font-size:13px;color:var(--gold)}
+.pay .pt{display:block;font-size:14px;margin-top:10px;opacity:.9}
 .pay .pn{display:block;font-family:var(--display);font-weight:800;font-size:clamp(32px,10vw,44px);letter-spacing:.03em;line-height:1.1;margin:4px 0 10px}
 .box{margin-top:32px;border:2px solid var(--gold);border-radius:16px;padding:8px 18px 22px}
 .cl{display:grid;grid-template-columns:1fr auto;gap:4px 12px;align-items:center;padding:10px 0;border-bottom:1px solid #2a2222}
@@ -267,10 +268,10 @@ a.fc:hover,a.fc:focus-visible{background:#fff;color:var(--red)}a.fc:hover .go,a.
 <label id="w-h" hidden><span data-en="What time will you pick it up? (optional)">¿A qué hora pasas a retirarlo? (opcional)</span><input id="f-h" placeholder="Por ejemplo, 8:30 p. m." data-en-ph="For example, 8:30 p.m."></label>
 <label><span data-en="Notes (optional)">Notas (opcional)</span><textarea id="f-t" rows="2" placeholder="Sin cebolla, otro producto del menú, etc." data-en-ph="No onion, another menu item, etc."></textarea></label>
 <label><span data-en="Payment method">Forma de pago</span><select id="f-p"><option value="SINPE Móvil">SINPE Móvil</option><option value="Efectivo" data-en="Cash">Efectivo</option></select></label>
-<div class="pay" id="pay"><span class="pl" data-en="SINPE Móvil number">Número SINPE Móvil</span><b class="pn" id="pn">8585-1661</b><button type="button" class="btn line" id="pcopy" data-en="Copy number">Copiar número</button></div>
+<div class="pay" id="pay"><span class="pl" data-en="Pay by SINPE Móvil to">Paga por SINPE Móvil al</span><b class="pn" id="pn">8585-1661</b><button type="button" class="btn line" id="pcopy" data-en="Copy number">Copiar número</button><span class="pt" data-en="You pay from your bank app. Your order is sent separately, with the button below.">El pago lo haces desde la app de tu banco. Tu pedido se envía aparte, con el botón de abajo.</span></div>
 </div>
 <p class="miss" id="miss" role="alert" hidden></p>
-<div class="btns"><a class="btn gold" id="wa" href="#" target="_blank" rel="noopener" data-track="soda-wa" data-en="Send on WhatsApp">Enviar por WhatsApp</a><button type="button" class="btn line" id="copy" data-en="Copy order">Copiar pedido</button></div>
+<div class="btns"><a class="btn gold" id="wa" href="#" target="_blank" rel="noopener" data-track="soda-wa" data-en="Send order on WhatsApp">Enviar pedido por WhatsApp</a><button type="button" class="btn line" id="copy" data-en="Copy order">Copiar pedido</button></div>
 <p class="foot" id="hint"></p>
 </div>
 </section>
