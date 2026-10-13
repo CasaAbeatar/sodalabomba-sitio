@@ -529,7 +529,7 @@ function opsHtml(x){
  return x.o.map(function(o){var q=qty[o.k]||0;
   return '<div class="op">'+(o.lb?'<span class="ol">'+esc(o.lb)+'</span>':'')+'<span class="pr">'+fm(o.pr)+'</span><span class="ctl" data-k="'+esc(o.k)+'">'+(q?'<button type="button" data-d="-1" aria-label="'+S('Quitar uno')+'">−</button><span class="n">'+q+'</span><button type="button" data-d="1" aria-label="'+S('Agregar uno')+'">+</button>':'<button type="button" class="add" data-d="1">'+S('Agregar')+'</button>')+'</span></div>'}).join('');
 }
-var PH={'Desayunos':'desayunos','Almuerzos':'almuerzos','Antojitos':'antojitos','Hamburguesas':'hamburguesas','Pizzas':'pizzas','Combos':'combos','Bebidas y postres':'bebidas','Ceviches y caldosas':'ceviches','Baldes':'baldes'};
+var PH={'Pollo':'pollo','Desayunos':'desayunos','Almuerzos':'almuerzos','Antojitos':'antojitos','Hamburguesas':'hamburguesas','Pizzas':'pizzas','Combos':'combos','Bebidas y postres':'bebidas','Ceviches y caldosas':'ceviches','Baldes':'baldes'};
 function phSrc(t){return PH[t]?'img/menu/'+PH[t]+'.webp':''}
 var curCat=-1;
 function drawCat(k){var c=MENU[k];var mi=$('#mimg'),src=phSrc(c.t);if(src){mi.src=src;mi.hidden=false}else{mi.hidden=true;mi.removeAttribute('src')}$('#mtitle').textContent=S(c.t);$('#mcrumb').textContent=S(c.t);$('#mbody').innerHTML=groupsHtml(c,true)}
