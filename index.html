@@ -77,6 +77,9 @@ h1,h2{font-family:var(--display);font-weight:800;text-transform:uppercase;letter
 .cats[hidden]{display:none}
 .cats{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
 .cats button{min-height:84px;border-radius:14px;border:2px solid var(--gold);background:transparent;color:var(--fg);font:800 18px var(--body);text-transform:uppercase;letter-spacing:.02em;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:10px}
+.cats button img{display:block;width:100%;height:96px;object-fit:contain;margin-bottom:4px}
+.cats button.ph{padding-top:6px}
+.mimg{display:block;margin:10px auto 0;max-width:260px;max-height:200px;width:auto;height:auto}
 .cats button small{font:700 13px var(--body);color:var(--gold);text-transform:none;letter-spacing:0}
 .cats button:hover{background:var(--gold);color:var(--gold-ink)}.cats button:hover small{color:var(--gold-ink)}
 button.btn.line{background:transparent;color:var(--fg);cursor:pointer;font-family:var(--body)}
@@ -236,9 +239,11 @@ a.fc:hover,a.fc:focus-visible{background:#fff;color:var(--red)}a.fc:hover .go,a.
 <div class="srch" role="search"><label for="q" style="position:absolute;left:-9999px" data-en="Search the menu">Buscar en el menú</label><input id="q" type="search" autocomplete="off" placeholder="Buscar en el menú: pizza, casado, pollo..." data-en-ph="Search the menu: pizza, casado, chicken..."></div>
 <div id="mres" hidden aria-live="polite"></div>
 <div id="mcats"></div>
+<p class="foot" data-en="Illustrative images.">Imágenes ilustrativas.</p>
 <div id="mdet" hidden>
 <nav class="crumb" aria-label="Ubicación en el menú"><button type="button" class="btn line back" id="mback" data-en="← All categories">← Todas las categorías</button><span><span data-en="Menu ›">Menú ›</span> <b id="mcrumb"></b></span></nav>
 <h3 class="ct" id="mtitle"></h3>
+<img id="mimg" class="mimg" alt="" width="260" height="200" hidden>
 <div id="mbody"></div>
 <div class="btns" style="margin-top:28px"><button type="button" class="btn line back" id="mback2" data-en="← All categories">← Todas las categorías</button><a class="btn gold" href="#pedir" data-track="soda-menu-a-pedir" data-en="I want to order">Quiero pedir</a></div>
 <div class="upw"><a class="up" href="#top" data-up="1" data-en="↑ Back to top">↑ Volver arriba</a></div>
@@ -523,8 +528,10 @@ function groupsHtml(c,order){
  });
  return h;
 }
+var PH={'Desayunos':'desayunos','Almuerzos':'almuerzos','Antojitos':'antojitos','Hamburguesas':'hamburguesas','Pizzas':'pizzas','Combos':'combos','Bebidas y postres':'bebidas','Ceviches y caldosas':'ceviches','Pollo':'pollo','Baldes':'baldes'};
+function phSrc(t){return PH[t]?'img/menu/'+PH[t]+'.webp':''}
 var curCat=-1;
-function drawCat(k){var c=MENU[k];$('#mtitle').textContent=S(c.t);$('#mcrumb').textContent=S(c.t);$('#mbody').innerHTML=groupsHtml(c,false)}
+function drawCat(k){var c=MENU[k];var mi=$('#mimg'),src=phSrc(c.t);if(src){mi.src=src;mi.hidden=false}else{mi.hidden=true;mi.removeAttribute('src')}$('#mtitle').textContent=S(c.t);$('#mcrumb').textContent=S(c.t);$('#mbody').innerHTML=groupsHtml(c,false)}
 function showCats(){curCat=-1;$('#mdet').hidden=true;$('#mres').hidden=true;$('#q').value='';$('#mcats').hidden=false;$('#menu').scrollIntoView()}
 function showCat(k,pop){var c=MENU[k];curCat=k;$('#mres').hidden=true;$('#mcats').hidden=true;$('#mdet').hidden=false;drawCat(k);
  if(!pop){try{history.pushState({c:k},'','#menu-'+k)}catch(e){}}
@@ -543,7 +550,7 @@ function buildCats(){
   var h=document.createElement('h3');h.className='gh';h.textContent=S(g.n);box.appendChild(h);
   if(g.s){var p=document.createElement('p');p.className='gs';p.textContent=S(g.s);box.appendChild(p)}
   var d=document.createElement('div');d.className='cats';
-  g.t.forEach(function(t){var k=idx(t),c=MENU[k],b=document.createElement('button');b.type='button';b.innerHTML=esc(S(c.t))+'<small>'+c.n+' '+S('opciones')+'</small>';b.addEventListener('click',function(){showCat(k)});d.appendChild(b)});
+  g.t.forEach(function(t){var k=idx(t),c=MENU[k],b=document.createElement('button');b.type='button';var src=phSrc(c.t);if(src)b.className='ph';b.innerHTML=(src?'<img src="'+src+'" alt="" width="120" height="96" loading="lazy">':'')+esc(S(c.t))+'<small>'+c.n+' '+S('opciones')+'</small>';b.addEventListener('click',function(){showCat(k)});d.appendChild(b)});
   box.appendChild(d);
  });
 }
