@@ -37,7 +37,8 @@ body{min-height:100%;margin:0;background:var(--bg);color:var(--fg);font-family:v
 a{color:inherit}
 :focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 h1,h2{font-family:var(--display);font-weight:800;text-transform:uppercase;letter-spacing:.01em;margin:0;line-height:.98;text-wrap:balance}
-.hero{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;text-align:center;padding:56px 20px;min-height:80svh}
+.hero{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;text-align:center;padding:28px 20px 20px}
+@media(min-width:760px){.hero{padding:56px 20px;min-height:70svh}}
 .tag{font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
 .logo img{display:block;width:clamp(220px,30vw,360px);height:auto}
 .lema{font-size:clamp(20px,2.8vw,28px);font-weight:700;margin:0;color:var(--gold)}
@@ -46,7 +47,7 @@ h1,h2{font-family:var(--display);font-weight:800;text-transform:uppercase;letter
 .btn.gold{background:var(--gold);color:var(--gold-ink)}
 .btn.line{border-color:var(--fg);color:var(--fg)}
 .info{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:#2a2222}
-.info>div{background:var(--bg);padding:36px 24px;text-align:center}
+.info>div{background:var(--bg);padding:26px 24px;text-align:center}
 .info h2{font-size:18px;letter-spacing:.08em;color:var(--gold);margin-bottom:10px}
 .info p{margin:0}
 .info a{text-decoration:none;font-weight:700;display:inline-flex;align-items:center;min-height:44px;padding:0 4px}
@@ -57,7 +58,7 @@ h1,h2{font-family:var(--display);font-weight:800;text-transform:uppercase;letter
 .pb .btn{background:var(--gold);color:var(--gold-ink)}
 .pb .btn:hover,.pb .btn:focus-visible{background:var(--red-ink)}
 
-.menu{padding:56px 20px;max-width:980px;margin:0 auto;width:100%}
+.menu{padding:36px 20px;max-width:980px;margin:0 auto;width:100%}
 .menu>h2{font-size:clamp(34px,6vw,60px);text-align:center;margin-bottom:8px}
 .menu .sub{text-align:center;margin:0 0 24px;opacity:.9}
 .tabs{display:flex;gap:8px;overflow-x:auto;padding:4px 2px 12px;scrollbar-width:thin;position:sticky;top:0;background:var(--bg);z-index:2}
@@ -151,9 +152,9 @@ section[id]{scroll-margin-top:calc(var(--hh) + 8px)}
 .bbar{display:none}
 @media (max-width:700px){
  body{padding-bottom:68px}
- .bbar{position:fixed;left:0;right:0;bottom:0;z-index:15;display:grid;grid-template-columns:1.6fr 1fr;gap:8px;padding:8px 12px calc(8px + env(safe-area-inset-bottom));background:var(--bar);border-top:1px solid #2a2222}
+ .bbar{position:fixed;left:0;right:0;bottom:0;z-index:15;display:grid;grid-template-columns:1.5fr 1.15fr 1fr;gap:8px;padding:8px 12px calc(8px + env(safe-area-inset-bottom));background:var(--bar);border-top:1px solid #2a2222}
  .bbar[hidden]{display:none}
- .bbar a{display:flex;align-items:center;justify-content:center;min-height:48px;border-radius:12px;border:2px solid var(--fg);font-weight:800;text-decoration:none;font-size:16px}
+ .bbar a{display:flex;align-items:center;justify-content:center;min-height:48px;border-radius:12px;border:2px solid var(--fg);font-weight:800;text-decoration:none;font-size:15px;padding:0 4px;text-align:center}
  .bbar a.p{background:var(--red);border-color:var(--red);color:#fff}
  .cbar{z-index:16}
 }
@@ -220,19 +221,13 @@ a.fc:hover,a.fc:focus-visible{background:#fff;color:var(--red)}a.fc:hover .go,a.
 </header>
 <main>
 <section class="hero" aria-labelledby="t-soda">
-<span class="tag" data-en="Route 4, Horquetas de Sarapiquí">Ruta 4, Horquetas de Sarapiquí</span>
+<span class="tag" data-en="Family business since 2012, Route 4">Empresa familiar desde 2012, Ruta 4</span>
 <h1 id="t-soda" class="logo"><img src="img/logo-soda-amarillo.png" width="700" height="736" alt="Soda La Bomba"></h1>
 <p class="lema" data-en="Home-style and fast food to keep you on the road">Comida casera y rápida para seguir el camino</p>
 <div class="btns">
 <a class="btn gold" data-track="soda-menu" href="#menu" data-en="See the menu and order">Ver el menú y pedir</a>
 </div>
 <button type="button" class="btn line" id="rep0" hidden data-en="Repeat my last order">Repetir mi último pedido</button>
-</section>
-
-<section class="info" aria-label="Datos de la soda">
-<div><h2 data-en="Hours">Horarios</h2><p data-en="&lt;b&gt;In-store:&lt;/b&gt; 24 hours, 7 days a week&lt;br&gt;&lt;b&gt;Express:&lt;/b&gt; every day, 7 a.m. to 10 p.m."><b>Local:</b> las 24 horas, los 7 días<br><b>Express:</b> todos los días, de 7 a. m. a 10 p. m.</p></div>
-<div><h2 data-en="Where we are">Dónde estamos</h2><p data-en="On Route 4, Horquetas de Sarapiquí.&lt;br&gt;Next to the Corporación JYJ gas station.&lt;br&gt;&lt;a href=&quot;https://www.google.com/maps/place/La+Bomba/@10.3339795,-83.9500609,17z/data=!4m6!3m5!1s0x8fa097240bc8c507:0xffa580b8cf09d520!8m2!3d10.3339795!4d-83.9500609&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; data-track=&quot;info-maps&quot;&gt;Google Maps&lt;/a&gt; · &lt;a href=&quot;https://waze.com/ul?ll=10.3339795,-83.9500609&amp;navigate=yes&amp;zoom=17&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; data-track=&quot;info-waze&quot;&gt;Waze&lt;/a&gt;">Sobre Ruta 4, Horquetas de Sarapiquí.<br>A un costado de la Gasolinera Corporación JYJ.<br><a href="https://www.google.com/maps/place/La+Bomba/@10.3339795,-83.9500609,17z/data=!4m6!3m5!1s0x8fa097240bc8c507:0xffa580b8cf09d520!8m2!3d10.3339795!4d-83.9500609" target="_blank" rel="noopener" data-track="info-maps">Google Maps</a> · <a href="https://waze.com/ul?ll=10.3339795,-83.9500609&navigate=yes&zoom=17" target="_blank" rel="noopener" data-track="info-waze">Waze</a></p></div>
-<div><h2 data-en="Contact">Contacto</h2><p><a href="tel:+50689825035">8982-5035</a> · <a href="tel:+50685798383">8579-8383</a></p></div>
 </section>
 
 <section class="menu" id="menu" aria-labelledby="t-menu">
@@ -248,7 +243,6 @@ a.fc:hover,a.fc:focus-visible{background:#fff;color:var(--red)}a.fc:hover .go,a.
 <img id="mimg" class="mimg" alt="" width="260" height="200" hidden>
 <div id="mbody"></div>
 <div class="btns" style="margin-top:28px"><button type="button" class="btn line back" id="mback2" data-en="← All categories">← Todas las categorías</button><a class="btn gold" href="#pedir" data-track="soda-menu-a-pedido" data-en="View my order">Ver mi pedido</a></div>
-<div class="upw"><a class="up" href="#top" data-up="1" data-en="↑ Back to top">↑ Volver arriba</a></div>
 </div>
 </section>
 
@@ -274,9 +268,14 @@ a.fc:hover,a.fc:focus-visible{background:#fff;color:var(--red)}a.fc:hover .go,a.
 <div class="btns"><a class="btn gold" id="wa" href="#" target="_blank" rel="noopener" data-track="soda-wa" data-en="Send on WhatsApp">Enviar por WhatsApp</a><button type="button" class="btn line" id="copy" data-en="Copy order">Copiar pedido</button></div>
 <p class="foot" id="hint"></p>
 </div>
-<div class="upw"><a class="up" href="#top" data-up="1" data-en="↑ Back to top">↑ Volver arriba</a></div>
 </section>
-<nav class="bbar" id="bbar" aria-label="Acciones rápidas"><a class="p" href="#menu" data-en="Menu &amp; order">Menú y pedir</a><a href="tel:+50689825035" data-en="Call">Llamar</a></nav>
+
+<section class="info" id="info" aria-label="Datos de la soda">
+<div><h2 data-en="Hours">Horarios</h2><p data-en="&lt;b&gt;In-store:&lt;/b&gt; 24 hours, 7 days a week&lt;br&gt;&lt;b&gt;Express:&lt;/b&gt; every day, 7 a.m. to 10 p.m."><b>Local:</b> las 24 horas, los 7 días<br><b>Express:</b> todos los días, de 7 a. m. a 10 p. m.</p></div>
+<div><h2 data-en="Where we are">Dónde estamos</h2><p data-en="On Route 4, Horquetas de Sarapiquí.&lt;br&gt;Next to the Corporación JYJ gas station.&lt;br&gt;&lt;a href=&quot;https://www.google.com/maps/place/La+Bomba/@10.3339795,-83.9500609,17z/data=!4m6!3m5!1s0x8fa097240bc8c507:0xffa580b8cf09d520!8m2!3d10.3339795!4d-83.9500609&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; data-track=&quot;info-maps&quot;&gt;Google Maps&lt;/a&gt; · &lt;a href=&quot;https://waze.com/ul?ll=10.3339795,-83.9500609&amp;navigate=yes&amp;zoom=17&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; data-track=&quot;info-waze&quot;&gt;Waze&lt;/a&gt;">Sobre Ruta 4, Horquetas de Sarapiquí.<br>A un costado de la Gasolinera Corporación JYJ.<br><a href="https://www.google.com/maps/place/La+Bomba/@10.3339795,-83.9500609,17z/data=!4m6!3m5!1s0x8fa097240bc8c507:0xffa580b8cf09d520!8m2!3d10.3339795!4d-83.9500609" target="_blank" rel="noopener" data-track="info-maps">Google Maps</a> · <a href="https://waze.com/ul?ll=10.3339795,-83.9500609&navigate=yes&zoom=17" target="_blank" rel="noopener" data-track="info-waze">Waze</a></p></div>
+<div><h2 data-en="Contact">Contacto</h2><p><a href="tel:+50689825035">8982-5035</a> · <a href="tel:+50685798383">8579-8383</a></p></div>
+</section>
+<nav class="bbar" id="bbar" aria-label="Acciones rápidas"><a class="p" href="#menu" data-en="Menu &amp; order">Menú y pedir</a><a href="#info" data-track="bbar-info" data-en="Info">Información</a><a href="tel:+50689825035" data-en="Call">Llamar</a></nav>
 <div id="cbar" class="cbar" hidden><span id="cinfo"></span><a class="btn gold" href="#pedir" data-en="View order">Ver pedido</a></div>
 
 <section class="rec" aria-labelledby="t-rec">
