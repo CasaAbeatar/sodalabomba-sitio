@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Soda La Bomba</title>
-<meta name="description" content="Soda La Bomba, Horquetas de Sarapiquí, sobre Ruta 4. Menú, Express todos los días y comida casera desde 2013.">
+<meta name="description" content="Soda La Bomba, Ruta 4, Horquetas de Sarapiquí. Abierta 24 horas. Menú, Express de 7 a. m. a 10 p. m. y comida casera desde 2013.">
 <meta name="theme-color" content="#171212">
 <link rel="canonical" href="https://www.sodalabomba.com/">
 <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
@@ -100,62 +100,127 @@ button.btn.line{background:transparent;color:var(--fg);cursor:pointer;font-famil
 .cbar{position:fixed;left:0;right:0;bottom:0;z-index:5;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px calc(10px + env(safe-area-inset-bottom));font-weight:800}
 .cbar[hidden]{display:none}.cbar .btn{min-height:44px;padding:0 20px}
 #wa[aria-disabled="true"]{opacity:.5;pointer-events:none}
+
+:root{--hh:96px}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+section[id]{scroll-margin-top:calc(var(--hh) + 8px)}
+.hd{position:sticky;top:0;z-index:20;background:var(--bar);border-bottom:1px solid #2a2222}
+.hd1{display:flex;align-items:center;gap:6px;padding:6px 12px;max-width:1100px;margin:0 auto}
+.hlogo{display:flex;align-items:center;margin-right:auto}
+.hlogo img{height:44px;width:auto;display:block}
+.hd1 a.n{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;border-radius:10px;font-weight:700;font-size:15px;text-decoration:none;color:var(--fg)}
+.hd1 a.n.p{background:var(--red);color:#fff}
+.hd1 a.n.w{display:none}
+.st{display:flex;flex-wrap:wrap;justify-content:center;gap:2px 10px;padding:5px 12px 6px;font-size:13px;font-weight:700;background:#000;color:var(--bar-fg);text-align:center}
+.st .dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#3ba55d;margin-right:6px}
+.st[data-e="0"] .e .dot{background:var(--gold)}
+@media (min-width:701px){.hd1 a.n.w{display:inline-flex}}
+#rep0[hidden]{display:none}
+.btn.red{background:var(--red);color:#fff}
+.lnk{font-weight:700;font-size:15px;opacity:.9}
+.gh{font-family:var(--display);font-size:22px;text-transform:uppercase;letter-spacing:.04em;margin:28px 0 2px}
+.gs{margin:0 0 12px;font-size:15px;opacity:.85}
+#mcats[hidden]{display:none}
+.crumb{position:sticky;top:var(--hh);z-index:4;background:var(--bg);display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:8px 0;border-bottom:1px solid #2a2222}
+.crumb .back{margin:0}
+.crumb span{font-size:15px;opacity:.9}
+.tabs{top:var(--hh)}
+.up{display:inline-flex;align-items:center;min-height:44px;margin-top:20px;padding:0 16px;border:2px solid var(--fg);border-radius:12px;font-weight:700;text-decoration:none;font-size:15px}
+.upw{text-align:center}
+.mode{border:2px solid var(--gold);border-radius:14px;padding:12px 14px;margin:0 0 14px}
+.mode legend{font-weight:800;padding:0 6px}
+.mo{display:flex;gap:10px;align-items:flex-start;padding:8px 0;cursor:pointer}
+.mo input{margin-top:5px;width:20px;height:20px;accent-color:var(--gold)}
+.mo b{display:block}.mo small{display:block;opacity:.85;font-size:14px}
+.mo.off{opacity:.5;cursor:not-allowed}
+.ban{margin:0 0 14px;padding:10px 14px;border-radius:12px;background:#2a1f0a;border:2px solid var(--gold);font-weight:700;font-size:15px}
+.ban[hidden]{display:none}
+.bbar{display:none}
+@media (max-width:700px){
+ body{padding-bottom:68px}
+ .bbar{position:fixed;left:0;right:0;bottom:0;z-index:15;display:grid;grid-template-columns:1fr 1.4fr 1fr;gap:8px;padding:8px 12px calc(8px + env(safe-area-inset-bottom));background:var(--bar);border-top:1px solid #2a2222}
+ .bbar[hidden]{display:none}
+ .bbar a{display:flex;align-items:center;justify-content:center;min-height:48px;border-radius:12px;border:2px solid var(--fg);font-weight:800;text-decoration:none;font-size:16px}
+ .bbar a.p{background:var(--red);border-color:var(--red);color:#fff}
+ .cbar{z-index:16}
+}
 .bar{background:var(--bar);color:var(--bar-fg);font-size:14px;font-weight:700;text-align:center;padding:12px 20px}
 </style>
 </head>
 <body>
+<header class="hd" id="top">
+<div class="hd1">
+<a class="hlogo" href="#top" data-up="1" aria-label="Soda La Bomba, volver al inicio"><img src="img/logo-soda-amarillo.png" width="700" height="736" alt=""></a>
+<a class="n" data-track="nav-menu" href="#menu">Menú</a>
+<a class="n p" data-track="nav-pedir" href="#pedir">Pedir</a>
+<a class="n w" data-track="nav-como-llegar" href="https://www.google.com/maps/place/La+Bomba/@10.3339795,-83.9500609,17z/data=!4m6!3m5!1s0x8fa097240bc8c507:0xffa580b8cf09d520!8m2!3d10.3339795!4d-83.9500609" target="_blank" rel="noopener">Cómo llegar</a>
+<a class="n w" data-track="nav-llamar" href="tel:+50689825035">Llamar</a>
+</div>
+<div class="st" id="st" role="status" aria-live="polite" data-e="1"><span><span class="dot"></span>Local abierto 24 horas</span><span class="e"><span class="dot"></span><span id="st2">Express: 7 a. m. a 10 p. m.</span></span></div>
+</header>
 <main>
 <section class="hero" aria-labelledby="t-soda">
-<span class="tag">Horquetas de Sarapiquí</span>
+<span class="tag">Abierto 24 horas · Ruta 4, Horquetas de Sarapiquí</span>
 <h1 id="t-soda" class="logo"><img src="img/logo-soda-amarillo.png" width="700" height="736" alt="Soda La Bomba"></h1>
-<p class="lema">Un cafecito para seguir el camino</p>
+<p class="lema">Comida casera y rápida para seguir el camino</p>
 <div class="btns">
-<a class="btn line" data-track="soda-como-llegar" href="https://www.google.com/maps/place/La+Bomba/@10.3339795,-83.9500609,17z/data=!4m6!3m5!1s0x8fa097240bc8c507:0xffa580b8cf09d520!8m2!3d10.3339795!4d-83.9500609" target="_blank" rel="noopener">Cómo llegar</a>
-<a class="btn gold" data-track="soda-menu" href="#menu">Ver el menú</a>
-<a class="btn gold" data-track="soda-pedir" href="#pedir">Pedir Express</a>
-<a class="btn line" data-track="soda-llamar" href="tel:+50689825035">Llamar al 8982-5035</a>
+<a class="btn gold" data-track="soda-menu" href="#menu">Quiero ver el menú</a>
+<a class="btn red" data-track="soda-pedir" href="#pedir">Ya conozco el menú, quiero pedir</a>
 </div>
+<button type="button" class="btn line" id="rep0" hidden>Repetir mi último pedido</button>
+<p class="lnk"><a data-track="soda-como-llegar" href="https://www.google.com/maps/place/La+Bomba/@10.3339795,-83.9500609,17z/data=!4m6!3m5!1s0x8fa097240bc8c507:0xffa580b8cf09d520!8m2!3d10.3339795!4d-83.9500609" target="_blank" rel="noopener">Cómo llegar</a> · <a data-track="soda-llamar" href="tel:+50689825035">Llamar al 8982-5035</a></p>
 </section>
 
 <section class="info" aria-label="Datos de la soda">
-<div><h2>Express</h2><p>Todos los días<br>de 7 a. m. a 10 p. m.</p></div>
+<div><h2>Horarios</h2><p><b>Local:</b> las 24 horas, los 7 días<br><b>Express:</b> todos los días, de 7 a. m. a 10 p. m.</p></div>
 <div><h2>Dónde estamos</h2><p>Sobre Ruta 4, Horquetas de Sarapiquí.<br>A un costado de la Gasolinera Corporación JYJ.</p></div>
 <div><h2>Contacto</h2><p><a href="tel:+50689825035">8982-5035</a> · <a href="tel:+50685798383">8579-8383</a><br>SINPE Móvil 8585-1661</p></div>
 </section>
 
 <section class="menu" id="menu" aria-labelledby="t-menu">
 <h2 id="t-menu">Menú</h2>
-<p class="sub">Comida casera desde 2013. Elige una categoría para verla.</p>
-<div id="mcats" class="cats"></div>
+<p class="sub">Comida casera y rápida desde 2013. Elige una categoría para verla.</p>
+<div id="mcats"></div>
 <div id="mdet" hidden>
-<button type="button" class="btn line back" id="mback">← Todas las categorías</button>
+<nav class="crumb" aria-label="Ubicación en el menú"><button type="button" class="btn line back" id="mback">← Todas las categorías</button><span>Menú › <b id="mcrumb"></b></span></nav>
 <h3 class="ct" id="mtitle"></h3>
 <div id="mbody"></div>
-<div class="btns" style="margin-top:28px"><button type="button" class="btn line back" id="mback2">← Todas las categorías</button><a class="btn gold" href="#pedir" data-track="soda-menu-a-pedir">Pedir Express</a></div>
+<div class="btns" style="margin-top:28px"><button type="button" class="btn line back" id="mback2">← Todas las categorías</button><a class="btn gold" href="#pedir" data-track="soda-menu-a-pedir">Quiero pedir</a></div>
+<div class="upw"><a class="up" href="#top" data-up="1">↑ Volver arriba</a></div>
 </div>
 </section>
 
 <section class="menu ord" id="pedir" aria-labelledby="t-ped">
-<h2 id="t-ped">Pide Express</h2>
-<p class="sub">Te lo llevamos. Todos los días de 7 a. m. a 10 p. m.</p>
-<ol class="steps"><li>Elige lo que quieres, por categoría.</li><li>Revisa tu resumen y completa tus datos.</li><li>Envíalo por WhatsApp y te confirmamos total, envío y entrega.</li></ol>
-<ul class="facts"><li>Zona de entrega y costo de envío: [por confirmar].</li><li>Pago por SINPE Móvil al 8585-1661 o en efectivo.</li></ul>
+<h2 id="t-ped">Haz tu pedido</h2>
+<p class="sub">Express a domicilio o retiro en el local.</p>
+<fieldset class="mode" id="mode"><legend>¿Cómo lo quieres?</legend>
+<label class="mo" id="mo-e"><input type="radio" name="mo" value="Express" checked><span><b>Express, te lo llevamos</b><small>Todos los días, de 7 a. m. a 10 p. m.</small></span></label>
+<label class="mo"><input type="radio" name="mo" value="Retiro"><span><b>Retiro en el local</b><small>Las 24 horas, los 7 días</small></span></label>
+</fieldset>
+<p class="ban" id="ban" hidden>Express está cerrado ahora y abre a las 7 a. m. Puedes pedir para retiro en el local, que atiende las 24 horas.</p>
+<ol class="steps"><li>Elige lo que quieres, por categoría.</li><li>Revisa tu resumen y completa tus datos.</li><li>Envíalo por WhatsApp y te confirmamos total y entrega.</li></ol>
+<ul class="facts"><li>Zona de entrega, costo de envío y tiempo estimado del Express: [por confirmar].</li><li>Pago por SINPE Móvil al 8585-1661 o en efectivo.</li></ul>
 <button type="button" class="btn line" id="rep" hidden>Repetir mi último pedido</button>
 <div id="ocat"><div class="tabs" role="tablist" id="otabs" aria-label="Categorías para pedir"></div>
 <div id="opanel"></div></div>
 <div id="resumen" class="box">
 <h3 class="ct">Tu resumen</h3>
+<p class="foot" id="modeNote" style="text-align:left;margin:6px 0 0"></p>
 <div id="sumry"></div>
 <div class="frm">
 <label>Nombre<input id="f-n" autocomplete="name"></label>
-<label>Dónde te la llevamos (dirección exacta)<textarea id="f-a" rows="2" placeholder="Señas exactas, o pega tu punto de Waze o de WhatsApp"></textarea></label>
+<label id="w-a">Dónde te lo llevamos (dirección exacta)<textarea id="f-a" rows="2" placeholder="Señas exactas, o pega tu punto de Waze o de WhatsApp"></textarea></label>
+<label id="w-h" hidden>¿A qué hora pasas a retirarlo? (opcional)<input id="f-h" placeholder="Por ejemplo, 8:30 p. m."></label>
 <label>Forma de pago<select id="f-p"><option value="SINPE Móvil">SINPE Móvil</option><option value="Efectivo">Efectivo</option></select></label>
 <label>Notas (opcional)<textarea id="f-t" rows="2" placeholder="Sin cebolla, otro producto del menú, etc."></textarea></label>
 </div>
 <div class="btns"><a class="btn gold" id="wa" href="#" target="_blank" rel="noopener" data-track="soda-wa">Enviar por WhatsApp</a><button type="button" class="btn line" id="copy">Copiar pedido</button></div>
 <p class="foot" id="hint"></p>
 </div>
+<div class="upw"><a class="up" href="#top" data-up="1">↑ Volver arriba</a></div>
 </section>
+<nav class="bbar" id="bbar" aria-label="Acciones rápidas"><a href="#menu">Menú</a><a class="p" href="#pedir">Pedir</a><a href="tel:+50689825035">Llamar</a></nav>
 <div id="cbar" class="cbar" hidden><span id="cinfo"></span><a class="btn gold" href="#resumen">Ver pedido</a></div>
 
 <section class="pb" aria-labelledby="t-pb">
@@ -165,7 +230,7 @@ button.btn.line{background:transparent;color:var(--fg);cursor:pointer;font-famil
 <a class="btn" data-track="soda-a-pollos" href="https://www.polloslabomba.com/">Conoce Pollos La Bomba</a>
 </section>
 </main>
-<div class="bar">Soda La Bomba · Horquetas de Sarapiquí, Costa Rica</div>
+<div class="bar">Soda La Bomba · Local 24 horas · Express de 7 a. m. a 10 p. m. · Ruta 4, Horquetas de Sarapiquí<br><a href="#top" data-up="1" style="font-weight:800">↑ Volver arriba</a></div>
 <script>
 function track(n){try{if(window.goatcounter&&window.goatcounter.count)window.goatcounter.count({path:n,title:n,event:true})}catch(e){}}
 document.addEventListener('click',function(e){var a=e.target.closest('[data-track]');if(a)track(a.dataset.track)});
@@ -244,7 +309,7 @@ var MENU=[
   ['Orden de platanitos',[m('1.000')]],['Orden de doraditas',[m('1.000')]]
  ]}
 ]},
-{t:'Pollo y mar',g:[
+{t:'Pollo',g:[
  {h:'Pollo',i:[
   ['Pechuga ala',[m('2.300')]],['Cadera muslo',[m('1.800')]],['Alitas 5x',[m('3.500')]],['Alitas BBQ 5x',[m('4.500')]],
   ['Fajitas de pollo',[m('4.500')],'Con papas y ensalada.'],['Nuggets de pollo',[],'Con papas.']
@@ -253,6 +318,8 @@ var MENU=[
   ['Pescado con papas y ensalada',[m('4.500')],'Empanizado o al ajillo.'],
   ['Camarones con papas y ensalada',[m('6.500')],'Empanizados o al ajillo.']
  ]},
+]},
+{t:'Ceviches y caldosas',g:[
  {h:'Ceviches',i:[
   ['Ceviche de tilapia',['grande '+m('4.500'),'pequeño '+m('3.000')]],
   ['Ceviche de camarón',['grande '+m('6.000'),'pequeño '+m('4.000')]],
@@ -362,9 +429,10 @@ MENU.forEach(function(c){c.n=0;c.g.forEach(function(g){g.i.forEach(function(x){
 var qty={};
 function get(s,k){try{return JSON.parse(s.getItem(k))}catch(e){return null}}
 function put(s,k,v){try{s.setItem(k,JSON.stringify(v))}catch(e){}}
-function snap(){return{q:qty,n:$('#f-n').value,a:$('#f-a').value,p:$('#f-p').value,t:$('#f-t').value}}
+var mode='Express';
+function snap(){return{q:qty,n:$('#f-n').value,a:$('#f-a').value,p:$('#f-p').value,t:$('#f-t').value,m:mode,h:$('#f-h').value}}
 function save(){put(sessionStorage,KS,snap())}
-function restore(o){if(!o)return;qty={};Object.keys(o.q||{}).forEach(function(k){if(ITEMS[k]&&o.q[k]>0)qty[k]=o.q[k]});$('#f-n').value=o.n||'';$('#f-a').value=o.a||'';$('#f-t').value=o.t||'';if(o.p)$('#f-p').value=o.p}
+function restore(o){if(!o)return;qty={};Object.keys(o.q||{}).forEach(function(k){if(ITEMS[k]&&o.q[k]>0)qty[k]=o.q[k]});$('#f-n').value=o.n||'';$('#f-a').value=o.a||'';$('#f-t').value=o.t||'';if(o.p)$('#f-p').value=o.p;$('#f-h').value=o.h||'';setMode(o.m==='Retiro'?'Retiro':'Express')}
 
 /* Menú: categorías y detalle */
 function priceHtml(x){return (x[1]||[]).map(function(p){return '<span>'+esc(p)+'</span>'}).join('')}
@@ -386,8 +454,20 @@ function groupsHtml(c,order){
  return h;
 }
 function showCats(){$('#mdet').hidden=true;$('#mcats').hidden=false;$('#menu').scrollIntoView()}
-function showCat(k){var c=MENU[k];$('#mcats').hidden=true;$('#mdet').hidden=false;$('#mtitle').textContent=c.t;$('#mbody').innerHTML=groupsHtml(c,false);$('#menu').scrollIntoView();try{track('soda-menu-'+c.t)}catch(e){}}
-MENU.forEach(function(c,k){var b=document.createElement('button');b.type='button';b.innerHTML=esc(c.t)+'<small>'+c.n+' opciones</small>';b.addEventListener('click',function(){showCat(k)});$('#mcats').appendChild(b)});
+function showCat(k){var c=MENU[k];$('#mcats').hidden=true;$('#mdet').hidden=false;$('#mtitle').textContent=c.t;$('#mcrumb').textContent=c.t;$('#mbody').innerHTML=groupsHtml(c,false);$('#menu').scrollIntoView();try{track('soda-menu-'+c.t)}catch(e){}}
+function idx(t){for(var i=0;i<MENU.length;i++)if(MENU[i].t===t)return i;return 0}
+var GR=[
+ {n:'Lo más pedido',s:'Pollo frito, hamburguesas, pizzas, papas y combos.',t:['Pollo','Antojitos','Hamburguesas','Pizzas','Combos']},
+ {n:'Comida casera de soda',s:'Casados, arroz con pollo, sopa de mariscos, desayunos y más, todos los días.',t:['Almuerzos','Desayunos','Ceviches y caldosas','Para llevar','Baldes']},
+ {n:'Bebidas y postres',s:'',t:['Bebidas y postres']}
+];
+GR.forEach(function(g){
+ var h=document.createElement('h3');h.className='gh';h.textContent=g.n;$('#mcats').appendChild(h);
+ if(g.s){var p=document.createElement('p');p.className='gs';p.textContent=g.s;$('#mcats').appendChild(p)}
+ var d=document.createElement('div');d.className='cats';
+ g.t.forEach(function(t){var k=idx(t),c=MENU[k],b=document.createElement('button');b.type='button';b.innerHTML=esc(c.t)+'<small>'+c.n+' opciones</small>';b.addEventListener('click',function(){showCat(k)});d.appendChild(b)});
+ $('#mcats').appendChild(d);
+});
 $('#mback').addEventListener('click',showCats);$('#mback2').addEventListener('click',showCats);
 
 /* Pedido */
@@ -395,9 +475,11 @@ var cur=0;
 function drawOrder(){
  $('#opanel').innerHTML=groupsHtml(MENU[cur],true);
  var b=document.querySelectorAll('#otabs button');
- for(var i=0;i<b.length;i++)b[i].setAttribute('aria-selected',i===cur?'true':'false');
+ for(var i=0;i<b.length;i++)b[i].setAttribute('aria-selected',OT[i]===cur?'true':'false');
 }
-MENU.forEach(function(c,k){var b=document.createElement('button');b.type='button';b.setAttribute('role','tab');b.textContent=c.t;b.addEventListener('click',function(){cur=k;drawOrder()});$('#otabs').appendChild(b)});
+var OT=[];GR.forEach(function(g){g.t.forEach(function(t){OT.push(idx(t))})});
+cur=OT[0];
+OT.forEach(function(k){var c=MENU[k],b=document.createElement('button');b.type='button';b.setAttribute('role','tab');b.textContent=c.t;b.addEventListener('click',function(){cur=k;drawOrder()});$('#otabs').appendChild(b)});
 function change(k,d){var n=(qty[k]||0)+d;if(n<=0)delete qty[k];else qty[k]=Math.min(n,99);refresh()}
 function total(){var t=0,c=0;Object.keys(qty).forEach(function(k){t+=ITEMS[k].pr*qty[k];c+=qty[k]});return{t:t,c:c}}
 function renderSum(){
@@ -411,41 +493,62 @@ function renderSum(){
  $('#sumry').innerHTML=h;
 }
 function msg(){
- var ks=Object.keys(qty),L=['Hola, quiero hacer un pedido Express en Soda La Bomba:',''];
+ var ks=Object.keys(qty),L=['Hola, quiero hacer un pedido '+(mode==='Retiro'?'para retiro en el local':'Express a domicilio')+' en Soda La Bomba:',''];
  ks.forEach(function(k){var it=ITEMS[k],q=qty[k];L.push('- '+q+' x '+it.n+(it.lb?' ('+it.lb+')':'')+': '+fm(it.pr*q))});
  if(ks.length){L.push('','Total productos: '+fm(total().t)+' (sin envío)')}
  L.push('','Pago: '+$('#f-p').value);
  var n=$('#f-n').value.trim(),a=$('#f-a').value.trim(),t=$('#f-t').value.trim();
- if(n)L.push('Nombre: '+n);if(a)L.push('Dirección: '+a);if(t)L.push('Notas: '+t);
+ var hr=$('#f-h').value.trim();L.push('Modalidad: '+(mode==='Retiro'?'Retiro en el local':'Express'));if(n)L.push('Nombre: '+n);if(mode==='Express'){if(a)L.push('Dirección: '+a)}else if(hr)L.push('Hora de retiro: '+hr);if(t)L.push('Notas: '+t);
  return L.join('\n');
 }
-function ready(){var ok=Object.keys(qty).length>0&&$('#f-n').value.trim()&&$('#f-a').value.trim();return !!ok}
+function ready(){var ok=Object.keys(qty).length>0&&$('#f-n').value.trim()&&(mode==='Retiro'||$('#f-a').value.trim());return !!ok}
 function refresh(){
  drawOrder();renderSum();
  var T=total();
- $('#cbar').hidden=!T.c||inView;$('#cinfo').textContent=T.c+(T.c===1?' producto · ':' productos · ')+fm(T.t);
+ $('#cbar').hidden=!T.c||inView;$('#bbar').hidden=!$('#cbar').hidden;$('#cinfo').textContent=T.c+(T.c===1?' producto · ':' productos · ')+fm(T.t);
  var m=msg();$('#wa').href='https://wa.me/'+WA+'?text='+encodeURIComponent(m);
  var ok=ready();$('#wa').setAttribute('aria-disabled',ok?'false':'true');
- $('#hint').textContent=ok?'':'Agrega productos y completa nombre y dirección para enviar.';
+ $('#hint').textContent=ok?'':(mode==='Retiro'?'Agrega productos y escribe tu nombre para enviar.':'Agrega productos y completa nombre y dirección para enviar.');
  save();
 }
 var inView=false;
+function expOpen(){var d=new Date(Date.now()-6*3600*1000),m=d.getUTCHours()*60+d.getUTCMinutes();return m>=420&&m<1320}
+function setMode(m){
+ mode=m;var r=document.getElementsByName('mo');for(var i=0;i<r.length;i++)r[i].checked=(r[i].value===m);
+ $('#w-a').hidden=(m==='Retiro');$('#w-h').hidden=(m!=='Retiro');
+ $('#modeNote').textContent=m==='Retiro'?'Retiro en el local, las 24 horas.':'Express a domicilio, de 7 a. m. a 10 p. m.';
+}
+function status(){
+ var o=expOpen();
+ $('#st').dataset.e=o?'1':'0';
+ $('#st2').textContent=o?'Express abierto hasta las 10 p. m.':'Express cerrado, abre a las 7 a. m.';
+ var rd=document.querySelector('input[name=mo][value=Express]');rd.disabled=!o;$('#mo-e').classList.toggle('off',!o);
+ $('#ban').hidden=o;
+ if(!o&&mode==='Express'){setMode('Retiro');try{refresh()}catch(e){}}
+}
+Array.prototype.forEach.call(document.getElementsByName('mo'),function(r){r.addEventListener('change',function(){if(r.checked){setMode(r.value);refresh()}})});
+function hh(){document.documentElement.style.setProperty('--hh',$('#top').offsetHeight+'px')}
+window.addEventListener('resize',hh);window.addEventListener('load',hh);
+document.addEventListener('click',function(e){var u=e.target.closest('[data-up]');if(u){e.preventDefault();window.scrollTo({top:0})}});
+
 $('#opanel').addEventListener('click',function(e){var b=e.target.closest('[data-d]');if(!b)return;change(b.parentNode.dataset.k,+b.dataset.d)});
 $('#sumry').addEventListener('click',function(e){
  var b=e.target.closest('[data-d]');if(b){change(b.parentNode.dataset.k,+b.dataset.d);return}
  var r=e.target.closest('[data-rm]');if(r){delete qty[r.dataset.rm];refresh();return}
  if(e.target.closest('[data-clear]')){qty={};refresh()}
 });
-['#f-n','#f-a','#f-p','#f-t'].forEach(function(q){$(q).addEventListener('input',refresh);$(q).addEventListener('change',refresh)});
+['#f-n','#f-a','#f-p','#f-t','#f-h'].forEach(function(q){$(q).addEventListener('input',refresh);$(q).addEventListener('change',refresh)});
 function saveLast(){if(Object.keys(qty).length)put(localStorage,KL,snap());updRep()}
-function updRep(){var l=get(localStorage,KL);$('#rep').hidden=!(l&&Object.keys(l.q||{}).length&&!Object.keys(qty).length)}
-$('#rep').addEventListener('click',function(){restore(get(localStorage,KL));refresh();updRep();$('#resumen').scrollIntoView()});
+function updRep(){var l=get(localStorage,KL),h=!(l&&Object.keys(l.q||{}).length&&!Object.keys(qty).length);$('#rep').hidden=h;$('#rep0').hidden=h}
+function repeatLast(){restore(get(localStorage,KL));refresh();updRep();$('#resumen').scrollIntoView()}
+$('#rep').addEventListener('click',repeatLast);$('#rep0').addEventListener('click',repeatLast);
 $('#wa').addEventListener('click',function(e){if(!ready()){e.preventDefault();return}saveLast()});
 $('#copy').addEventListener('click',function(){var m=msg(),b=this;function ok(){b.textContent='Copiado';setTimeout(function(){b.textContent='Copiar pedido'},1800)}
  if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(m).then(ok,function(){});else{var t=document.createElement('textarea');t.value=m;document.body.appendChild(t);t.select();try{document.execCommand('copy');ok()}catch(x){}document.body.removeChild(t)}
  saveLast()});
-if('IntersectionObserver' in window){new IntersectionObserver(function(en){inView=en[0].isIntersecting;var T=total();$('#cbar').hidden=!T.c||inView},{threshold:.15}).observe($('#resumen'))}
-restore(get(sessionStorage,KS));updRep();refresh();
+if('IntersectionObserver' in window){new IntersectionObserver(function(en){inView=en[0].isIntersecting;var T=total();$('#cbar').hidden=!T.c||inView;$('#bbar').hidden=!$('#cbar').hidden},{threshold:.15}).observe($('#resumen'))}
+setMode('Express');
+restore(get(sessionStorage,KS));status();updRep();refresh();hh();setInterval(status,60000);
 </script>
 </body>
 </html>
