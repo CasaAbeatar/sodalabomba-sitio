@@ -179,8 +179,18 @@ section[id]{scroll-margin-top:calc(var(--hh) + 8px)}
 .soc a:hover{background:var(--gold);color:var(--gold-ink)}
 .soc span.off{opacity:.45}
 .soc svg{width:26px;height:26px;fill:currentColor}
-.sg{margin:0 0 6px}
 .bar a{display:inline-flex;align-items:center;min-height:44px}
+.fam{background:var(--red);color:#fff;padding:56px 20px;text-align:center}
+.fam h2{font-size:clamp(34px,6vw,60px);margin:0}
+.fam .lead{max-width:640px;margin:12px auto 24px;font-size:18px}
+.fcs{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;max-width:1000px;margin:0 auto;text-align:left}
+.fc{display:flex;flex-direction:column;gap:6px;padding:18px;border-radius:16px;border:2px solid var(--gold);background:rgba(0,0,0,.25);color:#fff;text-decoration:none;min-height:44px}
+.fc b{font-family:var(--display);font-size:20px;text-transform:uppercase;line-height:1.1}
+.fc span{font-size:15px}
+.fc .go{margin-top:auto;padding-top:6px;font-weight:800;color:var(--gold)}
+.fc.cur{background:var(--gold);color:var(--gold-ink)}.fc.cur .go{color:var(--gold-ink)}
+a.fc:hover,a.fc:focus-visible{background:#fff;color:var(--red)}a.fc:hover .go,a.fc:focus-visible .go{color:var(--red)}
+
 .bar p{margin:0}
 .lnk a{display:inline-flex;align-items:center;min-height:44px;padding:0 6px}
 </style>
@@ -273,15 +283,17 @@ section[id]{scroll-margin-top:calc(var(--hh) + 8px)}
 <div class="soc" id="soc" role="list"></div>
 </section>
 
-<section class="pb" aria-labelledby="t-pb">
-<span class="tag" data-en="New, across from the soda">Nuevo, frente a la soda</span>
-<h2 id="t-pb">Pollos La Bomba y Papea</h2>
-<p data-en="We open Saturday, November 14. Fries in a cone or a box, for takeaway and Express.">Abrimos el sábado 14 de noviembre. Papas fritas en cono y Caja Bomba, para llevar y Express.</p>
-<div class="btns"><a class="btn" data-track="soda-a-pollos" href="https://www.polloslabomba.com/" data-en="Meet Pollos La Bomba">Conoce Pollos La Bomba</a><a class="btn" data-track="soda-a-papea" href="https://www.polloslabomba.com/papea/" data-en="See the Papea menu">Ver el menú de Papea</a></div>
+<section class="fam" aria-labelledby="t-fam">
+<h2 id="t-fam" data-en="&lt;span data-years&gt;13&lt;/span&gt; years on Route 4"><span data-years>13</span> años en la Ruta 4</h2>
+<p class="lead" data-en="Home-style food of the highest quality, made every day for Horquetas de Sarapiquí and for everyone traveling the route. Soda La Bomba, Pollos La Bomba and Papea share the same backing.">Comida casera y de altísima calidad, preparada todos los días para Horquetas de Sarapiquí y para quienes viajan por la ruta. Soda La Bomba, Pollos La Bomba y Papea tienen el mismo respaldo.</p>
+<div class="fcs">
+<div class="fc cur" aria-current="page"><b>Soda La Bomba</b><span data-en="Home-style and fast food. Open 24 hours, 7 days a week.">Comida casera y rápida. Abierta las 24 horas, los 7 días.</span><span class="go" data-en="You are here">Estás aquí</span></div>
+<a class="fc" data-track="fam-pollos" href="https://www.polloslabomba.com/"><b>Pollos La Bomba</b><span data-en="Fried chicken. Every day, 10 a.m. to 10 p.m. We open Saturday, November 14.">Pollo frito. Todos los días de 10 a. m. a 10 p. m. Abrimos el sábado 14 de noviembre.</span><span class="go" data-en="Visit →">Visitar →</span></a>
+<a class="fc" data-track="fam-papea" href="https://www.polloslabomba.com/papea/"><b>Papea</b><span data-en="Fries in a cone or a box, for takeaway and Express.">Papas fritas en cono y caja, para llevar y Express.</span><span class="go" data-en="Visit →">Visitar →</span></a>
+</div>
 </section>
 </main>
 <footer class="bar">
-<p class="sg" data-en="Soda La Bomba, Pollos La Bomba and Papea are one group, on Route 4 since 2013.">Soda La Bomba, Pollos La Bomba y Papea son un mismo grupo, en la Ruta 4 desde 2013.</p>
 <p data-en="In-store 24 hours · Express 7 a.m. to 10 p.m. · Route 4, Horquetas de Sarapiquí">Local 24 horas · Express de 7 a. m. a 10 p. m. · Ruta 4, Horquetas de Sarapiquí</p>
 <a href="#top" data-up="1" style="font-weight:800" data-en="↑ Back to top">↑ Volver arriba</a>
 </footer>
@@ -651,8 +663,9 @@ function applyLang(){
  $('#b-es').setAttribute('aria-pressed',String(L==='es'));$('#b-en').setAttribute('aria-pressed',String(L==='en'));
  buildCats();buildTabs();buildSoc();
  if(curCat>=0)drawCat(curCat);
- doSearch();status();setMode(mode);refresh();hh();tabsMask();
+ doSearch();status();setMode(mode);refresh();hh();tabsMask();ys();
 }
+function ys(){var y=new Date().getFullYear()-2013;document.querySelectorAll('[data-years]').forEach(function(e){e.textContent=y})}
 function setLang(l){L=l;try{localStorage.setItem('sb_lang',l)}catch(e){}applyLang()}
 $('#b-es').addEventListener('click',function(){setLang('es')});$('#b-en').addEventListener('click',function(){setLang('en')});
 restore(get(sessionStorage,KS));updRep();applyLang();setInterval(status,60000);
