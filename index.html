@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Soda La Bomba</title>
+<meta name="description" content="Soda La Bomba, Horquetas de Sarapiquí, sobre Ruta 4. Menú, Express todos los días y comida casera desde 2013.">
+<meta name="theme-color" content="#171212">
+<link rel="canonical" href="https://www.sodalabomba.com/">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="img/favicon-48.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CR">
+<meta property="og:site_name" content="Soda La Bomba">
+<meta property="og:title" content="Soda La Bomba">
+<meta property="og:description" content="Un cafecito para seguir el camino. Horquetas de Sarapiquí.">
+<meta property="og:url" content="https://www.sodalabomba.com/">
+<meta property="og:image" content="https://www.sodalabomba.com/img/og-soda.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#171212;--fg:#FFFFFF;--gold:#F3A62C;--gold-ink:#171212;--red:#B81622;--red-ink:#FFFFFF;--bar:#0E0A0A;--bar-fg:#F6EFE6;--display:'Figtree',system-ui,sans-serif;--body:'Figtree',system-ui,sans-serif}
+:root{color-scheme:dark}
+*{box-sizing:border-box}
+html{height:100%}
+body{min-height:100%;margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.5;display:flex;flex-direction:column}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+h1,h2{font-family:var(--display);font-weight:800;text-transform:uppercase;letter-spacing:.01em;margin:0;line-height:.98;text-wrap:balance}
+.hero{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;text-align:center;padding:56px 20px;min-height:80svh}
+.tag{font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
+.logo img{display:block;width:clamp(220px,30vw,360px);height:auto}
+.lema{font-size:clamp(20px,2.8vw,28px);font-weight:700;margin:0;color:var(--gold)}
+.btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 30px;border-radius:12px;font-weight:700;font-size:17px;font-family:var(--body);text-decoration:none;border:2px solid transparent}
+.btn.gold{background:var(--gold);color:var(--gold-ink)}
+.btn.line{border-color:var(--fg);color:var(--fg)}
+.info{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:#2a2222}
+.info>div{background:var(--bg);padding:36px 24px;text-align:center}
+.info h2{font-size:18px;letter-spacing:.08em;color:var(--gold);margin-bottom:10px}
+.info p{margin:0}
+.info a{text-decoration:none;font-weight:700}
+.pb{background:var(--red);color:var(--red-ink);text-align:center;padding:56px 20px;display:flex;flex-direction:column;align-items:center;gap:14px}
+.pb .tag{background:var(--gold);color:var(--gold-ink);padding:6px 14px;border-radius:999px}
+.pb h2{font-size:clamp(34px,6vw,64px)}
+.pb p{margin:0;max-width:460px}
+.pb .btn{background:var(--gold);color:var(--gold-ink)}
+.pb .btn:hover,.pb .btn:focus-visible{background:var(--red-ink)}
+
+.menu{padding:56px 20px;max-width:980px;margin:0 auto;width:100%}
+.menu>h2{font-size:clamp(34px,6vw,60px);text-align:center;margin-bottom:8px}
+.menu .sub{text-align:center;margin:0 0 24px;opacity:.9}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:4px 2px 12px;scrollbar-width:thin;position:sticky;top:0;background:var(--bg);z-index:2}
+.tabs button{flex:0 0 auto;min-height:44px;padding:0 18px;border-radius:999px;border:2px solid var(--gold);background:transparent;color:var(--gold);font:700 15px var(--body);cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--gold);color:var(--gold-ink)}
+.grp h3{font-family:var(--display);font-size:20px;text-transform:uppercase;letter-spacing:.06em;color:var(--gold);margin:30px 0 4px;padding-bottom:6px;border-bottom:2px solid var(--red)}
+.grp .nt{margin:8px 0 0;font-size:15px;opacity:.85}
+.it{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid #2a2222}
+.it .l{min-width:0}
+.it b{font-weight:800;text-transform:uppercase;font-size:16px;letter-spacing:.01em}
+.it .d{display:block;font-size:15px;opacity:.85;margin-top:2px}
+.it .p{text-align:right;font-weight:800;color:var(--gold);white-space:nowrap}
+.it .p span{display:block}
+.it .p small{font-weight:700;color:var(--fg);opacity:.85;font-size:13px;margin-right:6px}
+.foot{margin-top:28px;font-size:15px;opacity:.9;text-align:center}
+
+.cats[hidden]{display:none}
+.cats{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+.cats button{min-height:84px;border-radius:14px;border:2px solid var(--gold);background:transparent;color:var(--fg);font:800 18px var(--body);text-transform:uppercase;letter-spacing:.02em;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:10px}
+.cats button small{font:700 13px var(--body);color:var(--gold);text-transform:none;letter-spacing:0}
+.cats button:hover{background:var(--gold);color:var(--gold-ink)}.cats button:hover small{color:var(--gold-ink)}
+button.btn.line{background:transparent;color:var(--fg);cursor:pointer;font-family:var(--body)}
+.back{margin-bottom:8px;min-height:44px;padding:0 20px;cursor:pointer;background:transparent}
+.ct{font-family:var(--display);font-size:clamp(26px,5vw,40px);text-transform:uppercase;margin:14px 0 0;line-height:1}
+.steps{margin:0 auto 12px;padding-left:22px;max-width:560px}.steps li{margin:4px 0}
+.facts{margin:0 auto 18px;padding-left:22px;max-width:560px;font-size:15px;opacity:.9}
+#rep{margin-bottom:12px;cursor:pointer;background:transparent}#rep[hidden]{display:none}
+.op{display:flex;align-items:center;justify-content:flex-end;gap:10px;margin-top:4px}
+.op .ol{font-size:13px;font-weight:700;opacity:.85}
+.op .pr{font-weight:800;color:var(--gold);min-width:64px;text-align:right}
+.ctl{display:inline-flex;align-items:center;gap:6px}
+.ctl button{min-height:36px;min-width:36px;border-radius:10px;border:2px solid var(--gold);background:transparent;color:var(--gold);font:800 16px var(--body);cursor:pointer;padding:0 10px}
+.ctl .add{padding:0 14px;min-width:92px}
+.ctl .n{min-width:22px;text-align:center;font-weight:800}
+.ord .it .p{white-space:normal}
+.ord .it .np{font-size:13px;opacity:.8}
+.box{margin-top:32px;border:2px solid var(--gold);border-radius:16px;padding:8px 18px 22px}
+.cl{display:grid;grid-template-columns:1fr auto;gap:4px 12px;align-items:center;padding:10px 0;border-bottom:1px solid #2a2222}
+.cl .tt{font-weight:800}.cl .lb{font-weight:400;opacity:.85;font-size:14px}
+.cl .rm{background:none;border:0;color:var(--gold);text-decoration:underline;font:700 14px var(--body);cursor:pointer;padding:0;justify-self:start}
+.tot{display:flex;justify-content:space-between;font-weight:800;font-size:19px;padding:14px 0}
+.frm{display:grid;gap:12px;margin:8px 0 18px}
+.frm label{display:grid;gap:4px;font-weight:700;font-size:15px}
+.frm input,.frm textarea,.frm select{font:400 17px var(--body);padding:10px 12px;border-radius:10px;border:2px solid #4a3d3d;background:#0E0A0A;color:var(--fg)}
+.cbar{position:fixed;left:0;right:0;bottom:0;z-index:5;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px calc(10px + env(safe-area-inset-bottom));font-weight:800}
+.cbar[hidden]{display:none}.cbar .btn{min-height:44px;padding:0 20px}
+#wa[aria-disabled="true"]{opacity:.5;pointer-events:none}
+.bar{background:var(--bar);color:var(--bar-fg);font-size:14px;font-weight:700;text-align:center;padding:12px 20px}
+</style>
+</head>
+<body>
+<main>
+<section class="hero" aria-labelledby="t-soda">
+<span class="tag">Horquetas de Sarapiquí</span>
+<h1 id="t-soda" class="logo"><img src="img/logo-soda-amarillo.png" width="700" height="736" alt="Soda La Bomba"></h1>
+<p class="lema">Un cafecito para seguir el camino</p>
+<div class="btns">
+<a class="btn line" data-track="soda-como-llegar" href="https://www.google.com/maps/place/La+Bomba/@10.3339795,-83.9500609,17z/data=!4m6!3m5!1s0x8fa097240bc8c507:0xffa580b8cf09d520!8m2!3d10.3339795!4d-83.9500609" target="_blank" rel="noopener">Cómo llegar</a>
+<a class="btn gold" data-track="soda-menu" href="#menu">Ver el menú</a>
+<a class="btn gold" data-track="soda-pedir" href="#pedir">Pedir Express</a>
+<a class="btn line" data-track="soda-llamar" href="tel:+50689825035">Llamar al 8982-5035</a>
+</div>
+</section>
+
+<section class="info" aria-label="Datos de la soda">
+<div><h2>Express</h2><p>Todos los días<br>de 7 a. m. a 10 p. m.</p></div>
+<div><h2>Dónde estamos</h2><p>Sobre Ruta 4, Horquetas de Sarapiquí.<br>A un costado de la Gasolinera Corporación JYJ.</p></div>
+<div><h2>Contacto</h2><p><a href="tel:+50689825035">8982-5035</a> · <a href="tel:+50685798383">8579-8383</a><br>SINPE Móvil 8585-1661</p></div>
+</section>
+
+<section class="menu" id="menu" aria-labelledby="t-menu">
+<h2 id="t-menu">Menú</h2>
+<p class="sub">Comida casera desde 2013. Elige una categoría para verla.</p>
+<div id="mcats" class="cats"></div>
+<div id="mdet" hidden>
+<button type="button" class="btn line back" id="mback">← Todas las categorías</button>
+<h3 class="ct" id="mtitle"></h3>
+<div id="mbody"></div>
+<div class="btns" style="margin-top:28px"><button type="button" class="btn line back" id="mback2">← Todas las categorías</button><a class="btn gold" href="#pedir" data-track="soda-menu-a-pedir">Pedir Express</a></div>
+</div>
+</section>
+
+<section class="menu ord" id="pedir" aria-labelledby="t-ped">
+<h2 id="t-ped">Pide Express</h2>
+<p class="sub">Te lo llevamos. Todos los días de 7 a. m. a 10 p. m.</p>
+<ol class="steps"><li>Elige lo que quieres, por categoría.</li><li>Revisa tu resumen y completa tus datos.</li><li>Envíalo por WhatsApp y te confirmamos total, envío y entrega.</li></ol>
+<ul class="facts"><li>Zona de entrega y costo de envío: [por confirmar].</li><li>Pago por SINPE Móvil al 8585-1661 o en efectivo.</li></ul>
+<button type="button" class="btn line" id="rep" hidden>Repetir mi último pedido</button>
+<div id="ocat"><div class="tabs" role="tablist" id="otabs" aria-label="Categorías para pedir"></div>
+<div id="opanel"></div></div>
+<div id="resumen" class="box">
+<h3 class="ct">Tu resumen</h3>
+<div id="sumry"></div>
+<div class="frm">
+<label>Nombre<input id="f-n" autocomplete="name"></label>
+<label>Dónde te la llevamos (dirección exacta)<textarea id="f-a" rows="2" placeholder="Señas exactas, o pega tu punto de Waze o de WhatsApp"></textarea></label>
+<label>Forma de pago<select id="f-p"><option value="SINPE Móvil">SINPE Móvil</option><option value="Efectivo">Efectivo</option></select></label>
+<label>Notas (opcional)<textarea id="f-t" rows="2" placeholder="Sin cebolla, otro producto del menú, etc."></textarea></label>
+</div>
+<div class="btns"><a class="btn gold" id="wa" href="#" target="_blank" rel="noopener" data-track="soda-wa">Enviar por WhatsApp</a><button type="button" class="btn line" id="copy">Copiar pedido</button></div>
+<p class="foot" id="hint"></p>
+</div>
+</section>
+<div id="cbar" class="cbar" hidden><span id="cinfo"></span><a class="btn gold" href="#resumen">Ver pedido</a></div>
+
+<section class="pb" aria-labelledby="t-pb">
+<span class="tag">Nuevo, frente a la soda</span>
+<h2 id="t-pb">Pollos La Bomba y Papea</h2>
+<p>Abrimos el sábado 14 de noviembre. Papas fritas en cono y Caja Bomba, para llevar y Express.</p>
+<a class="btn" data-track="soda-a-pollos" href="https://www.polloslabomba.com/">Conoce Pollos La Bomba</a>
+</section>
+</main>
+<div class="bar">Soda La Bomba · Horquetas de Sarapiquí, Costa Rica</div>
+<script>
+function track(n){try{if(window.goatcounter&&window.goatcounter.count)window.goatcounter.count({path:n,title:n,event:true})}catch(e){}}
+document.addEventListener('click',function(e){var a=e.target.closest('[data-track]');if(a)track(a.dataset.track)});
+
+var CRC='₡';
+function m(x){return CRC+x}
+var MENU=[
+{t:'Desayunos',g:[
+ {h:'Desayunos',i:[
+  ['Gallo pinto típico costarricense',[m('3.500')],'Huevo, natilla y salchichón.'],
+  ['Gallo pinto + bebida',[m('3.300')],'Carne en salsa, pollo o carne mexicana.'],
+  ['Desayuno americano',[m('4.200')],'Tostadas, 2 huevos, tocineta, miel, jugo de naranja y café.'],
+  ['Adicionales',[m('800')],'Arme su desayuno perfecto.'],
+  ['Maduro con queso',[m('1.500')]],
+  ['Tortilla aliñada',[m('2.200'),'con natilla o queso '+m('2.500')],'Con queso o natilla.'],
+  ['Repostería variada',[],'Budín, tamal de maicena, tamal asado, tamal de queso crema, queque de chocolate, queque seco, queque de zanahoria, queque de manzana.']
+ ]},
+ {h:'Para acompañar',i:[
+  ['Enyucado',[m('1.200')]],['Empanada',[m('1.200')]],['Empanada arreglada',[m('2.000')]],['Flauta de queso',[m('1.800')]],
+  ['Sándwich de carne y pollo',[m('2.500')]],['Sándwich de jamón y queso',[m('1.800')]],
+  ['Tamal tradicional costarricense',[],'Sujeto a disponibilidad.']
+ ]},
+ {h:'Gallos',i:[
+  ['Torta de carne arreglada',[m('1.800')]],['Carne',[m('2.500')]],['Lengua',[m('3.300')]],
+  ['Salchichón',[m('800'),'arreglado '+m('1.350')]],['Queso',[m('800')]],['Picadillo',[m('1.200')],'Sujeto a disponibilidad.'],
+  ['Tortilla con torta de huevo',[m('1.200')]],['Torta de carne',[m('1.800')]]
+ ]}
+]},
+{t:'Almuerzos',g:[
+ {h:'Buffet La Bomba',n:'Variedad de comida casera preparada diariamente. Opciones según disponibilidad del día. Barra de ensaladas frescas y acompañamientos para complementar su plato.',i:[]},
+ {h:'Casados',n:'Todos incluyen té frío natural, arroz, frijoles, ensalada, maduro, picadillo y proteína a elegir.',i:[
+  ['Casado de pollo',[m('4.000')],'Frito, al horno, caribeño o en salsa. Cadera o muslo.'],['Casado de carne en salsa o mexicana',[m('4.000')]],['Casado de mondongo',[m('4.000')]],['Casado de pescado',[m('4.000')]],['Casado de chicharrón',[m('4.000')]],['Casado de chuleta',[m('4.000')]],
+  ['Casado con lengua',[m('4.950')]],['Casado con bistec',[m('4.650')]],['Casado con filete o fajitas de pollo',[m('4.500')]],['Casado con lasaña',[m('6.500')]]
+ ]},
+ {h:'Arroces',i:[
+  ['Arroz estilo cantonés',['entero '+m('4.800'),'medio '+m('3.300'),'plato '+m('5.600')]],
+  ['Arroz con camarones',['entero '+m('5.200'),'medio '+m('3.500'),'plato '+m('6.500')]],
+  ['Arroz con pollo',['entero '+m('3.800'),'medio '+m('2.500'),'plato '+m('4.500')]]
+ ]},
+ {h:'Sopas',i:[
+  ['Olla de carne',['grande '+m('4.500'),'mediana '+m('3.900'),'pequeña '+m('2.800')],'Para llevar: solo porción grande, '+m('4.500')+'.'],
+  ['Sopa de mariscos',['grande '+m('5.800'),'mediana '+m('4.500'),'pequeña '+m('3.500')],'Para llevar: solo porción grande, '+m('5.800')+'.']
+ ]},
+ {h:'Más',i:[
+  ['Lasaña',[m('3.500'),'con ensalada '+m('4.500')]],['Orden de puré',[m('1.000')]],['Orden de papas salteadas',[m('800')]]
+ ]}
+]},
+{t:'Antojitos',g:[
+ {h:'Tacos',i:[
+  ['Taco sencillo',[m('2.000'),'con papas '+m('3.000')],'Tortilla de maíz, salsa, carne, repollo y salsas.'],
+  ['Taco especial',[m('3.975')],'Tortilla de maíz con carne, jamón, queso amarillo, repollo, papas fritas y salsas.'],
+  ['Taco Bomba',[m('5.200')],'Tres tortillas de maíz con res, pollo, queso, repollo o lechuga, papas fritas y salsas.']
+ ]},
+ {h:'Burritos y wraps',i:[
+  ['Burrito',[m('2.250'),'con papas '+m('3.250')],'Carne de res o pollo, frijoles molidos, queso cheddar, lechuga y pico de gallo.'],
+  ['Crunchy burrito',[m('1.200'),'con papas '+m('2.400')],'Carne molida de res con chips de ranchitas.'],
+  ['Wrap de pollo',[m('2.600'),'con papas '+m('3.800')],'Tortilla de harina, pollo empanizado, lechuga, tomate, queso mozzarella, salsa especial o mostaza miel.']
+ ]},
+ {h:'Nachos',i:[['Nachos de pollo y carne',[m('4.500')]],['Nachos mixtos',[m('5.350')]]]},
+ {h:'Papas',i:[
+  ['Papas pequeñas',[m('1.200')]],['Papas grandes',[m('2.500')]],['Papas gajo',[m('2.500')],'Salsa ranch.'],
+  ['Papa queso',[m('3.500')],'Papa, queso mozzarella y tocineta.'],
+  ['Papa carne',[m('4.500')],'Papa, frijoles, carne o pollo, salsa de queso, pico de gallo y salsas.'],
+  ['Papa Bomba',[m('4.800')],'Papas, queso mozzarella, tocineta, pollo empanizado o chicharrón, jalapeños, salsa chipotle, especial o aguacate.'],
+  ['Salchipapas',[m('2.800')]],['Salchi mix',[m('4.000')],'Papas, salchichas, carne desmechada y salsa de aguacate.']
+ ]},
+ {h:'Más antojitos',i:[
+  ['Gorditas',[m('2.500'),'con papas '+m('3.600')],'Pan de pita relleno con frijoles molidos, carne o pollo, queso mozzarella, lechuga, pico de gallo y salsa especial.'],
+  ['Chalupa',[m('3.500')],'Tortilla de maíz, frijoles, queso rallado, pollo o carne, lechuga, pico de gallo y salsas.'],
+  ['Quesadilla',[m('3.200'),'con papas '+m('4.300')],'Tortilla de harina, mozzarella, cheddar, pollo o carne, pico de gallo y salsa especial.'],
+  ['Orden de patacones',[m('2.675')],'6 patacones y frijoles molidos.'],
+  ['Patacones arreglados',[m('3.975')],'5 patacones con carne, frijoles molidos, queso mozzarella, lechuga, pico de gallo y salsas.'],
+  ['Palitos de yuca frita',[m('1.675')],'Yuca frita y salsa rosada.'],
+  ['Dedos de mozzarella',[m('2.500')],'Con salsa de queso.'],
+  ['Aros de cebolla',[m('2.500')],'Con salsa ranch.'],
+  ['Orden de platanitos',[m('1.000')]],['Orden de doraditas',[m('1.000')]]
+ ]}
+]},
+{t:'Pollo y mar',g:[
+ {h:'Pollo',i:[
+  ['Pechuga ala',[m('2.300')]],['Cadera muslo',[m('1.800')]],['Alitas 5x',[m('3.500')]],['Alitas BBQ 5x',[m('4.500')]],
+  ['Fajitas de pollo',[m('4.500')],'Con papas y ensalada.'],['Nuggets de pollo',[],'Con papas.']
+ ]},
+ {h:'Para darse un gustito',i:[
+  ['Pescado con papas y ensalada',[m('4.500')],'Empanizado o al ajillo.'],
+  ['Camarones con papas y ensalada',[m('6.500')],'Empanizados o al ajillo.']
+ ]},
+ {h:'Ceviches',i:[
+  ['Ceviche de tilapia',['grande '+m('4.500'),'pequeño '+m('3.000')]],
+  ['Ceviche de camarón',['grande '+m('6.000'),'pequeño '+m('4.000')]],
+  ['Ceviche mixto',['grande '+m('5.500'),'pequeño '+m('3.500')]]
+ ]},
+ {h:'Caldosas',i:[['Caldosa de pescado',[m('1.500')]],['Caldosa mixta',[m('2.500')]]]}
+]},
+{t:'Hamburguesas',g:[
+ {h:'Hamburguesas',n:'Precio solo y con papas.',i:[
+  ['Hamburguesa sencilla',[m('1.500'),'con papas '+m('2.500')],'Torta, tomate, lechuga y salsas.'],
+  ['Quesoburguesa',[m('1.800'),'con papas '+m('3.000')],'Torta de carne, queso amarillo, lechuga, tomate y salsa.'],
+  ['Hamburguesa clásica',[m('2.875'),'con papas '+m('3.975')],'Torta de carne, jamón, tocineta, queso amarillo, pepinillo, lechuga, tomate y salsas.'],
+  ['Hamburguesa de pollo',[m('2.975'),'con papas '+m('3.975')],'Pechuga de pollo, queso mozzarella, lechuga, tomate y salsa ranch.'],
+  ['Hamburguesa bacon',[m('3.475'),'con papas '+m('4.575')],'Torta de carne, tocineta, queso cheddar, lechuga, tomate y salsa barbacoa.'],
+  ['Hamburguesa Bomba (doble)',[m('4.175'),'con papas '+m('5.275')],'2 tortas, jamón, tocineta, queso amarillo, pepinillo, cebolla, dedos de mozzarella, huevo frito, lechuga, tomate y salsas.'],
+  ['Adicionales',[m('500')],'Queso amarillo, jamón, tocineta, queso mozzarella, pepinillos, salsas, cebolla o huevo.']
+ ]}
+]},
+{t:'Pizzas',g:[
+ {h:'Pizzas',i:[
+  ['Jamón y queso',[m('9.000')],'Jamón y queso mozzarella.'],
+  ['Jamón y hongos',[m('9.000')],'Jamón, hongos y queso mozzarella.'],
+  ['Pepperoni',[m('9.000')],'Pepperoni y queso mozzarella.'],
+  ['Hawaiana',[m('9.000')],'Jamón, piña y queso mozzarella.'],
+  ['Suprema',[m('9.500')],'Jamón, carne, pepperoni, hongos, chile, cebolla y queso mozzarella.'],
+  ['Solo carnes',[m('9.500')],'Jamón, carne, pepperoni y salami.'],
+  ['Pizza Bomba',[m('9.500')],'Topping de carne, pepperoni, tocineta, jalapeños y extra de queso mozzarella.'],
+  ['Slice',[m('1.500')]]
+ ]}
+]},
+{t:'Combos',g:[
+ {h:'Combos',i:[
+  ['Combo 1',[m('3.500')],'Quesoburguesa + papas pequeñas + Coca-Cola de 600 ml.'],
+  ['Combo 2',[m('4.675')],'Hamburguesa clásica + papas pequeñas + Coca-Cola de 600 ml.'],
+  ['Combo 3',[m('3.000')],'2 piezas de pollo (cadera y muslo) + papas pequeñas + Coca-Cola de 355 ml.'],
+  ['Combo 4',[m('5.200')],'1 taco Bomba + fresco natural.'],
+  ['Combo 5',[m('4.675')],'1 nacho + Coca-Cola de 355 ml.'],
+  ['Combo 6',[m('11.975')],'4 burritos + papas grandes + Pepsi de 2,5 L.'],
+  ['Combo 7',[m('12.475')],'6 empanadas arregladas + Pepsi de 2,5 L.'],
+  ['Combo 8',[m('12.950')],'10 piezas de pollo variadas + papas grandes + escabeche de banano + Pepsi de 2,5 L.'],
+  ['Combo 9',[m('10.975')],'4 tacos sencillos + papas grandes + Pepsi de 2,5 L.'],
+  ['Combo 10',[m('12.275')],'3 quesoburguesas + 6 alitas fritas + papas grandes + Pepsi de 2,5 L.']
+ ]},
+ {h:'Menú para niños',n:'Todo a '+m('1.000')+'.',i:[
+  ['Hot dog (niños)',[m('1.000')]],['Taco pequeño (niños)',[m('1.000')]],['Burrito (niños)',[m('1.000')]],['Hamburguesa (niños)',[m('1.000')]],['Salchipapas (niños)',[m('1.000')]],['Nuggets, 5 unidades (niños)',[m('1.000')]],
+  ['Combo para niños',[m('1.975')],'Hamburguesa o pieza de pollo con papas y jugo Hi-C de frutas o melocotón.']
+ ]}
+]},
+{t:'Bebidas y postres',g:[
+ {h:'Bebidas',i:[
+  ['Refresco natural',[m('800')]],
+  ['Gaseosas',['600 ml '+m('1.200'),'355 ml '+m('800')]],
+  ['Batido en leche',[m('2.250')],'Crema, chocolate, papaya o mora.'],
+  ['Milkshakes',[m('2.975')],'Conejo blanco, Oreo, chicle o fresa.']
+ ]},
+ {h:'Bebidas calientes',i:[
+  ['Agua dulce',[m('1.200')]],['Chocolate',[m('1.500')]],['Té',[m('1.000')]],['Café',['negro '+m('1.000'),'con leche '+m('1.200')]]
+ ]},
+ {h:'Postres',i:[
+  ['Tres leches',[m('2.000')],'Vainilla, Nutella, pie de limón y fresa. Sujeto a disponibilidad.'],
+  ['Fresas con crema',[m('2.000')],'Sujeto a disponibilidad.'],
+  ['Gelatina de mosaico',[m('1.300')]],
+  ['Pie',[m('2.200')],'Limón, maracuyá, fresa y chocolate. Sujeto a disponibilidad.'],
+  ['Arroz con leche',[m('1.300')]]
+ ]}
+]},
+{t:'Para llevar',g:[
+ {h:'Por porción o entero',i:[
+  ['Chicharrones',['carne '+m('8.500'),'concha '+m('9.600'),'BBQ '+m('9.500')],'Incluye banano y limón.'],
+  ['Medio de carne en salsa y mexicana',[m('4.850')]],['Medio de mondongo',[m('3.800')]],
+  ['Posta caribeña',['pequeño '+m('2.200'),'medio '+m('4.200')]],
+  ['Posta de cerdo con papas',['pequeño '+m('1.800'),'medio '+m('3.600')]],
+  ['Pollo caribeño',['pechuga '+m('2.000'),'cadera '+m('1.200'),'muslo '+m('1.000')]],
+  ['Lomo de cerdo al horno',[m('10.975')+' / kg']],
+  ['Entero gallo pinto',[m('3.000')]],['Entero rice and beans',[m('3.500')]],['Entero arroz blanco',[m('2.600')]],
+  ['Spaghetti salsa blanca',['medio '+m('3.500'),'grande '+m('5.500')]],
+  ['Spaghetti salsa de tomate',['medio '+m('2.500'),'grande '+m('4.500')]],
+  ['Porción de puré',[m('1.500')]],
+  ['Porción de ensaladas frías',['pequeño '+m('1.250'),'grande '+m('2.500')]],
+  ['Porción de lengua',[m('2.500')]],['Porción de picadillo',[m('1.500')]],
+  ['Porción de papas salteadas',[m('1.200')]],['Orden de plátanos maduros',[m('800')]]
+ ]}
+]},
+{t:'Baldes',g:[
+ {h:'Baldes para compartir',n:'Ideales para celebraciones y eventos.',i:[
+  ['Balde de arroz',['con pollo '+m('28.500'),'cantonés '+m('35.000')]],
+  ['Balde de escabeche de banano',[m('16.500')]],
+  ['Balde de chips doraditas',[m('6.000')]]
+ ]}
+]}
+];
+
+var WA='50689825035',KS='sb_cart',KL='sb_last';
+function esc(x){return String(x).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function $(q){return document.querySelector(q)}
+function fm(n){return CRC+String(n).replace(/\B(?=(\d{3})+(?!\d))/g,'.')}
+var ITEMS={};
+MENU.forEach(function(c){c.n=0;c.g.forEach(function(g){g.i.forEach(function(x){
+ c.n++;
+ x.o=(x[1]||[]).map(function(p){
+  var r=/^(.*?)\s*₡\s*([\d.]+)\s*(.*)$/.exec(p),lb=((r[1]||'')+' '+(r[3]||'')).trim().replace(/^\//,'por ');
+  return{lb:lb,pr:parseInt(r[2].replace(/\./g,''),10)};
+ });
+ if(x.o.length>1)x.o.forEach(function(o){if(!o.lb)o.lb='solo'});
+ x.o.forEach(function(o){o.k=x[0]+'|'+o.lb;ITEMS[o.k]={n:x[0],lb:o.lb,pr:o.pr}});
+})})});
+var qty={};
+function get(s,k){try{return JSON.parse(s.getItem(k))}catch(e){return null}}
+function put(s,k,v){try{s.setItem(k,JSON.stringify(v))}catch(e){}}
+function snap(){return{q:qty,n:$('#f-n').value,a:$('#f-a').value,p:$('#f-p').value,t:$('#f-t').value}}
+function save(){put(sessionStorage,KS,snap())}
+function restore(o){if(!o)return;qty={};Object.keys(o.q||{}).forEach(function(k){if(ITEMS[k]&&o.q[k]>0)qty[k]=o.q[k]});$('#f-n').value=o.n||'';$('#f-a').value=o.a||'';$('#f-t').value=o.t||'';if(o.p)$('#f-p').value=o.p}
+
+/* Menú: categorías y detalle */
+function priceHtml(x){return (x[1]||[]).map(function(p){return '<span>'+esc(p)+'</span>'}).join('')}
+function groupsHtml(c,order){
+ var h='';
+ c.g.forEach(function(g){
+  h+='<div class="grp"><h3>'+esc(g.h)+'</h3>'+(g.n?'<p class="nt">'+esc(g.n)+'</p>':'');
+  g.i.forEach(function(x){
+   var r='';
+   if(order){
+    if(!x.o.length)r='<div class="np">Consúltalo en las notas o por WhatsApp</div>';
+    else r=x.o.map(function(o){var q=qty[o.k]||0;
+     return '<div class="op">'+(o.lb?'<span class="ol">'+esc(o.lb)+'</span>':'')+'<span class="pr">'+fm(o.pr)+'</span><span class="ctl" data-k="'+esc(o.k)+'">'+(q?'<button type="button" data-d="-1" aria-label="Quitar uno">−</button><span class="n">'+q+'</span><button type="button" data-d="1" aria-label="Agregar uno">+</button>':'<button type="button" class="add" data-d="1">Agregar</button>')+'</span></div>'}).join('');
+   }else r=priceHtml(x);
+   h+='<div class="it"><div class="l"><b>'+esc(x[0])+'</b>'+(x[2]?'<span class="d">'+esc(x[2])+'</span>':'')+'</div><div class="p">'+r+'</div></div>';
+  });
+  h+='</div>';
+ });
+ return h;
+}
+function showCats(){$('#mdet').hidden=true;$('#mcats').hidden=false;$('#menu').scrollIntoView()}
+function showCat(k){var c=MENU[k];$('#mcats').hidden=true;$('#mdet').hidden=false;$('#mtitle').textContent=c.t;$('#mbody').innerHTML=groupsHtml(c,false);$('#menu').scrollIntoView();try{track('soda-menu-'+c.t)}catch(e){}}
+MENU.forEach(function(c,k){var b=document.createElement('button');b.type='button';b.innerHTML=esc(c.t)+'<small>'+c.n+' opciones</small>';b.addEventListener('click',function(){showCat(k)});$('#mcats').appendChild(b)});
+$('#mback').addEventListener('click',showCats);$('#mback2').addEventListener('click',showCats);
+
+/* Pedido */
+var cur=0;
+function drawOrder(){
+ $('#opanel').innerHTML=groupsHtml(MENU[cur],true);
+ var b=document.querySelectorAll('#otabs button');
+ for(var i=0;i<b.length;i++)b[i].setAttribute('aria-selected',i===cur?'true':'false');
+}
+MENU.forEach(function(c,k){var b=document.createElement('button');b.type='button';b.setAttribute('role','tab');b.textContent=c.t;b.addEventListener('click',function(){cur=k;drawOrder()});$('#otabs').appendChild(b)});
+function change(k,d){var n=(qty[k]||0)+d;if(n<=0)delete qty[k];else qty[k]=Math.min(n,99);refresh()}
+function total(){var t=0,c=0;Object.keys(qty).forEach(function(k){t+=ITEMS[k].pr*qty[k];c+=qty[k]});return{t:t,c:c}}
+function renderSum(){
+ var ks=Object.keys(qty),h='';
+ if(!ks.length){$('#sumry').innerHTML='<p>Aún no has agregado nada. Elige una categoría arriba.</p>';return}
+ ks.forEach(function(k){var it=ITEMS[k],q=qty[k];
+  h+='<div class="cl"><div class="tt">'+esc(it.n)+(it.lb?' <span class="lb">('+esc(it.lb)+')</span>':'')+'</div><div class="tt">'+fm(it.pr*q)+'</div><span class="ctl" data-k="'+esc(k)+'"><button type="button" data-d="-1" aria-label="Quitar uno">−</button><span class="n">'+q+'</span><button type="button" data-d="1" aria-label="Agregar uno">+</button></span><button type="button" class="rm" data-rm="'+esc(k)+'">Quitar</button></div>';
+ });
+ var T=total();
+ h+='<div class="tot"><span>Total productos</span><span>'+fm(T.t)+'</span></div><p class="foot" style="text-align:left;margin:0 0 8px">No incluye envío. Te confirmamos el costo por WhatsApp.</p><button type="button" class="btn line" data-clear="1" style="cursor:pointer">Borrar pedido</button>';
+ $('#sumry').innerHTML=h;
+}
+function msg(){
+ var ks=Object.keys(qty),L=['Hola, quiero hacer un pedido Express en Soda La Bomba:',''];
+ ks.forEach(function(k){var it=ITEMS[k],q=qty[k];L.push('- '+q+' x '+it.n+(it.lb?' ('+it.lb+')':'')+': '+fm(it.pr*q))});
+ if(ks.length){L.push('','Total productos: '+fm(total().t)+' (sin envío)')}
+ L.push('','Pago: '+$('#f-p').value);
+ var n=$('#f-n').value.trim(),a=$('#f-a').value.trim(),t=$('#f-t').value.trim();
+ if(n)L.push('Nombre: '+n);if(a)L.push('Dirección: '+a);if(t)L.push('Notas: '+t);
+ return L.join('\n');
+}
+function ready(){var ok=Object.keys(qty).length>0&&$('#f-n').value.trim()&&$('#f-a').value.trim();return !!ok}
+function refresh(){
+ drawOrder();renderSum();
+ var T=total();
+ $('#cbar').hidden=!T.c||inView;$('#cinfo').textContent=T.c+(T.c===1?' producto · ':' productos · ')+fm(T.t);
+ var m=msg();$('#wa').href='https://wa.me/'+WA+'?text='+encodeURIComponent(m);
+ var ok=ready();$('#wa').setAttribute('aria-disabled',ok?'false':'true');
+ $('#hint').textContent=ok?'':'Agrega productos y completa nombre y dirección para enviar.';
+ save();
+}
+var inView=false;
+$('#opanel').addEventListener('click',function(e){var b=e.target.closest('[data-d]');if(!b)return;change(b.parentNode.dataset.k,+b.dataset.d)});
+$('#sumry').addEventListener('click',function(e){
+ var b=e.target.closest('[data-d]');if(b){change(b.parentNode.dataset.k,+b.dataset.d);return}
+ var r=e.target.closest('[data-rm]');if(r){delete qty[r.dataset.rm];refresh();return}
+ if(e.target.closest('[data-clear]')){qty={};refresh()}
+});
+['#f-n','#f-a','#f-p','#f-t'].forEach(function(q){$(q).addEventListener('input',refresh);$(q).addEventListener('change',refresh)});
+function saveLast(){if(Object.keys(qty).length)put(localStorage,KL,snap());updRep()}
+function updRep(){var l=get(localStorage,KL);$('#rep').hidden=!(l&&Object.keys(l.q||{}).length&&!Object.keys(qty).length)}
+$('#rep').addEventListener('click',function(){restore(get(localStorage,KL));refresh();updRep();$('#resumen').scrollIntoView()});
+$('#wa').addEventListener('click',function(e){if(!ready()){e.preventDefault();return}saveLast()});
+$('#copy').addEventListener('click',function(){var m=msg(),b=this;function ok(){b.textContent='Copiado';setTimeout(function(){b.textContent='Copiar pedido'},1800)}
+ if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(m).then(ok,function(){});else{var t=document.createElement('textarea');t.value=m;document.body.appendChild(t);t.select();try{document.execCommand('copy');ok()}catch(x){}document.body.removeChild(t)}
+ saveLast()});
+if('IntersectionObserver' in window){new IntersectionObserver(function(en){inView=en[0].isIntersecting;var T=total();$('#cbar').hidden=!T.c||inView},{threshold:.15}).observe($('#resumen'))}
+restore(get(sessionStorage,KS));updRep();refresh();
+</script>
+</body>
+</html>
