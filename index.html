@@ -321,15 +321,16 @@ document.addEventListener('click',function(e){var a=e.target.closest('[data-trac
 
 var CRC='₡';
 function m(x){return CRC+x}
+var FL=(window.Carrito&&Carrito.notes&&Carrito.notes.flavor)||{es:'Te escribimos para confirmar el sabor.',en:'We message you to confirm the flavor.'},FD=(window.Carrito&&Carrito.notes&&Carrito.notes.drink)||{es:'Te escribimos para confirmar la bebida.',en:'We message you to confirm the drink.'};
 var MENU=[
 {t:'Desayunos',g:[
  {h:'Desayunos',i:[
   ['Gallo pinto típico costarricense',[m('3.500')],'Huevo, natilla y salchichón.'],
-  ['Gallo pinto + bebida',[m('3.300')],'',[['Acompañamiento',['Carne en salsa','Pollo','Carne mexicana']]]],
+  ['Gallo pinto + bebida',[m('3.300')],FD.es,[['Acompañamiento',['Carne en salsa','Pollo','Carne mexicana']]]],
   ['Desayuno americano',[m('4.200')],'Tostadas, 2 huevos, tocineta, miel, jugo de naranja y café.'],
   ['Adicionales',[m('800')],'Arma tu desayuno perfecto.'],
   ['Maduro con queso',[m('1.500')]],
-  ['Tortilla aliñada',[m('2.200'),'con natilla o queso '+m('2.500')],'Con queso o natilla.'],
+  ['Tortilla aliñada',['sola '+m('2.200'),'con queso '+m('2.500'),'con natilla '+m('2.500')]],
   ['Repostería variada',[],'Budín, tamal de maicena, tamal asado, tamal de queso crema, queque de chocolate, queque seco, queque de zanahoria, queque de manzana.']
  ]},
  {h:'Para acompañar',i:[
@@ -359,7 +360,7 @@ var MENU=[
   ['Sopa de mariscos',['grande '+m('5.800'),'mediana '+m('4.500'),'pequeña '+m('3.500')],'Para llevar: solo porción grande, '+m('5.800')+'.']
  ]},
  {h:'Más',i:[
-  ['Lasaña',[m('3.500'),'con ensalada '+m('4.500')]],['Orden de puré',[m('1.000')]],['Orden de papas salteadas',[m('800')]]
+  ['Lasaña',['sola '+m('3.500'),'con ensalada '+m('4.500')]],['Orden de puré',[m('1.000')]],['Orden de papas salteadas',[m('800')]]
  ]},
  {h:'Platos por porción o medio',i:[
   ['Chicharrones',['carne '+m('8.500'),'concha '+m('9.600'),'BBQ '+m('9.500')],'Precio por kilo. Incluye banano y limón.'],
@@ -400,9 +401,9 @@ var MENU=[
   ['Salchipapas',[m('2.800')]],['Salchi mix',[m('4.000')],'Papas, salchichas, carne desmechada y salsa de aguacate.']
  ]},
  {h:'Más antojitos',i:[
-  ['Gorditas',[m('2.500'),'con papas '+m('3.600')],'Pan de pita con frijoles molidos, queso mozzarella, lechuga, pico de gallo y salsa especial.',[['Relleno',['Carne','Pollo']]]],
+  ['Gorditas',['solas '+m('2.500'),'con papas '+m('3.600')],'Pan de pita con frijoles molidos, queso mozzarella, lechuga, pico de gallo y salsa especial.',[['Relleno',['Carne','Pollo']]]],
   ['Chalupa',[m('3.500')],'Tortilla de maíz, frijoles, queso rallado, lechuga, pico de gallo y salsas.',[['Relleno',['Pollo','Carne']]]],
-  ['Quesadilla',[m('3.200'),'con papas '+m('4.300')],'Tortilla de harina, mozzarella, cheddar, pico de gallo y salsa especial.',[['Relleno',['Pollo','Carne']]]],
+  ['Quesadilla',['sola '+m('3.200'),'con papas '+m('4.300')],'Tortilla de harina, mozzarella, cheddar, pico de gallo y salsa especial.',[['Relleno',['Pollo','Carne']]]],
   ['Orden de patacones',[m('2.675')],'6 patacones y frijoles molidos.'],
   ['Patacones arreglados',[m('3.975')],'5 patacones con carne, frijoles molidos, queso mozzarella, lechuga, pico de gallo y salsas.'],
   ['Palitos de yuca frita',[m('1.675')],'Yuca frita y salsa rosada.'],
@@ -432,12 +433,12 @@ var MENU=[
 ]},
 {t:'Hamburguesas',g:[
  {h:'Hamburguesas',n:'Precio solo y con papas.',i:[
-  ['Hamburguesa sencilla',[m('1.500'),'con papas '+m('2.500')],'Torta, tomate, lechuga y salsas.'],
-  ['Quesoburguesa',[m('1.800'),'con papas '+m('3.000')],'Torta de carne, queso amarillo, lechuga, tomate y salsa.'],
-  ['Hamburguesa clásica',[m('2.875'),'con papas '+m('3.975')],'Torta de carne, jamón, tocineta, queso amarillo, pepinillo, lechuga, tomate y salsas.'],
-  ['Hamburguesa de pollo',[m('2.975'),'con papas '+m('3.975')],'Pechuga de pollo, queso mozzarella, lechuga, tomate y salsa ranch.'],
-  ['Hamburguesa bacon',[m('3.475'),'con papas '+m('4.575')],'Torta de carne, tocineta, queso cheddar, lechuga, tomate y salsa barbacoa.'],
-  ['Hamburguesa Bomba (doble)',[m('4.175'),'con papas '+m('5.275')],'2 tortas, jamón, tocineta, queso amarillo, pepinillo, cebolla, dedos de mozzarella, huevo frito, lechuga, tomate y salsas.'],
+  ['Hamburguesa sencilla',['sola '+m('1.500'),'con papas '+m('2.500')],'Torta, tomate, lechuga y salsas.'],
+  ['Quesoburguesa',['sola '+m('1.800'),'con papas '+m('3.000')],'Torta de carne, queso amarillo, lechuga, tomate y salsa.'],
+  ['Hamburguesa clásica',['sola '+m('2.875'),'con papas '+m('3.975')],'Torta de carne, jamón, tocineta, queso amarillo, pepinillo, lechuga, tomate y salsas.'],
+  ['Hamburguesa de pollo',['sola '+m('2.975'),'con papas '+m('3.975')],'Pechuga de pollo, queso mozzarella, lechuga, tomate y salsa ranch.'],
+  ['Hamburguesa bacon',['sola '+m('3.475'),'con papas '+m('4.575')],'Torta de carne, tocineta, queso cheddar, lechuga, tomate y salsa barbacoa.'],
+  ['Hamburguesa Bomba (doble)',['sola '+m('4.175'),'con papas '+m('5.275')],'2 tortas, jamón, tocineta, queso amarillo, pepinillo, cebolla, dedos de mozzarella, huevo frito, lechuga, tomate y salsas.'],
   ['Adicionales',[m('500')],'',[['Adicional',['Queso amarillo','Jamón','Tocineta','Queso mozzarella','Pepinillos','Salsas','Cebolla','Huevo']]]]
  ]}
 ]},
@@ -458,8 +459,8 @@ var MENU=[
   ['Combo 1',[m('3.500')],'Quesoburguesa + papas pequeñas + Coca-Cola de 600 ml.'],
   ['Combo 2',[m('4.675')],'Hamburguesa clásica + papas pequeñas + Coca-Cola de 600 ml.'],
   ['Combo 3',[m('3.000')],'2 piezas de pollo (cadera y muslo) + papas pequeñas + Coca-Cola de 355 ml.'],
-  ['Combo 4',[m('5.200')],'1 taco Bomba + fresco natural.'],
-  ['Combo 5',[m('4.675')],'1 nacho + Coca-Cola de 355 ml.'],
+  ['Combo 4',[m('5.200')],'1 taco Bomba + fresco natural. '+FL.es],
+  ['Combo 5',[m('4.675')],'1 nacho + Coca-Cola de 355 ml.',[['Relleno del nacho',['Pollo','Carne']]]],
   ['Combo 6',[m('11.975')],'4 burritos + papas grandes + Pepsi de 2,5 L.'],
   ['Combo 7',[m('12.475')],'6 empanadas arregladas + Pepsi de 2,5 L.'],
   ['Combo 8',[m('12.950')],'10 piezas de pollo variadas + papas grandes + escabeche de banano + Pepsi de 2,5 L.'],
@@ -473,8 +474,8 @@ var MENU=[
 ]},
 {t:'Bebidas y postres',g:[
  {h:'Bebidas',i:[
-  ['Refresco natural',[m('800')]],
-  ['Gaseosas',['600 ml '+m('1.200'),'355 ml '+m('800')]],
+  ['Refresco natural',[m('800')],FL.es],
+  ['Gaseosas',['600 ml '+m('1.200'),'355 ml '+m('800')],FL.es],
   ['Batido en leche',[m('2.250')],'',[['Sabor',['Crema','Chocolate','Papaya','Mora']]]],
   ['Milkshakes',[m('2.975')],'',[['Sabor',['Conejo blanco','Oreo','Chicle','Fresa']]]]
  ]},
@@ -519,7 +520,7 @@ MENU.forEach(function(c){c.n=0;c.g.forEach(function(g){g.i.forEach(function(x){
  if(!x.G.length)x.o=x.P;
  else{x.o=[];x.P.forEach(function(p,pi){
   var rec=function(gi,sel){
-   if(gi===x.G.length){var parts=[];if(x.P.length>1&&p.lb!=='solo'&&p.lb)parts.push(p.lb);sel.forEach(function(ci,j){parts.push(x.G[j][1][ci])});x.o.push({lb:parts.join(', '),pr:p.pr,pi:pi,sel:sel.slice()});return}
+   if(gi===x.G.length){var parts=[];if(x.P.length>1&&!/^solas?$|^solo$/.test(p.lb)&&p.lb)parts.push(p.lb);sel.forEach(function(ci,j){parts.push(x.G[j][1][ci])});x.o.push({lb:parts.join(', '),pr:p.pr,pi:pi,sel:sel.slice()});return}
    x.G[gi][1].forEach(function(_,ci){rec(gi+1,sel.concat(ci))})};
   rec(0,[])})}
  x.o.forEach(function(o){o.k=x[0]+'|'+o.lb;ITEMS[o.k]={n:x[0],lb:o.lb,pr:o.pr}});x.id=VAR.length;VAR.push(x);
