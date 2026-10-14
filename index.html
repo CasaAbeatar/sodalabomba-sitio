@@ -325,7 +325,7 @@ var MENU=[
 {t:'Desayunos',g:[
  {h:'Desayunos',i:[
   ['Gallo pinto típico costarricense',[m('3.500')],'Huevo, natilla y salchichón.'],
-  ['Gallo pinto + bebida',[m('3.300')],'Carne en salsa, pollo o carne mexicana.'],
+  ['Gallo pinto + bebida',[m('3.300')],'',[['Acompañamiento',['Carne en salsa','Pollo','Carne mexicana']]]],
   ['Desayuno americano',[m('4.200')],'Tostadas, 2 huevos, tocineta, miel, jugo de naranja y café.'],
   ['Adicionales',[m('800')],'Arma tu desayuno perfecto.'],
   ['Maduro con queso',[m('1.500')]],
@@ -334,7 +334,7 @@ var MENU=[
  ]},
  {h:'Para acompañar',i:[
   ['Enyucado',[m('1.200')]],['Empanada',[m('1.200')]],['Empanada arreglada',[m('2.000')]],['Flauta de queso',[m('1.800')]],
-  ['Sándwich de carne y pollo',[m('2.500')]],['Sándwich de jamón y queso',[m('1.800')]],
+  ['Sándwich de carne o pollo',[m('2.500')],'',[['Relleno',['Carne de res','Pollo']]]],['Sándwich de jamón y queso',[m('1.800')]],
   ['Tamal tradicional costarricense',[],'Sujeto a disponibilidad.']
  ]},
  {h:'Gallos',i:[
@@ -346,8 +346,8 @@ var MENU=[
 {t:'Almuerzos',g:[
  {h:'Buffet La Bomba',n:'Variedad de platos preparados diariamente. Opciones según disponibilidad del día. Barra de ensaladas frescas y acompañamientos para complementar su plato.',i:[]},
  {h:'Casados',n:'Todos incluyen té frío natural, arroz, frijoles, ensalada, maduro, picadillo y proteína a elegir.',i:[
-  ['Casado de pollo',[m('4.000')],'Frito, al horno, caribeño o en salsa. Cadera o muslo.'],['Casado de carne en salsa o mexicana',[m('4.000')]],['Casado de mondongo',[m('4.000')]],['Casado de pescado',[m('4.000')]],['Casado de chicharrón',[m('4.000')]],['Casado de chuleta',[m('4.000')]],
-  ['Casado con lengua',[m('4.950')]],['Casado con bistec',[m('4.650')]],['Casado con filete o fajitas de pollo',[m('4.500')]],['Casado con lasaña',[m('6.500')]]
+  ['Casado de pollo',[m('4.000')],'',[['Preparación',['Frito','Al horno','Caribeño','En salsa']],['Pieza',['Cadera','Muslo']]]],['Casado de carne en salsa o mexicana',[m('4.000')],'',[['Preparación',['En salsa','Mexicana']]]],['Casado de mondongo',[m('4.000')]],['Casado de pescado',[m('4.000')]],['Casado de chicharrón',[m('4.000')]],['Casado de chuleta',[m('4.000')]],
+  ['Casado con lengua',[m('4.950')]],['Casado con bistec',[m('4.650')]],['Casado con filete o fajitas de pollo',[m('4.500')],'',[['Carne',['Filete','Fajitas de pollo']]]],['Casado con lasaña',[m('6.500')]]
  ]},
  {h:'Arroces',i:[
   ['Arroz estilo cantonés',['entero '+m('4.800'),'medio '+m('3.300'),'plato '+m('5.600')]],
@@ -362,8 +362,8 @@ var MENU=[
   ['Lasaña',[m('3.500'),'con ensalada '+m('4.500')]],['Orden de puré',[m('1.000')]],['Orden de papas salteadas',[m('800')]]
  ]},
  {h:'Platos por porción o medio',i:[
-  ['Chicharrones',['carne '+m('8.500'),'concha '+m('9.600'),'BBQ '+m('9.500')],'Incluye banano y limón.'],
-  ['Medio de carne en salsa y mexicana',[m('4.850')]],['Medio de mondongo',[m('3.800')]],
+  ['Chicharrones',['carne '+m('8.500'),'concha '+m('9.600'),'BBQ '+m('9.500')],'Precio por kilo. Incluye banano y limón.'],
+  ['Medio de carne en salsa o mexicana',[m('4.850')],'',[['Preparación',['En salsa','Mexicana']]]],['Medio de mondongo',[m('3.800')]],
   ['Posta caribeña',['pequeño '+m('2.200'),'medio '+m('4.200')]],
   ['Posta de cerdo con papas',['pequeño '+m('1.800'),'medio '+m('3.600')]],
   ['Lomo de cerdo al horno',[m('10.975')+' / kg']],
@@ -384,25 +384,25 @@ var MENU=[
  {h:'Tacos',i:[
   ['Taco sencillo',[m('2.000'),'con papas '+m('3.000')],'Tortilla de maíz, salsa, carne, repollo y salsas.'],
   ['Taco especial',[m('3.975')],'Tortilla de maíz con carne, jamón, queso amarillo, repollo, papas fritas y salsas.'],
-  ['Taco Bomba',[m('5.200')],'Tres tortillas de maíz con res, pollo, queso, repollo o lechuga, papas fritas y salsas.']
+  ['Taco Bomba',[m('5.200')],'Tres tortillas de maíz con res, pollo, queso, papas fritas y salsas.',[['Verdura',['Repollo','Lechuga']]]]
  ]},
  {h:'Burritos y wraps',i:[
-  ['Burrito',[m('2.250'),'con papas '+m('3.250')],'Carne de res o pollo, frijoles molidos, queso cheddar, lechuga y pico de gallo.'],
+  ['Burrito',[m('2.250'),'con papas '+m('3.250')],'Frijoles molidos, queso cheddar, lechuga y pico de gallo.',[['Carne',['Res','Pollo']]]],
   ['Crunchy burrito',[m('1.200'),'con papas '+m('2.400')],'Carne molida de res con chips de ranchitas.'],
-  ['Wrap de pollo',[m('2.600'),'con papas '+m('3.800')],'Tortilla de harina, pollo empanizado, lechuga, tomate, queso mozzarella, salsa especial o mostaza miel.']
+  ['Wrap de pollo',[m('2.600'),'con papas '+m('3.800')],'Tortilla de harina, pollo empanizado, lechuga, tomate y queso mozzarella.',[['Salsa',['Salsa especial','Mostaza miel']]]]
  ]},
- {h:'Nachos',i:[['Nachos de pollo y carne',[m('4.500')]],['Nachos mixtos',[m('5.350')]]]},
+ {h:'Nachos',i:[['Nachos de pollo o carne',[m('4.500')],'',[['Relleno',['Pollo','Carne']]]],['Nachos mixtos',[m('5.350')]]]},
  {h:'Papas',i:[
   ['Papas pequeñas',[m('1.200')]],['Papas grandes',[m('2.500')]],['Papas gajo',[m('2.500')],'Salsa ranch.'],
   ['Papa queso',[m('3.500')],'Papa, queso mozzarella y tocineta.'],
-  ['Papa carne',[m('4.500')],'Papa, frijoles, carne o pollo, salsa de queso, pico de gallo y salsas.'],
-  ['Papa Bomba',[m('4.800')],'Papas, queso mozzarella, tocineta, pollo empanizado o chicharrón, jalapeños, salsa chipotle, especial o aguacate.'],
+  ['Papa carne',[m('4.500')],'Papa, frijoles, salsa de queso, pico de gallo y salsas.',[['Carne',['Carne','Pollo']]]],
+  ['Papa Bomba',[m('4.800')],'Papas, queso mozzarella, tocineta y jalapeños.',[['Proteína',['Pollo empanizado','Chicharrón']],['Salsa',['Chipotle','Especial','Aguacate']]]],
   ['Salchipapas',[m('2.800')]],['Salchi mix',[m('4.000')],'Papas, salchichas, carne desmechada y salsa de aguacate.']
  ]},
  {h:'Más antojitos',i:[
-  ['Gorditas',[m('2.500'),'con papas '+m('3.600')],'Pan de pita relleno con frijoles molidos, carne o pollo, queso mozzarella, lechuga, pico de gallo y salsa especial.'],
-  ['Chalupa',[m('3.500')],'Tortilla de maíz, frijoles, queso rallado, pollo o carne, lechuga, pico de gallo y salsas.'],
-  ['Quesadilla',[m('3.200'),'con papas '+m('4.300')],'Tortilla de harina, mozzarella, cheddar, pollo o carne, pico de gallo y salsa especial.'],
+  ['Gorditas',[m('2.500'),'con papas '+m('3.600')],'Pan de pita con frijoles molidos, queso mozzarella, lechuga, pico de gallo y salsa especial.',[['Relleno',['Carne','Pollo']]]],
+  ['Chalupa',[m('3.500')],'Tortilla de maíz, frijoles, queso rallado, lechuga, pico de gallo y salsas.',[['Relleno',['Pollo','Carne']]]],
+  ['Quesadilla',[m('3.200'),'con papas '+m('4.300')],'Tortilla de harina, mozzarella, cheddar, pico de gallo y salsa especial.',[['Relleno',['Pollo','Carne']]]],
   ['Orden de patacones',[m('2.675')],'6 patacones y frijoles molidos.'],
   ['Patacones arreglados',[m('3.975')],'5 patacones con carne, frijoles molidos, queso mozzarella, lechuga, pico de gallo y salsas.'],
   ['Palitos de yuca frita',[m('1.675')],'Yuca frita y salsa rosada.'],
@@ -418,8 +418,8 @@ var MENU=[
   ['Pollo caribeño',['pechuga '+m('2.000'),'cadera '+m('1.200'),'muslo '+m('1.000')]]
  ]},
  {h:'Para darse un gustito',i:[
-  ['Pescado con papas y ensalada',[m('4.500')],'Empanizado o al ajillo.'],
-  ['Camarones con papas y ensalada',[m('6.500')],'Empanizados o al ajillo.']
+  ['Pescado con papas y ensalada',[m('4.500')],'',[['Preparación',['Empanizado','Al ajillo']]]],
+  ['Camarones con papas y ensalada',[m('6.500')],'',[['Preparación',['Empanizados','Al ajillo']]]]
  ]},
 ]},
 {t:'Ceviches y caldosas',g:[
@@ -438,7 +438,7 @@ var MENU=[
   ['Hamburguesa de pollo',[m('2.975'),'con papas '+m('3.975')],'Pechuga de pollo, queso mozzarella, lechuga, tomate y salsa ranch.'],
   ['Hamburguesa bacon',[m('3.475'),'con papas '+m('4.575')],'Torta de carne, tocineta, queso cheddar, lechuga, tomate y salsa barbacoa.'],
   ['Hamburguesa Bomba (doble)',[m('4.175'),'con papas '+m('5.275')],'2 tortas, jamón, tocineta, queso amarillo, pepinillo, cebolla, dedos de mozzarella, huevo frito, lechuga, tomate y salsas.'],
-  ['Adicionales',[m('500')],'Queso amarillo, jamón, tocineta, queso mozzarella, pepinillos, salsas, cebolla o huevo.']
+  ['Adicionales',[m('500')],'',[['Adicional',['Queso amarillo','Jamón','Tocineta','Queso mozzarella','Pepinillos','Salsas','Cebolla','Huevo']]]]
  ]}
 ]},
 {t:'Pizzas',g:[
@@ -468,24 +468,24 @@ var MENU=[
  ]},
  {h:'Menú para niños',n:'Todo a '+m('1.000')+'.',i:[
   ['Hot dog (niños)',[m('1.000')]],['Taco pequeño (niños)',[m('1.000')]],['Burrito (niños)',[m('1.000')]],['Hamburguesa (niños)',[m('1.000')]],['Salchipapas (niños)',[m('1.000')]],['Nuggets, 5 unidades (niños)',[m('1.000')]],
-  ['Combo para niños',[m('1.975')],'Hamburguesa o pieza de pollo con papas y jugo Hi-C de frutas o melocotón.']
+  ['Combo para niños',[m('1.975')],'Con papas.',[['Plato',['Hamburguesa','Pieza de pollo']],['Jugo Hi-C',['Frutas','Melocotón']]]]
  ]}
 ]},
 {t:'Bebidas y postres',g:[
  {h:'Bebidas',i:[
   ['Refresco natural',[m('800')]],
   ['Gaseosas',['600 ml '+m('1.200'),'355 ml '+m('800')]],
-  ['Batido en leche',[m('2.250')],'Crema, chocolate, papaya o mora.'],
-  ['Milkshakes',[m('2.975')],'Conejo blanco, Oreo, chicle o fresa.']
+  ['Batido en leche',[m('2.250')],'',[['Sabor',['Crema','Chocolate','Papaya','Mora']]]],
+  ['Milkshakes',[m('2.975')],'',[['Sabor',['Conejo blanco','Oreo','Chicle','Fresa']]]]
  ]},
  {h:'Bebidas calientes',i:[
   ['Agua dulce',[m('1.200')]],['Chocolate',[m('1.500')]],['Té',[m('1.000')]],['Café',['negro '+m('1.000'),'con leche '+m('1.200')]]
  ]},
  {h:'Postres',i:[
-  ['Tres leches',[m('2.000')],'Vainilla, Nutella, pie de limón y fresa. Sujeto a disponibilidad.'],
+  ['Tres leches',[m('2.000')],'Sujeto a disponibilidad.',[['Sabor',['Vainilla','Nutella','Pie de limón','Fresa']]]],
   ['Fresas con crema',[m('2.000')],'Sujeto a disponibilidad.'],
   ['Gelatina de mosaico',[m('1.300')]],
-  ['Pie',[m('2.200')],'Limón, maracuyá, fresa y chocolate. Sujeto a disponibilidad.'],
+  ['Pie',[m('2.200')],'Sujeto a disponibilidad.',[['Sabor',['Limón','Maracuyá','Fresa','Chocolate']]]],
   ['Arroz con leche',[m('1.300')]]
  ]}
 ]},
@@ -502,7 +502,7 @@ var WA='50689825035',KS='sb_cart',KL='sb_last';
 function esc(x){return String(x).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
 function $(q){return document.querySelector(q)}
 var L='es';try{if(localStorage.getItem('sb_lang')==='en')L='en'}catch(e){}
-var EN={"desde": "from", "Elige una opción": "Choose an option", "Agregar al pedido": "Add to order", "Cerrar": "Close", "agregado a tu pedido": "added to your order", "Copiar número": "Copy number", "Falta": "Missing", "al menos un producto": "at least one product", "tu nombre": "your name", "la dirección de entrega": "the delivery address", "Retiro en el local.": "Pickup at the restaurant.", "Te lo llevamos a domicilio.": "We bring it to you.", "Consúltalo en las notas o por WhatsApp": "Ask about it in the notes or on WhatsApp", "Quitar uno": "Remove one", "Agregar uno": "Add one", "Agregar": "Add", "opciones": "options", "Quitar": "Remove", "Total productos": "Products total", "No incluye envío. Te confirmamos el costo por WhatsApp.": "Shipping not included. We confirm the cost on WhatsApp.", "Borrar pedido": "Clear order", "Aún no has agregado nada. Elige del menú de arriba.": "You have not added anything yet. Pick something from the menu above.", "producto": "item", "productos": "items", "Agrega productos y escribe tu nombre para enviar.": "Add items and enter your name to send.", "Agrega productos y completa nombre y dirección para enviar.": "Add items and fill in your name and address to send.", "Retiro en el local, las 24 horas.": "Pickup at the restaurant, 24 hours.", "Express a domicilio, de 7 a. m. a 10 p. m.": "Express delivery, 7 a.m. to 10 p.m.", "Express hasta las 10 p. m.": "Express until 10 p.m.", "Express cerrado, abre a las 7 a. m.": "Express closed, opens at 7 a.m.", "Copiado": "Copied", "Copiar pedido": "Copy order", "Lo más pedido": "Most ordered", "Pollo frito, hamburguesas, pizzas, papas y combos.": "Fried chicken, burgers, pizzas, fries and combos.", "Otras Delicias": "Other Delights", "Casados, arroz con pollo, sopa de mariscos, desayunos y más, todos los días.": "Casados, chicken and rice, seafood soup, breakfasts and more, every day.", "Bebidas y postres": "Drinks and desserts", "Sin resultados para": "No results for", "Prueba con otra palabra, o escríbelo en las notas del pedido.": "Try another word, or write it in the order notes.", "Ver categoría": "See category", "resultados": "results", "resultado": "result", "pronto": "coming soon", "Desayunos": "Breakfast", "Almuerzos": "Lunch", "Antojitos": "Snacks", "Pollo": "Chicken", "Ceviches y caldosas": "Ceviches and soups", "Hamburguesas": "Burgers", "Pizzas": "Pizzas", "Combos": "Combos", "Para llevar": "Takeaway", "Baldes": "Buckets"};
+var EN={"Acompañamiento": "Side", "Preparación": "Preparation", "Pieza": "Cut", "Carne": "Meat", "Verdura": "Veggie", "Salsa": "Sauce", "Relleno": "Filling", "Proteína": "Protein", "Plato": "Dish", "Jugo Hi-C": "Hi-C juice", "Adicional": "Extra", "Sabor": "Flavor", "desde": "from", "Elige una opción": "Choose an option", "Agregar al pedido": "Add to order", "Cerrar": "Close", "agregado a tu pedido": "added to your order", "Copiar número": "Copy number", "Falta": "Missing", "al menos un producto": "at least one product", "tu nombre": "your name", "la dirección de entrega": "the delivery address", "Retiro en el local.": "Pickup at the restaurant.", "Te lo llevamos a domicilio.": "We bring it to you.", "Consúltalo en las notas o por WhatsApp": "Ask about it in the notes or on WhatsApp", "Quitar uno": "Remove one", "Agregar uno": "Add one", "Agregar": "Add", "opciones": "options", "Quitar": "Remove", "Total productos": "Products total", "No incluye envío. Te confirmamos el costo por WhatsApp.": "Shipping not included. We confirm the cost on WhatsApp.", "Borrar pedido": "Clear order", "Aún no has agregado nada. Elige del menú de arriba.": "You have not added anything yet. Pick something from the menu above.", "producto": "item", "productos": "items", "Agrega productos y escribe tu nombre para enviar.": "Add items and enter your name to send.", "Agrega productos y completa nombre y dirección para enviar.": "Add items and fill in your name and address to send.", "Retiro en el local, las 24 horas.": "Pickup at the restaurant, 24 hours.", "Express a domicilio, de 7 a. m. a 10 p. m.": "Express delivery, 7 a.m. to 10 p.m.", "Express hasta las 10 p. m.": "Express until 10 p.m.", "Express cerrado, abre a las 7 a. m.": "Express closed, opens at 7 a.m.", "Copiado": "Copied", "Copiar pedido": "Copy order", "Lo más pedido": "Most ordered", "Pollo frito, hamburguesas, pizzas, papas y combos.": "Fried chicken, burgers, pizzas, fries and combos.", "Otras Delicias": "Other Delights", "Casados, arroz con pollo, sopa de mariscos, desayunos y más, todos los días.": "Casados, chicken and rice, seafood soup, breakfasts and more, every day.", "Bebidas y postres": "Drinks and desserts", "Sin resultados para": "No results for", "Prueba con otra palabra, o escríbelo en las notas del pedido.": "Try another word, or write it in the order notes.", "Ver categoría": "See category", "resultados": "results", "resultado": "result", "pronto": "coming soon", "Desayunos": "Breakfast", "Almuerzos": "Lunch", "Antojitos": "Snacks", "Pollo": "Chicken", "Ceviches y caldosas": "Ceviches and soups", "Hamburguesas": "Burgers", "Pizzas": "Pizzas", "Combos": "Combos", "Para llevar": "Takeaway", "Baldes": "Buckets"};
 function S(k){return L==='en'&&EN[k]?EN[k]:k}
 
 var fm=Carrito.fm;
@@ -510,11 +510,18 @@ var VAR=[];
 var ITEMS={};
 MENU.forEach(function(c){c.n=0;c.g.forEach(function(g){g.i.forEach(function(x){
  c.n++;
- x.o=(x[1]||[]).map(function(p){
+ x.P=(x[1]||[]).map(function(p){
   var r=/^(.*?)\s*₡\s*([\d.]+)\s*(.*)$/.exec(p),lb=((r[1]||'')+' '+(r[3]||'')).trim().replace(/^\//,'por ');
   return{lb:lb,pr:parseInt(r[2].replace(/\./g,''),10)};
  });
- if(x.o.length>1)x.o.forEach(function(o){if(!o.lb)o.lb='solo'});
+ if(x.P.length>1)x.P.forEach(function(o){if(!o.lb)o.lb='solo'});
+ x.G=x[3]||[];
+ if(!x.G.length)x.o=x.P;
+ else{x.o=[];x.P.forEach(function(p,pi){
+  var rec=function(gi,sel){
+   if(gi===x.G.length){var parts=[];if(x.P.length>1&&p.lb!=='solo'&&p.lb)parts.push(p.lb);sel.forEach(function(ci,j){parts.push(x.G[j][1][ci])});x.o.push({lb:parts.join(', '),pr:p.pr,pi:pi,sel:sel.slice()});return}
+   x.G[gi][1].forEach(function(_,ci){rec(gi+1,sel.concat(ci))})};
+  rec(0,[])})}
  x.o.forEach(function(o){o.k=x[0]+'|'+o.lb;ITEMS[o.k]={n:x[0],lb:o.lb,pr:o.pr}});x.id=VAR.length;VAR.push(x);
 })})});
 var qty={};
@@ -527,7 +534,8 @@ function restore(o){if(!o)return;qty={};Object.keys(o.q||{}).forEach(function(k)
 
 /* Menú: categorías y detalle */
 function varRow(x){var n=0;x.o.forEach(function(o){n+=qty[o.k]||0});var mn=Math.min.apply(null,x.o.map(function(o){return o.pr}));
- return '<div class="op"><span class="ol">'+S('desde')+'</span><span class="pr">'+fm(mn)+'</span><span class="ctl"><button type="button" class="add vo" data-vo="'+x.id+'" aria-label="'+S('Agregar')+': '+esc(x[0])+'">'+S('Agregar')+(n?'<span class="bd" aria-hidden="true">'+n+'</span>':'')+'</button></span></div>'}
+ var mx=Math.max.apply(null,x.o.map(function(o){return o.pr}));
+ return '<div class="op">'+(mn<mx?'<span class="ol">'+S('desde')+'</span>':'')+'<span class="pr">'+fm(mn)+'</span><span class="ctl"><button type="button" class="add vo" data-vo="'+x.id+'" aria-label="'+S('Agregar')+': '+esc(x[0])+'">'+S('Agregar')+(n?'<span class="bd" aria-hidden="true">'+n+'</span>':'')+'</button></span></div>'}
 function priceHtml(x){return (x[1]||[]).map(function(p){return '<span>'+esc(p)+'</span>'}).join('')}
 function groupsHtml(c,order){
  var h='';
@@ -627,17 +635,21 @@ function msg(){
 
 /* Hoja de opciones para platos con variantes */
 var cur=null,toast=Carrito.toast;
-function sheetHTML(){var x=VAR[cur.id];
- return '<div class="sh" role="dialog" aria-modal="true" aria-labelledby="sh-t"><div class="gr"></div><div class="hh"><h2 id="sh-t">'+esc(x[0])+'</h2><button type="button" class="x" data-x="1" aria-label="'+S('Cerrar')+'">&times;</button></div>'+(x[2]?'<p class="dd">'+esc(x[2])+'</p>':'')+
- '<div class="stp"><i>1</i>'+S('Elige una opción')+'</div><div role="radiogroup" aria-label="'+S('Elige una opción')+'">'+x.o.map(function(o,i){return '<button type="button" class="rop" role="radio" aria-checked="'+String(i===cur.o)+'" data-po="'+i+'"><span class="rd"></span><span class="rl"><b>'+esc(o.lb)+'</b></span><span class="rp">'+fm(o.pr)+'</span></button>'}).join('')+'</div>'+
- '<div class="ft"><span class="qq"><button type="button" data-q="-1" aria-label="'+S('Quitar uno')+'">&minus;</button><output aria-live="polite">'+cur.q+'</output><button type="button" data-q="1" aria-label="'+S('Agregar uno')+'">+</button></span><button type="button" class="go" data-go="1">'+S('Agregar al pedido')+' · '+fm(x.o[cur.o].pr*cur.q)+'</button></div></div>'}
+function stepHTML(n,t,body){return '<div class="stp"><i>'+n+'</i>'+t+'</div><div role="radiogroup" aria-label="'+t+'">'+body+'</div>'}
+function curO(x){if(!x.G.length)return x.o[cur.p];var r=null;x.o.forEach(function(o){if(o.pi===cur.p&&o.sel.join()===cur.s.join())r=o});return r}
+function sheetHTML(){var x=VAR[cur.id],n=0,h='';
+ if(x.P.length>1)h+=stepHTML(++n,S('Elige una opción'),x.P.map(function(o,i){return '<button type="button" class="rop" role="radio" aria-checked="'+String(i===cur.p)+'" data-po="'+i+'"><span class="rd"></span><span class="rl"><b>'+esc(o.lb)+'</b></span><span class="rp">'+fm(o.pr)+'</span></button>'}).join(''));
+ x.G.forEach(function(g,gi){h+=stepHTML(++n,S(g[0]),g[1].map(function(c,ci){return '<button type="button" class="rop" role="radio" aria-checked="'+String(ci===cur.s[gi])+'" data-pg="'+gi+'" data-pc="'+ci+'"><span class="rd"></span><span class="rl"><b>'+esc(c)+'</b></span></button>'}).join(''))});
+ return '<div class="sh" role="dialog" aria-modal="true" aria-labelledby="sh-t"><div class="gr"></div><div class="hh"><h2 id="sh-t">'+esc(x[0])+'</h2><button type="button" class="x" data-x="1" aria-label="'+S('Cerrar')+'">&times;</button></div>'+(x[2]?'<p class="dd">'+esc(x[2])+'</p>':'')+h+
+ '<div class="ft"><span class="qq"><button type="button" data-q="-1" aria-label="'+S('Quitar uno')+'">&minus;</button><output aria-live="polite">'+cur.q+'</output><button type="button" data-q="1" aria-label="'+S('Agregar uno')+'">+</button></span><button type="button" class="go" data-go="1">'+S('Agregar al pedido')+' · '+fm(x.P[cur.p].pr*cur.q)+'</button></div></div>'}
 function drawSheet(fs){Carrito.sheet.draw(fs)}
-function openSheet(id,btn){cur={id:id,o:0,q:1};Carrito.sheet.open({render:sheetHTML,click:sheetClick,onClose:function(){cur=null},restore:function(b){return b&&document.querySelector('[data-vo="'+b.dataset.vo+'"]')}},btn)}
+function openSheet(id,btn){var x=VAR[id];cur={id:id,p:0,s:x.G.map(function(){return 0}),q:1};Carrito.sheet.open({render:sheetHTML,click:sheetClick,onClose:function(){cur=null},restore:function(b){return b&&document.querySelector('[data-vo="'+b.dataset.vo+'"]')}},btn)}
 function closeSheet(){Carrito.sheet.close()}
 function sheetClick(b){
- if(b.dataset.po!==undefined){cur.o=+b.dataset.po;drawSheet('[data-po="'+cur.o+'"]');return}
+ if(b.dataset.po!==undefined){cur.p=+b.dataset.po;drawSheet('[data-po="'+cur.p+'"]');return}
+ if(b.dataset.pg!==undefined){cur.s[+b.dataset.pg]=+b.dataset.pc;drawSheet('[data-pg="'+b.dataset.pg+'"][data-pc="'+b.dataset.pc+'"]');return}
  if(b.dataset.q){cur.q=Math.max(1,Math.min(20,cur.q+Number(b.dataset.q)));drawSheet('[data-q="'+b.dataset.q+'"]');return}
- if(b.dataset.go){var x=VAR[cur.id],o=x.o[cur.o];qty[o.k]=Math.min(99,(qty[o.k]||0)+cur.q);var nm=x[0]+' ('+o.lb+')';closeSheet();refresh();toast(nm+' '+S('agregado a tu pedido'))}
+ if(b.dataset.go){var x=VAR[cur.id],o=curO(x);qty[o.k]=Math.min(99,(qty[o.k]||0)+cur.q);var nm=x[0]+' ('+o.lb+')';closeSheet();refresh();toast(nm+' '+S('agregado a tu pedido'))}
 }
 function ready(){var ok=Object.keys(qty).length>0&&$('#f-n').value.trim()&&(mode==='Retiro'||$('#f-a').value.trim());return !!ok}
 function payUI(){var p=$("#pay");if(p)p.hidden=$("#f-p").value!=="SINPE Móvil"}
