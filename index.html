@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Soda La Bomba</title>
-<meta name="description" content="Soda La Bomba, Ruta 4, Horquetas de Sarapiquí. Abierta 24 horas. Menú, Express de 7 a. m. a 10 p. m. y comida casera desde 2012.">
+<meta name="description" content="Soda La Bomba, Ruta 4, Horquetas de Sarapiquí. Abierta 24 horas. Menú, Express de 7 a. m. a 10 p. m. y comida de soda desde 2012.">
 <meta name="theme-color" content="#171212">
 <link rel="canonical" href="https://www.sodalabomba.com/">
 <link rel="icon" href="favicon.ico" sizes="any">
@@ -23,7 +23,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Restaurant","name":"Soda La Bomba","url":"https://www.sodalabomba.com/","image":"https://www.sodalabomba.com/img/og-soda.png","description":"Soda 24 horas sobre la Ruta 4, en Horquetas de Sarapiquí. Comida casera y rápida, desde 2012. Express de 7 a. m. a 10 p. m.","foundingDate":"2012","servesCuisine":["Comida costarricense","Comida casera","Pollo frito","Pizza","Hamburguesas"],"telephone":"+506 8982-5035","hasMap":"https://www.google.com/maps/place/La+Bomba/@10.3339795,-83.9500609,17z","geo":{"@type":"GeoCoordinates","latitude":10.3339795,"longitude":-83.9500609},"address":{"@type":"PostalAddress","streetAddress":"Ruta 4, a un costado de la Gasolinera JyJ","addressLocality":"Horquetas de Sarapiquí","addressRegion":"Heredia","addressCountry":"CR"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"00:00","closes":"23:59"}],"hasMenu":"https://www.sodalabomba.com/#menu"}
+{"@context":"https://schema.org","@type":"Restaurant","name":"Soda La Bomba","url":"https://www.sodalabomba.com/","image":"https://www.sodalabomba.com/img/og-soda.png","description":"Soda 24 horas sobre la Ruta 4, en Horquetas de Sarapiquí. Comida de soda, desde 2012. Express de 7 a. m. a 10 p. m.","foundingDate":"2012","servesCuisine":["Comida costarricense","Pollo frito","Pizza","Hamburguesas"],"telephone":"+506 8982-5035","hasMap":"https://www.google.com/maps/place/La+Bomba/@10.3339795,-83.9500609,17z","geo":{"@type":"GeoCoordinates","latitude":10.3339795,"longitude":-83.9500609},"address":{"@type":"PostalAddress","streetAddress":"Ruta 4, a un costado de la Gasolinera JyJ","addressLocality":"Horquetas de Sarapiquí","addressRegion":"Heredia","addressCountry":"CR"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"00:00","closes":"23:59"}],"hasMenu":"https://www.sodalabomba.com/#menu"}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -122,6 +122,25 @@ button.btn.line{background:transparent;color:var(--fg);cursor:pointer;font-famil
 #wa[aria-disabled="true"]{opacity:.8}
 .miss{margin:0 0 12px;padding:10px 14px;border:2px solid #ff8a8a;border-radius:10px;color:#ffc9c9;font-weight:700}.miss[hidden]{display:none}
 [aria-invalid="true"]{border-color:#ff8a8a!important;outline:2px solid #ff8a8a}
+/* carrito: mismo diseño en todos los sitios, colores claros */
+section.ord{color-scheme:light;max-width:none;margin:0;padding:48px 20px;--bg:#FBF4EA;--fg:#171212;--muted:#4A3F3F;--line:#E6DDD3;--red:#B81622;background:var(--bg);color:var(--fg)}
+section.ord>*{max-width:760px;margin-left:auto;margin-right:auto}
+section.ord h2{font-size:clamp(40px,8vw,64px);text-align:center;margin:0 auto 18px;line-height:1;color:var(--fg)}
+.ord .mode{border-color:var(--gold);color:var(--fg)}
+.ord .ban{background:#fff1d2;color:var(--fg);border-color:var(--gold)}
+.ord .facts{opacity:1}
+.ord .box{background:#fff}
+.ord .emp a{text-decoration:none}
+.ord .emp{font-size:21px;font-weight:700;text-align:center;margin:22px 0}
+.ord .cl{border-bottom-color:var(--line)}
+.ord .cl .rm,.ord .op .pr,.ord .pay .pl,.ord .it .np,.ord .rs .np{color:var(--red)}
+.ord .ctl button{color:var(--red);border-color:var(--red)}
+.ord .frm input,.ord .frm textarea,.ord .frm select{background:#fff;border-color:var(--fg);color:var(--fg)}
+.ord .miss{background:#fde8ea;border-color:var(--red);color:#7a0d16}
+.ord .foot{color:var(--fg);opacity:1}
+.ord .cl .lb{display:block;font-size:14px;opacity:.85}
+.ord .cl .ctl{grid-column:2;grid-row:2;justify-self:end}
+.ord .cl .rm{grid-column:1;grid-row:2;align-self:center}
 
 :root{--hh:96px}
 html{scroll-behavior:smooth}
@@ -236,7 +255,7 @@ a.fc:hover,a.fc:focus-visible{background:#fff;color:var(--red)}a.fc:hover .go,a.
 <section class="hero" aria-labelledby="t-soda">
 <span class="tag" data-en="Family business since 2012">Empresa familiar desde 2012</span>
 <h1 id="t-soda" class="logo"><img src="img/logo-soda-amarillo.png" width="700" height="736" alt="Soda La Bomba"></h1>
-<p class="lema" data-en="Home-style and fast food to keep you on the road">Comida casera y rápida para seguir el camino</p>
+<p class="lema" data-en="The 24-Hour Soda on Route 4">La Soda 24 Horas de la Ruta 4</p>
 <div class="btns">
 <a class="btn gold" data-track="soda-menu" href="#menu" data-en="See the menu and order">Ver el menú y pedir</a>
 </div>
@@ -299,7 +318,7 @@ a.fc:hover,a.fc:focus-visible{background:#fff;color:var(--red)}a.fc:hover .go,a.
 </section>
 
 <section class="fam" aria-labelledby="t-fam">
-<p class="lead" id="t-fam" data-en="We are a family business with &lt;span data-years&gt;13&lt;/span&gt; years on Route 4, in Horquetas de Sarapiquí. Since 2012 we have served with the home-style flavor you know.">Somos una empresa familiar con <span data-years>14</span> años en la Ruta 4, en Horquetas de Sarapiquí. Desde 2012 atendemos con el sabor casero de siempre.</p>
+<p class="lead" id="t-fam" data-en="We are a family business with &lt;span data-years&gt;13&lt;/span&gt; years on Route 4, in Horquetas de Sarapiquí. Since 2012 we have served with the flavor you know.">Somos una empresa familiar con <span data-years>14</span> años en la Ruta 4, en Horquetas de Sarapiquí. Desde 2012 atendemos con el sabor de siempre.</p>
 <div class="fcs">
 <a class="fc" data-track="fam-pollos" href="https://www.polloslabomba.com/"><b>Pollos La Bomba</b><span data-en="Fried chicken and Papea. Every day, 10 a.m. to 10 p.m.">Pollo frito y Papea. Todos los días de 10 a. m. a 10 p. m.</span><span class="go" data-en="Visit →">Visitar →</span></a>
 <a class="fc" data-track="fam-papea" href="https://www.polloslabomba.com/papea/"><b>Papea</b><span data-en="Fries in a cone or Caja Bomba.">Papas fritas en cono o Caja Bomba.</span><span class="go" data-en="Visit →">Visitar →</span></a>
@@ -338,7 +357,7 @@ var MENU=[
  ]}
 ]},
 {t:'Almuerzos',g:[
- {h:'Buffet La Bomba',n:'Variedad de comida casera preparada diariamente. Opciones según disponibilidad del día. Barra de ensaladas frescas y acompañamientos para complementar su plato.',i:[]},
+ {h:'Buffet La Bomba',n:'Variedad de platos preparados diariamente. Opciones según disponibilidad del día. Barra de ensaladas frescas y acompañamientos para complementar su plato.',i:[]},
  {h:'Casados',n:'Todos incluyen té frío natural, arroz, frijoles, ensalada, maduro, picadillo y proteína a elegir.',i:[
   ['Casado de pollo',[m('4.000')],'Frito, al horno, caribeño o en salsa. Cadera o muslo.'],['Casado de carne en salsa o mexicana',[m('4.000')]],['Casado de mondongo',[m('4.000')]],['Casado de pescado',[m('4.000')]],['Casado de chicharrón',[m('4.000')]],['Casado de chuleta',[m('4.000')]],
   ['Casado con lengua',[m('4.950')]],['Casado con bistec',[m('4.650')]],['Casado con filete o fajitas de pollo',[m('4.500')]],['Casado con lasaña',[m('6.500')]]
@@ -496,7 +515,7 @@ var WA='50689825035',KS='sb_cart',KL='sb_last';
 function esc(x){return String(x).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
 function $(q){return document.querySelector(q)}
 var L='es';try{if(localStorage.getItem('sb_lang')==='en')L='en'}catch(e){}
-var EN={"Copiar número": "Copy number", "Falta": "Missing", "al menos un producto": "at least one product", "tu nombre": "your name", "la dirección de entrega": "the delivery address", "Retiro en el local.": "Pickup at the restaurant.", "Te lo llevamos a domicilio.": "We bring it to you.", "Consúltalo en las notas o por WhatsApp": "Ask about it in the notes or on WhatsApp", "Quitar uno": "Remove one", "Agregar uno": "Add one", "Agregar": "Add", "opciones": "options", "Quitar": "Remove", "Total productos": "Products total", "No incluye envío. Te confirmamos el costo por WhatsApp.": "Shipping not included. We confirm the cost on WhatsApp.", "Borrar pedido": "Clear order", "Aún no has agregado nada. Elige del menú de arriba.": "You have not added anything yet. Pick something from the menu above.", "producto": "item", "productos": "items", "Agrega productos y escribe tu nombre para enviar.": "Add items and enter your name to send.", "Agrega productos y completa nombre y dirección para enviar.": "Add items and fill in your name and address to send.", "Retiro en el local, las 24 horas.": "Pickup at the restaurant, 24 hours.", "Express a domicilio, de 7 a. m. a 10 p. m.": "Express delivery, 7 a.m. to 10 p.m.", "Express hasta las 10 p. m.": "Express until 10 p.m.", "Express cerrado, abre a las 7 a. m.": "Express closed, opens at 7 a.m.", "Copiado": "Copied", "Copiar pedido": "Copy order", "Lo más pedido": "Most ordered", "Pollo frito, hamburguesas, pizzas, papas y combos.": "Fried chicken, burgers, pizzas, fries and combos.", "Comida casera de soda": "Home-style soda food", "Casados, arroz con pollo, sopa de mariscos, desayunos y más, todos los días.": "Casados, chicken and rice, seafood soup, breakfasts and more, every day.", "Bebidas y postres": "Drinks and desserts", "Sin resultados para": "No results for", "Prueba con otra palabra, o escríbelo en las notas del pedido.": "Try another word, or write it in the order notes.", "Ver categoría": "See category", "resultados": "results", "resultado": "result", "pronto": "coming soon", "Desayunos": "Breakfast", "Almuerzos": "Lunch", "Antojitos": "Snacks", "Pollo": "Chicken", "Ceviches y caldosas": "Ceviches and soups", "Hamburguesas": "Burgers", "Pizzas": "Pizzas", "Combos": "Combos", "Para llevar": "Takeaway", "Baldes": "Buckets"};
+var EN={"Copiar número": "Copy number", "Falta": "Missing", "al menos un producto": "at least one product", "tu nombre": "your name", "la dirección de entrega": "the delivery address", "Retiro en el local.": "Pickup at the restaurant.", "Te lo llevamos a domicilio.": "We bring it to you.", "Consúltalo en las notas o por WhatsApp": "Ask about it in the notes or on WhatsApp", "Quitar uno": "Remove one", "Agregar uno": "Add one", "Agregar": "Add", "opciones": "options", "Quitar": "Remove", "Total productos": "Products total", "No incluye envío. Te confirmamos el costo por WhatsApp.": "Shipping not included. We confirm the cost on WhatsApp.", "Borrar pedido": "Clear order", "Aún no has agregado nada. Elige del menú de arriba.": "You have not added anything yet. Pick something from the menu above.", "producto": "item", "productos": "items", "Agrega productos y escribe tu nombre para enviar.": "Add items and enter your name to send.", "Agrega productos y completa nombre y dirección para enviar.": "Add items and fill in your name and address to send.", "Retiro en el local, las 24 horas.": "Pickup at the restaurant, 24 hours.", "Express a domicilio, de 7 a. m. a 10 p. m.": "Express delivery, 7 a.m. to 10 p.m.", "Express hasta las 10 p. m.": "Express until 10 p.m.", "Express cerrado, abre a las 7 a. m.": "Express closed, opens at 7 a.m.", "Copiado": "Copied", "Copiar pedido": "Copy order", "Lo más pedido": "Most ordered", "Pollo frito, hamburguesas, pizzas, papas y combos.": "Fried chicken, burgers, pizzas, fries and combos.", "Otras Delicias": "Other Delights", "Casados, arroz con pollo, sopa de mariscos, desayunos y más, todos los días.": "Casados, chicken and rice, seafood soup, breakfasts and more, every day.", "Bebidas y postres": "Drinks and desserts", "Sin resultados para": "No results for", "Prueba con otra palabra, o escríbelo en las notas del pedido.": "Try another word, or write it in the order notes.", "Ver categoría": "See category", "resultados": "results", "resultado": "result", "pronto": "coming soon", "Desayunos": "Breakfast", "Almuerzos": "Lunch", "Antojitos": "Snacks", "Pollo": "Chicken", "Ceviches y caldosas": "Ceviches and soups", "Hamburguesas": "Burgers", "Pizzas": "Pizzas", "Combos": "Combos", "Para llevar": "Takeaway", "Baldes": "Buckets"};
 function S(k){return L==='en'&&EN[k]?EN[k]:k}
 
 function fm(n){return CRC+String(n).replace(/\B(?=(\d{3})+(?!\d))/g,'.')}
@@ -555,7 +574,7 @@ window.addEventListener('popstate',function(e){if(e.state&&e.state.c!=null)showC
 function idx(t){for(var i=0;i<MENU.length;i++)if(MENU[i].t===t)return i;return 0}
 var GR=[
  {n:'Lo más pedido',s:'Pollo frito, hamburguesas, pizzas, papas y combos.',t:['Pollo','Antojitos','Hamburguesas','Pizzas','Combos']},
- {n:'Comida casera de soda',s:'Casados, arroz con pollo, sopa de mariscos, desayunos y más, todos los días.',t:['Desayunos','Almuerzos','Ceviches y caldosas','Baldes']},
+ {n:'Otras Delicias',s:'Casados, arroz con pollo, sopa de mariscos, desayunos y más, todos los días.',t:['Desayunos','Almuerzos','Ceviches y caldosas','Baldes']},
  {n:'Bebidas y postres',s:'',t:['Bebidas y postres']}
 ];
 function buildCats(){
@@ -596,7 +615,7 @@ function change(k,d){var n=(qty[k]||0)+d;if(n<=0)delete qty[k];else qty[k]=Math.
 function total(){var t=0,c=0;Object.keys(qty).forEach(function(k){t+=ITEMS[k].pr*qty[k];c+=qty[k]});return{t:t,c:c}}
 function renderSum(){
  var ks=Object.keys(qty),h='';
- if(!ks.length){$('#sumry').innerHTML='<p>'+S('Aún no has agregado nada. Elige del menú de arriba.')+'</p>';return}
+ if(!ks.length){$('#sumry').innerHTML='<p class="emp">'+S('Aún no has agregado nada. Elige del menú de arriba.')+'</p>';return}
  ks.forEach(function(k){var it=ITEMS[k],q=qty[k];
   h+='<div class="cl"><div class="tt">'+esc(it.n)+(it.lb?' <span class="lb">('+esc(it.lb)+')</span>':'')+'</div><div class="tt">'+fm(it.pr*q)+'</div><span class="ctl" data-k="'+esc(k)+'"><button type="button" data-d="-1" aria-label="'+S('Quitar uno')+'">−</button><span class="n">'+q+'</span><button type="button" data-d="1" aria-label="'+S('Agregar uno')+'">+</button></span><button type="button" class="rm" data-rm="'+esc(k)+'">'+S('Quitar')+'</button></div>';
  });
