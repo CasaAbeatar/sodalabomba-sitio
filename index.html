@@ -136,7 +136,8 @@ section[id]{scroll-margin-top:calc(var(--hh) + 8px)}
 .hd1 a.n.p{background:var(--red);color:#fff}
 .hd1 a.n.w{display:none}
 @media (max-width:700px){.hd1 a.n.p{display:none}}
-.st{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 14px;font-size:14px;font-weight:700;color:var(--fg);text-align:center}
+.st{display:flex;flex-wrap:wrap;justify-content:center;gap:2px 10px;padding:5px 12px 6px;font-size:13px;font-weight:700;background:#000;color:var(--bar-fg);text-align:center}
+.hd.nologo .hlogo{visibility:hidden}
 .st .dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#3ba55d;margin-right:6px}
 .st[data-e="0"] .e .dot{background:var(--gold)}
 @media (min-width:701px){.hd1 a.n.w{display:inline-flex}}
@@ -219,7 +220,8 @@ a.fc:hover,a.fc:focus-visible{background:#fff;color:var(--red)}a.fc:hover .go,a.
 <a class="skip" href="#menu" data-en="Skip to the menu">Saltar al menú</a>
 <noscript><p class="ns">Para ver el menú y hacer tu pedido hace falta JavaScript. Mientras tanto, llámanos al <a href="tel:+50689825035">8982-5035</a> o escríbenos por <a href="https://wa.me/50689825035">WhatsApp</a>.</p></noscript>
 <nav class="sites" aria-label="Nuestros negocios" data-en-aria="Our businesses"><a href="https://www.polloslabomba.com/" data-track="sites-pollos"><img src="img/favicon-pollos-48.png" alt="" width="22" height="22">Pollos La Bomba</a><a href="https://www.polloslabomba.com/papea/" data-track="sites-papea">Papea</a></nav>
-<header class="hd" id="top">
+<div class="st" id="st" role="status" aria-live="polite" data-e="1"><span><span class="dot"></span><span data-en="Restaurant open 24 hours">Local abierto 24 horas</span></span><span class="e"><span class="dot"></span><span id="st2">Express: 7 a. m. a 10 p. m.</span></span></div>
+<header class="hd nologo" id="top">
 <div class="hd1">
 <a class="hlogo" href="#top" data-up="1" aria-label="Soda La Bomba, volver al inicio" data-en-aria="Soda La Bomba, back to the top"><img src="img/logo-soda-amarillo.png" width="700" height="736" alt=""></a>
 <div class="lg" role="group" aria-label="Idioma"><button type="button" id="b-es" aria-pressed="true" aria-label="Español" title="Español">ES</button><button type="button" id="b-en" aria-pressed="false" aria-label="English" title="English">EN</button></div>
@@ -230,7 +232,6 @@ a.fc:hover,a.fc:focus-visible{background:#fff;color:var(--red)}a.fc:hover .go,a.
 <span class="tag" data-en="Family business since 2012, Route 4">Empresa familiar desde 2012, Ruta 4</span>
 <h1 id="t-soda" class="logo"><img src="img/logo-soda-amarillo.png" width="700" height="736" alt="Soda La Bomba"></h1>
 <p class="lema" data-en="Home-style and fast food to keep you on the road">Comida casera y rápida para seguir el camino</p>
-<div class="st" id="st" role="status" aria-live="polite" data-e="1"><span><span class="dot"></span><span data-en="Restaurant open 24 hours">Local abierto 24 horas</span></span><span class="e"><span class="dot"></span><span id="st2">Express: 7 a. m. a 10 p. m.</span></span></div>
 <div class="btns">
 <a class="btn gold" data-track="soda-menu" href="#menu" data-en="See the menu and order">Ver el menú y pedir</a>
 </div>
@@ -691,6 +692,11 @@ function setLang(l){L=l;try{localStorage.setItem('sb_lang',l)}catch(e){}applyLan
 $('#b-es').addEventListener('click',function(){setLang('es')});$('#b-en').addEventListener('click',function(){setLang('en')});
 restore(get(sessionStorage,KS));updRep();applyLang();setInterval(status,60000);
 var hm=/^#menu-(\d+)$/.exec(location.hash);if(hm&&MENU[+hm[1]]){try{history.replaceState({c:+hm[1]},'')}catch(e){}showCat(+hm[1],true)}
+</script>
+<script>
+(function(){var h=document.getElementById('top'),l=document.querySelector('.hero .logo img');if(!h||!l)return;
+if(!('IntersectionObserver' in window)){h.classList.remove('nologo');return}
+new IntersectionObserver(function(e){h.classList.toggle('nologo',e[0].isIntersecting)},{rootMargin:'-57px 0px 0px 0px'}).observe(l)})();
 </script>
 </body>
 </html>
