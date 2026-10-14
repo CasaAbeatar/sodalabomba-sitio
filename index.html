@@ -123,8 +123,9 @@ button.btn.line{background:transparent;color:var(--fg);cursor:pointer;font-famil
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 section[id]{scroll-margin-top:calc(var(--hh) + 8px)}
-.sites{background:#000;display:flex;justify-content:center;flex-wrap:wrap;gap:2px;padding:0 8px}
-.sites a{border-radius:0;display:inline-flex;align-items:center;min-height:44px;padding:0 12px;font-family:inherit;font-weight:700;font-size:15px;text-decoration:none;color:#fff;border-bottom:3px solid transparent}
+.sites{background:#000;display:flex;justify-content:center;flex-wrap:wrap;gap:2px;padding:0 4px}
+.sites a{border-radius:0;display:inline-flex;align-items:center;gap:5px;min-height:44px;padding:0 6px;font-family:inherit;font-weight:700;font-size:14px;text-decoration:none;color:#fff;border-bottom:3px solid transparent}
+.sites img{width:20px;height:20px;border-radius:5px;flex:none}
 .sites a:hover,.sites a:focus-visible{background:rgba(255,255,255,.14)}
 .sites a[aria-current="page"]{color:#F3A62C;border-bottom-color:#F3A62C}
 .hd{position:sticky;top:0;z-index:20;background:var(--bar);border-bottom:1px solid #2a2222}
@@ -216,7 +217,7 @@ a.fc:hover,a.fc:focus-visible{background:#fff;color:var(--red)}a.fc:hover .go,a.
 <body>
 <a class="skip" href="#menu" data-en="Skip to the menu">Saltar al menú</a>
 <noscript><p class="ns">Para ver el menú y hacer tu pedido hace falta JavaScript. Mientras tanto, llámanos al <a href="tel:+50689825035">8982-5035</a> o escríbenos por <a href="https://wa.me/50689825035">WhatsApp</a>.</p></noscript>
-<nav class="sites" aria-label="Nuestros negocios" data-en-aria="Our businesses"><a href="https://www.polloslabomba.com/" data-track="sites-pollos">Pollos La Bomba</a><a href="https://www.polloslabomba.com/papea/" data-track="sites-papea">Papea</a><a href="https://www.sodalabomba.com/" aria-current="page" data-track="sites-soda">Soda La Bomba</a></nav>
+<nav class="sites" aria-label="Nuestros negocios" data-en-aria="Our businesses"><a href="https://www.polloslabomba.com/" data-track="sites-pollos"><img src="img/favicon-pollos-48.png" alt="" width="22" height="22">Pollos La Bomba</a><a href="https://www.polloslabomba.com/papea/" data-track="sites-papea">Papea</a><a href="https://www.sodalabomba.com/" aria-current="page" data-track="sites-soda"><img src="img/favicon-48.png" alt="" width="22" height="22">Soda La Bomba</a></nav>
 <header class="hd" id="top">
 <div class="hd1">
 <a class="hlogo" href="#top" data-up="1" aria-label="Soda La Bomba, volver al inicio" data-en-aria="Soda La Bomba, back to the top"><img src="img/logo-soda-amarillo.png" width="700" height="736" alt=""></a>
