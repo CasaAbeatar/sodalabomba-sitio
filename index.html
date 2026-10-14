@@ -23,7 +23,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Restaurant","name":"Soda La Bomba","url":"https://www.sodalabomba.com/","image":"https://www.sodalabomba.com/img/og-soda.png","description":"Soda 24 horas sobre la Ruta 4, en Horquetas de Sarapiquí. Comida casera y rápida, desde 2012. Express de 7 a. m. a 10 p. m.","foundingDate":"2012","servesCuisine":["Comida costarricense","Comida casera","Pollo frito","Pizza","Hamburguesas"],"telephone":"+506 8982-5035","hasMap":"https://www.google.com/maps/place/La+Bomba/@10.3339795,-83.9500609,17z","geo":{"@type":"GeoCoordinates","latitude":10.3339795,"longitude":-83.9500609},"address":{"@type":"PostalAddress","streetAddress":"Ruta 4, a un costado de la Gasolinera Corporación JYJ","addressLocality":"Horquetas de Sarapiquí","addressRegion":"Heredia","addressCountry":"CR"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"00:00","closes":"23:59"}],"hasMenu":"https://www.sodalabomba.com/#menu"}
+{"@context":"https://schema.org","@type":"Restaurant","name":"Soda La Bomba","url":"https://www.sodalabomba.com/","image":"https://www.sodalabomba.com/img/og-soda.png","description":"Soda 24 horas sobre la Ruta 4, en Horquetas de Sarapiquí. Comida casera y rápida, desde 2012. Express de 7 a. m. a 10 p. m.","foundingDate":"2012","servesCuisine":["Comida costarricense","Comida casera","Pollo frito","Pizza","Hamburguesas"],"telephone":"+506 8982-5035","hasMap":"https://www.google.com/maps/place/La+Bomba/@10.3339795,-83.9500609,17z","geo":{"@type":"GeoCoordinates","latitude":10.3339795,"longitude":-83.9500609},"address":{"@type":"PostalAddress","streetAddress":"Ruta 4, a un costado de la Gasolinera JyJ","addressLocality":"Horquetas de Sarapiquí","addressRegion":"Heredia","addressCountry":"CR"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"00:00","closes":"23:59"}],"hasMenu":"https://www.sodalabomba.com/#menu"}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -174,7 +174,8 @@ section[id]{scroll-margin-top:calc(var(--hh) + 8px)}
  .bbar a.p{background:var(--red);border-color:var(--red);color:#fff}
  .cbar{z-index:16}
 }
-.bar{background:var(--bar);color:var(--bar-fg);font-size:14px;font-weight:700;text-align:center;padding:12px 20px}
+.bar{background:var(--bar);color:var(--bar-fg);font-size:14px;font-weight:700;text-align:center;padding:16px 20px;display:flex;flex-direction:column;align-items:center;gap:2px}
+.bar b{font-size:15px;text-transform:uppercase;letter-spacing:.04em}
 .skip{position:absolute;left:8px;top:-60px;z-index:40;background:var(--gold);color:var(--gold-ink);font-weight:700;padding:12px 18px;border-radius:10px}
 .skip:focus{top:8px}
 .ns{margin:0;padding:12px 20px;background:var(--gold);color:var(--gold-ink);font-weight:700}
@@ -244,7 +245,7 @@ a.fc:hover,a.fc:focus-visible{background:#fff;color:var(--red)}a.fc:hover .go,a.
 
 <section class="menu" id="menu" aria-labelledby="t-menu">
 <h2 id="t-menu" data-en="Menu">Menú</h2>
-<p class="sub" data-en="Home-style and fast food since 2012. Pick a category, add what you want and send your order on WhatsApp.">Comida casera y rápida desde 2012. Elige una categoría, agrega lo que quieras y envía tu pedido por WhatsApp.</p>
+<p class="sub" data-en="Pick a category, add what you want and send your order on WhatsApp.">Elige una categoría, agrega lo que quieras y envía tu pedido por WhatsApp.</p>
 <div class="srch" role="search"><label for="q" style="position:absolute;left:-9999px" data-en="Search the menu">Buscar en el menú</label><input id="q" type="search" autocomplete="off" placeholder="Buscar en el menú: pizza, casado, pollo..." data-en-ph="Search the menu: pizza, casado, chicken..."></div>
 <div id="mres" hidden aria-live="polite"></div>
 <div id="mcats"></div>
@@ -285,10 +286,10 @@ a.fc:hover,a.fc:focus-visible{background:#fff;color:var(--red)}a.fc:hover .go,a.
 
 <section class="info" id="info" aria-label="Datos de la soda">
 <div><h2 data-en="Hours">Horarios</h2><p data-en="&lt;b&gt;In-store:&lt;/b&gt; 24 hours, 7 days a week&lt;br&gt;&lt;b&gt;Express:&lt;/b&gt; every day, 7 a.m. to 10 p.m."><b>Local:</b> las 24 horas, los 7 días<br><b>Express:</b> todos los días, de 7 a. m. a 10 p. m.</p></div>
-<div><h2 data-en="Where we are">Dónde estamos</h2><p data-en="On Route 4, Horquetas de Sarapiquí.&lt;br&gt;Next to the Corporación JYJ gas station.">Sobre Ruta 4, Horquetas de Sarapiquí.<br>A un costado de la Gasolinera Corporación JYJ.</p><div class="ib"><a class="btn gold" href="https://www.google.com/maps/place/La+Bomba/@10.3339795,-83.9500609,17z/data=!4m6!3m5!1s0x8fa097240bc8c507:0xffa580b8cf09d520!8m2!3d10.3339795!4d-83.9500609" target="_blank" rel="noopener" data-track="info-maps"><svg class="ic" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg><span>Google Maps</span></a><a class="btn line" href="https://waze.com/ul?ll=10.3339795,-83.9500609&amp;navigate=yes&amp;zoom=17" target="_blank" rel="noopener" data-track="info-waze"><svg class="ic" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg><span>Waze</span></a></div></div>
+<div><h2 data-en="Where we are">Dónde estamos</h2><p data-en="On Route 4, Horquetas de Sarapiquí.&lt;br&gt;Next to the JyJ gas station.">Sobre Ruta 4, Horquetas de Sarapiquí.<br>A un costado de la Gasolinera JyJ.</p><div class="ib"><a class="btn gold" href="https://www.google.com/maps/place/La+Bomba/@10.3339795,-83.9500609,17z/data=!4m6!3m5!1s0x8fa097240bc8c507:0xffa580b8cf09d520!8m2!3d10.3339795!4d-83.9500609" target="_blank" rel="noopener" data-track="info-maps"><svg class="ic" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg><span>Google Maps</span></a><a class="btn line" href="https://waze.com/ul?ll=10.3339795,-83.9500609&amp;navigate=yes&amp;zoom=17" target="_blank" rel="noopener" data-track="info-waze"><svg class="ic" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg><span>Waze</span></a></div></div>
 <div><h2 data-en="Contact">Contacto</h2><p><a href="tel:+50689825035">8982-5035</a> · <a href="tel:+50685798383">8579-8383</a></p><div class="ib"><a class="btn wa" href="https://wa.me/message/LABL4IYZ6R6LE1" target="_blank" rel="noopener" data-track="info-wa"><svg class="ic" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg><span data-en="Questions on WhatsApp">Consultas por WhatsApp</span></a></div></div>
 </section>
-<nav class="bbar" id="bbar" aria-label="Acciones rápidas"><a class="p" href="#menu" data-en="Menu &amp; order">Menú y pedir</a><a href="#info" data-track="bbar-info" data-en="Info">Información</a><a href="tel:+50689825035" data-en="Call">Llamar</a></nav>
+<nav class="bbar" id="bbar" aria-label="Acciones rápidas"><a class="p" href="#menu" data-en="Menu &amp; order">Menú y pedir</a><a href="#info" data-track="bbar-info" data-en="Info">Información</a><a href="tel:+50689825035"><svg class="ic" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg><span data-en="Call">Llamar</span></a></nav>
 <div id="cbar" class="cbar" hidden><span id="cinfo"></span><a class="btn gold" href="#pedir" data-en="View order">Ver pedido</a></div>
 
 <section class="rec" aria-labelledby="t-rec">
@@ -300,11 +301,12 @@ a.fc:hover,a.fc:focus-visible{background:#fff;color:var(--red)}a.fc:hover .go,a.
 <section class="fam" aria-labelledby="t-fam">
 <p class="lead" id="t-fam" data-en="We are a family business with &lt;span data-years&gt;13&lt;/span&gt; years on Route 4, in Horquetas de Sarapiquí. Since 2012 we have served with the home-style flavor you know.">Somos una empresa familiar con <span data-years>14</span> años en la Ruta 4, en Horquetas de Sarapiquí. Desde 2012 atendemos con el sabor casero de siempre.</p>
 <div class="fcs">
-<a class="fc" data-track="fam-pollos" href="https://www.polloslabomba.com/"><b>Pollos La Bomba</b><span data-en="Fried chicken. Every day, 10 a.m. to 10 p.m. We open Saturday, November 14.">Pollo frito. Todos los días de 10 a. m. a 10 p. m. Abrimos el sábado 14 de noviembre.</span><span class="go" data-en="Visit →">Visitar →</span></a>
+<a class="fc" data-track="fam-pollos" href="https://www.polloslabomba.com/"><b>Pollos La Bomba</b><span data-en="Fried chicken and Papea. Every day, 10 a.m. to 10 p.m.">Pollo frito y Papea. Todos los días de 10 a. m. a 10 p. m.</span><span class="go" data-en="Visit →">Visitar →</span></a>
+<a class="fc" data-track="fam-papea" href="https://www.polloslabomba.com/papea/"><b>Papea</b><span data-en="Fries in a cone or Caja Bomba.">Papas fritas en cono o Caja Bomba.</span><span class="go" data-en="Visit →">Visitar →</span></a>
 </div>
 </section>
 </main>
-<footer class="bar">
+<footer class="bar"><b>Soda La Bomba</b>
 <a href="#top" data-up="1" style="font-weight:800" data-en="↑ Back to top">↑ Volver arriba</a>
 </footer>
 <script>
