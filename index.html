@@ -332,7 +332,7 @@ section.cat[id],.pap{scroll-margin-top:calc(var(--hh,0px) + var(--ch,60px) + 8px
 <p class="miss" id="miss" role="alert" hidden></p>
 <div class="btns"><a class="btn gold" id="wa" href="#" target="_blank" rel="noopener" data-track="soda-wa" data-en="Send order on WhatsApp">Enviar pedido por WhatsApp</a><button type="button" class="btn line" id="copy" data-en="Copy order">Copiar pedido</button></div>
 <p class="foot" id="hint" data-en="WhatsApp opens with your order ready.">Se abre WhatsApp con tu pedido listo.</p>
-<p class="foot lgl" data-en="By sending your order on WhatsApp you accept our &lt;a href=&quot;privacidad/index.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;privacy notice&lt;/a&gt;. We keep your name, phone and address only to prepare and deliver your order.">Al enviar tu pedido por WhatsApp aceptas nuestro <a href="privacidad/index.html" target="_blank" rel="noopener">aviso de privacidad</a>. Guardamos tu nombre, teléfono y dirección solo para preparar y entregar tu pedido.</p>
+<p class="foot lgl" data-en="By sending your order on WhatsApp you accept our &lt;a href=&quot;privacidad/index.html&quot; data-pol=&quot;1&quot;&gt;privacy policy&lt;/a&gt;.">Al enviar tu pedido por WhatsApp aceptas nuestra <a href="privacidad/index.html" data-pol="1">política de privacidad</a>.</p>
 <div class="pay" id="pay"><span class="pl" data-en="After we confirm your total, pay by SINPE Móvil to">Cuando te confirmemos el total, paga por SINPE Móvil al</span><b class="pn" id="pn">8585-1661</b><button type="button" class="btn line" id="pcopy" data-en="Copy number">Copiar número</button><ol class="pst"><li data-en="Send your order on WhatsApp.">Envía tu pedido por WhatsApp.</li><li data-en="We confirm the final total, delivery included.">Te confirmamos el total final, con el envío incluido.</li><li data-en="You pay from your bank app and we prepare it.">Pagas desde la app de tu banco y lo preparamos.</li></ol></div>
 </div>
 </section>
@@ -354,7 +354,7 @@ section.cat[id],.pap{scroll-margin-top:calc(var(--hh,0px) + var(--ch,60px) + 8px
 </section>
 
 <section class="fam" aria-labelledby="t-fam">
-<p class="lead" id="t-fam" data-en="We are a family business with &lt;span data-years&gt;14&lt;/span&gt; years of experience on Route 4, Horquetas de Sarapiquí. Since 2012 we have served with the good taste you know.">Somos una empresa familiar con <span data-years>14</span> años de experiencia en la Ruta 4, Horquetas de Sarapiquí. Desde 2012 atendemos con el buen sabor de siempre.</p>
+<p class="lead" id="t-fam" data-en="We are a family business with &lt;span data-years&gt;14&lt;/span&gt; years of experience on Route 4, Horquetas de Sarapiquí. Since 2012 we have served with the good taste you know.">Somos una empresa familiar con <span data-years>14</span> años de experiencia en la Ruta 4 de Horquetas de Sarapiquí. Desde 2012 atendemos con el buen sabor de siempre.</p>
 <div class="nos"><p class="ref" id="ref" lang="es"></p></div>
 <div class="fcs">
 <a class="fc" data-track="fam-pollos" href="https://www.polloslabomba.com/"><b>Pollos La Bomba</b><span data-en="Fried chicken, roast chicken and chicharrón. Every day, 10 a.m. to 10 p.m.">Pollo frito, asado y chicharrón. Todos los días de 10 a. m. a 10 p. m.</span><span class="go" data-en="Visit →">Visitar →</span></a>
@@ -364,7 +364,7 @@ section.cat[id],.pap{scroll-margin-top:calc(var(--hh,0px) + var(--ch,60px) + 8px
 </main>
 <footer class="bar"><b>Soda La Bomba</b>
 <a href="nosotros/index.html" data-en="About us" style="font-weight:800">Quiénes somos</a>
-<a href="privacidad/index.html" data-en="Privacy notice" style="font-weight:800">Aviso de privacidad</a>
+<a href="privacidad/index.html" data-pol="1" data-en="Privacy policy" style="font-weight:800">Política de privacidad</a>
 <a href="#top" data-up="1" style="font-weight:800" data-en="↑ Back to top">↑ Volver arriba</a>
 </footer>
 <script src="https://casaabeatar.github.io/carrito-la-bomba/v1/carrito.js"></script>
@@ -821,6 +821,33 @@ setTimeout(function(){var hm=/^#(?:menu-|s-)(\d+)$/.exec(location.hash);var t=hm
 if(!('IntersectionObserver' in window)){h.classList.remove('nologo');return}
 new IntersectionObserver(function(e){h.classList.toggle('nologo',e[0].isIntersecting)},{rootMargin:'-57px 0px 0px 0px'}).observe(l)})();
 (function(){var R=["Todos los caminos llevan a Soda La Bomba.", "Nunca es tarde si la Soda es buena. Soda La Bomba, abierta las 24 horas.", "Como en casa, en ningún lado, excepto en Soda La Bomba.", "A buen hambre, no hay Soda cerrada. Soda La Bomba, abierta las 24 horas.", "Quien a buena Soda se arrima, en Soda La Bomba termina.", "Para gustos se hicieron los colores y el menú de Soda La Bomba. Amplia variedad.", "Quien tiene una Soda La Bomba cerca, tiene un tesoro.", "Al que quiere caldosa, dos tazas. La mejor caldosa solo está en Soda La Bomba.", "Más vale calidad que cantidad. En Soda La Bomba, de las dos.", "Todo entra por los ojos. En Soda La Bomba, también por la nariz."],e=document.getElementById('ref');if(!e)return;var d=new Date(Date.now()-216e5),i=Math.floor(d.getTime()/864e5)%R.length;e.innerHTML=R[i].replace(/~~(.+?)~~/g,'<s>$1</s>')})();
+</script>
+<style>
+dialog#pol{border:0;border-radius:16px;padding:0;max-width:640px;width:calc(100% - 24px);max-height:88vh;max-height:88svh;background:#FBF3E6;color:#171212;font:400 17px/1.55 'Figtree',system-ui,sans-serif}
+dialog#pol::backdrop{background:rgba(0,0,0,.6)}
+#pol .pbox{padding:12px 20px 28px;overflow:auto;max-height:88vh;max-height:88svh}
+#pol .pclose{position:sticky;top:0;display:block;margin:0 0 6px auto;min-height:44px;padding:0 18px;border:2px solid #171212;border-radius:12px;background:#FBF3E6;color:#171212;font:800 16px 'Figtree',system-ui,sans-serif;cursor:pointer}
+#pol h1{font:900 28px/1.1 'Figtree',system-ui,sans-serif;text-transform:none;letter-spacing:0;margin:8px 0 10px}
+#pol h2{font:800 20px/1.2 'Figtree',system-ui,sans-serif;text-transform:none;letter-spacing:0;color:#B81622;margin:22px 0 4px}
+#pol p{margin:6px 0}#pol .bd{background:#B81622;color:#fff;border-radius:12px;padding:12px 16px;font-weight:700}
+#pol hr{border:0;border-top:2px solid #B81622;margin:28px 0}
+</style>
+<dialog id="pol" aria-label="Política de privacidad"><div class="pbox"><button type="button" class="pclose">Cerrar ✕</button><div id="pbody"></div></div></dialog>
+<script>
+/* La política se abre encima del pedido, sin salir de la página, para no perder el carrito ni el lugar donde estaba el cliente. Si no se puede cargar, se abre la página normal. */
+(function(){var dlg=document.getElementById('pol');if(!dlg||!dlg.showModal)return;var body=document.getElementById('pbody'),cache=null,from=null;
+function lang(){return(typeof L!=='undefined'&&L==='en')?'en':'es'}
+function parse(html){var m=new DOMParser().parseFromString(html,'text/html').querySelector('main'),es='',en='',kids=Array.prototype.slice.call(m.children);
+ for(var i=0;i<kids.length;i++){var k=kids[i];if(k.tagName==='HR')continue;if(k.getAttribute('lang')==='en'){en=k.innerHTML;continue}if(k.classList.contains('back'))continue;es+=k.outerHTML}
+ return{es:es,en:en}}
+function show(){body.innerHTML=cache[lang()];dlg.querySelector('.pclose').textContent=lang()==='en'?'Close ✕':'Cerrar ✕';dlg.setAttribute('aria-label',lang()==='en'?'Privacy policy':'Política de privacidad');dlg.showModal();dlg.querySelector('.pbox').scrollTop=0}
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-pol]');if(!a)return;e.preventDefault();from=a;
+ if(cache){show();return}
+ fetch(a.getAttribute('href')).then(function(r){if(!r.ok)throw 0;return r.text()}).then(function(t){cache=parse(t);if(!cache.es)throw 0;show()}).catch(function(){location.href=a.getAttribute('href')})});
+dlg.querySelector('.pclose').addEventListener('click',function(){dlg.close()});
+dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close()});
+dlg.addEventListener('close',function(){if(from&&from.focus&&document.contains(from))from.focus()});
+})();
 </script>
 <script data-goatcounter="https://sodalabomba.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
