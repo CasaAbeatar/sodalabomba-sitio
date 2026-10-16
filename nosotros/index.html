@@ -3,6 +3,15 @@
 <title>Quiénes somos, Soda La Bomba</title>
 <meta name="description" content="Empresa familiar con 14 años de experiencia en la Ruta 4 de Horquetas de Sarapiquí. Soda La Bomba, Pollos La Bomba y Papea.">
 <meta name="theme-color" content="#B81622">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Quiénes somos, Soda La Bomba">
+<meta property="og:description" content="Empresa familiar desde 2012 en la Ruta 4, Horquetas de Sarapiquí.">
+<meta property="og:url" content="https://www.sodalabomba.com/nosotros/">
+<meta property="og:image" content="https://www.sodalabomba.com/img/og-nosotros.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.sodalabomba.com/img/og-nosotros.png">
 <link rel="canonical" href="https://www.sodalabomba.com/nosotros/">
 <link rel="icon" href="../favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
@@ -130,56 +139,77 @@ html{scroll-padding-top:96px}
 
 /* títulos con contraste AA */
 h2,a.c .go,.side h2{color:#FFD27A}
+
+.t .lg{display:none}
+.t.gg .sm{display:block;font-size:12px;line-height:1.2;font-weight:800}
+@media(max-width:899px){.side .col{grid-template-columns:2.2fr 1fr 1fr}}
+@media(min-width:900px){.t.gg .sm{font-size:22px;font-weight:900;line-height:1.2}}
+
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.lang{display:flex;gap:6px}.lang button{min-width:48px;min-height:44px;padding:0 10px;font:800 15px 'Figtree',system-ui,sans-serif;color:var(--fg);background:transparent;border:2px solid var(--fg);border-radius:10px;cursor:pointer}.lang button[aria-pressed=true]{background:var(--btn);color:var(--btn-ink);border-color:var(--btn)}
 </style></head><body><main>
-<a class="back" href="../index.html">← Volver al menú</a>
+<div class="bar"><a class="back" href="../index.html" data-en="← Back to menu">← Volver al menú</a><div class="lang" role="group" aria-label="Idioma"><button type="button" id="b-es" aria-pressed="true">ES</button><button type="button" id="b-en" aria-pressed="false">EN</button></div></div>
 <div class="wrap">
 <div class="top"><img class="logo" src="../img/logo-soda-amarillo.png" alt="Soda La Bomba">
-<h1>Quiénes somos</h1>
-<p class="lead">Somos una empresa familiar con <span data-years>14</span> años de experiencia en la Ruta 4 de Horquetas de Sarapiquí.</p></div>
-<aside class="side" id="siguenos"><div class="box"><h2>Síguenos y opina</h2><div class="col" id="col"></div></div></aside>
+<h1 data-en="About us">Quiénes somos</h1>
+<p class="lead" data-en="We are a family business with &lt;span data-years&gt;14&lt;/span&gt; years of experience on Route 4 in Horquetas de Sarapiquí.">Somos una empresa familiar con <span data-years>14</span> años de experiencia en la Ruta 4 de Horquetas de Sarapiquí.</p></div>
+<aside class="side" id="siguenos"><div class="box"><h2 data-en="Follow us and share your thoughts">Síguenos y opina</h2><div class="col" id="col"></div></div></aside>
 <div class="art">
-<h2>Nuestra historia</h2>
-<p>Todo empezó en 2012 con un local pequeño y dos empleados. Con mucho trabajo y esfuerzo lo sacamos adelante en familia y fuimos ampliando nuestro espacio hasta llegar a lo que somos hoy.</p>
-<p>Ahora atendemos las 24 horas los 7 días de la semana con un equipo de más de 30 personas. Seguimos creciendo con Pollos La Bomba y Papea por ellos y por ti, para que cada día tengas más opciones.</p>
+<h2 data-en="Our story">Nuestra historia</h2>
+<p data-en="It all began in 2012 with a small place and two employees. With hard work and effort we pulled it through as a family and kept expanding our space until we became what we are today.">Todo empezó en 2012 con un local pequeño y dos empleados. Con mucho trabajo y esfuerzo lo sacamos adelante en familia y fuimos ampliando nuestro espacio hasta llegar a lo que somos hoy.</p>
+<p data-en="Now we serve 24 hours a day, 7 days a week, with a team of more than 30 people. We keep growing with Pollos La Bomba and Papea for them and for you, so that every day you have more options.">Ahora atendemos las 24 horas los 7 días de la semana con un equipo de más de 30 personas. Seguimos creciendo con Pollos La Bomba y Papea por ellos y por ti, para que cada día tengas más opciones.</p>
 
-<h2>Lo que nos mueve</h2>
+<h2 data-en="Mission and vision">Misión y visión</h2>
 <ul class="pil">
-<li>Productos de alta calidad<span>En lo que usamos y en lo que vendemos.</span></li>
-<li>Variedad<span>Para que cada quien encuentre algo que le guste.</span></li>
-<li>Buenos precios<span>Comer rico no tiene que costar de más.</span></li>
-<li>Buena atención<span>Te atendemos como nos gusta que nos atiendan.</span></li>
+<li data-en="Mission&lt;span&gt;To offer every customer the best product with the best experience.&lt;/span&gt;">Misión<span>Ofrecer a cada cliente el mejor producto con la mejor experiencia.</span></li>
+<li data-en="Vision&lt;span&gt;To be the benchmark for roadside food in Costa Rica, across all our restaurant formats.&lt;/span&gt;">Visión<span>Ser el referente de la comida de carretera en Costa Rica, en todos nuestros formatos de restaurante.</span></li>
 </ul>
 
-<h2>Nuestros negocios</h2>
+<h2 data-en="What drives us">Lo que nos mueve</h2>
+<ul class="pil">
+<li data-en="High-quality products&lt;span&gt;In what we use and in what we sell.&lt;/span&gt;">Productos de alta calidad<span>En lo que usamos y en lo que vendemos.</span></li>
+<li data-en="Variety&lt;span&gt;So everyone finds something they like.&lt;/span&gt;">Variedad<span>Para que cada quien encuentre algo que le guste.</span></li>
+<li data-en="Good prices&lt;span&gt;Eating well should not cost extra.&lt;/span&gt;">Buenos precios<span>Comer rico no tiene que costar de más.</span></li>
+<li data-en="Good service&lt;span&gt;We serve you the way we like to be served.&lt;/span&gt;">Buena atención<span>Te atendemos como nos gusta que nos atiendan.</span></li>
+</ul>
+
+<h2 data-en="Our businesses">Nuestros negocios</h2>
 <div class="cards">
-<a class="c" href="https://www.polloslabomba.com/"><b>Pollos La Bomba</b><span>Pollo frito, asado y chicharrón. Todos los días de 10 a. m. a 10 p. m.</span><span class="go">Visitar →</span></a>
-<a class="c" href="https://www.polloslabomba.com/#papea"><b>Papea</b><span>Papas fritas en cono o caja.</span><span class="go">Visitar →</span></a>
+<a class="c" href="https://www.polloslabomba.com/"><b>Pollos La Bomba</b><span data-en="Fried chicken, roast chicken and chicharrón. Every day from 10 a.m. to 10 p.m.">Pollo frito, asado y chicharrón. Todos los días de 10 a. m. a 10 p. m.</span><span class="go" data-en="Visit →">Visitar →</span></a>
+<a class="c" href="https://www.polloslabomba.com/#papea"><b>Papea</b><span data-en="Fries in a cone or box.">Papas fritas en cono o caja.</span><span class="go" data-en="Visit →">Visitar →</span></a>
 </div>
 
-<h2>Dónde estamos</h2>
-<p>Estamos sobre la Ruta 4 en Horquetas de Sarapiquí. Pollos La Bomba queda frente a la Gasolinera JyJ y a Soda La Bomba.</p>
-<div class="row"><a class="b" href="https://www.google.com/maps/place/La+Bomba/@10.3339795,-83.9500609,17z/data=!4m6!3m5!1s0x8fa097240bc8c507:0xffa580b8cf09d520!8m2!3d10.3339795!4d-83.9500609" target="_blank" rel="noopener">Cómo llegar</a></div>
 
 </div>
 </div>
 </main>
-<footer>Soda La Bomba · <a href="../privacidad/index.html">Política de privacidad</a></footer>
+<footer>Soda La Bomba · <a href="../privacidad/index.html" data-en="Privacy policy">Política de privacidad</a></footer>
 <script>
 /* Enlaces de redes: se activan al escribir la dirección. Vacío = no se muestra. */
 var REDES=[{t:'Instagram',u:'',d:'M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077'},{t:'Facebook',u:'',d:'M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z'}];
 var RESENA='https://search.google.com/local/writereview?placeid=ChIJB8XICySXoI8RINUJz7iApf8'; /* enlace de reseña en Google; vacío = no se muestra */
 var STAR='M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z';
 (function(){var h='';
+var LK='sb_lang',L='es';try{if(localStorage.getItem(LK)==='en')L='en'}catch(e){}
 var GL='<svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.9 6.1C12.4 13.6 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.7c-.6 3-2.2 5.5-4.7 7.2l7.6 5.9c4.4-4.1 6.9-10.1 6.9-17.6z"/><path fill="#FBBC05" d="M10.5 28.7A14.5 14.5 0 0 1 9.5 24c0-1.6.3-3.2.8-4.7l-7.9-6.1A24 24 0 0 0 0 24c0 3.9.9 7.5 2.6 10.8l7.9-6.1z"/><path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.6-5.9c-2.1 1.4-4.9 2.3-8.3 2.3-6.3 0-11.6-4.1-13.5-9.8l-7.9 6.1C6.5 42.6 14.6 48 24 48z"/></svg>';
-function btn(u,t,d){var ic='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="'+d+'"/></svg>';return u?'<a class="b l" href="'+u+'" target="_blank" rel="noopener">'+ic+t+'</a>':'<span class="b l off" aria-disabled="true">'+ic+t+'<small>Próximamente</small></span>'}
 var st='';for(var k=0;k<5;k++)st+='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="'+STAR+'"/></svg>';
-function tile(u,cls,inner,label){return u?'<a class="t '+cls+'" href="'+u+'" target="_blank" rel="noopener" aria-label="'+label+'">'+inner+'</a>':'<div class="t off '+cls+'" role="img" aria-label="'+label+' (próximamente)">'+inner+'</div>'}
-var soon=function(u){return u?'':'<small>Próximamente</small>'};
-h+=tile(RESENA,'gg','<span class="g">'+GL+'</span><span class="st">'+st+'</span><span>Déjanos tu reseña</span>'+soon(RESENA),'Reseña en Google');
-REDES.forEach(function(x){var c=x.t=='Instagram'?'ig':'fb';h+=tile(x.u,c,'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="'+x.d+'"/></svg><span>'+x.t+'</span>'+soon(x.u),x.t)});
+function tile(u,cls,inner,es,en,tr){var a=u?'<a class="t '+cls+'" href="'+u+'" target="_blank" rel="noopener" data-track="'+tr+'"':'<div class="t off '+cls+'" role="img"';return a+' data-ales="'+es+'" data-ael="'+en+'" aria-label="'+es+'">'+inner+(u?'</a>':'</div>')}
+var SOON='<small data-en="Coming soon">Próximamente</small>';
+h+=tile(RESENA,'gg','<span class="g">'+GL+'</span><span class="st">'+st+'</span><span class="sm" data-en="Your review<br>helps us grow">Tu reseña<br>nos ayuda a crecer</span>'+(RESENA?'':SOON),'Reseña en Google','Google review','nosotros-resena');
+REDES.forEach(function(x){var c=x.t=='Instagram'?'ig':'fb';h+=tile(x.u,c,'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="'+x.d+'"/></svg><span>'+x.t+'</span>'+(x.u?'':SOON),x.t,x.t,'nosotros-'+x.t.toLowerCase())});
 document.getElementById('col').innerHTML=h;
-var d=new Date(),y=d.getFullYear()-2012;if(d<new Date(d.getFullYear(),8,30))y--;
-document.querySelectorAll('[data-years]').forEach(function(e){e.textContent=y})})();
+function years(){var d=new Date(),y=d.getFullYear()-2012;if(d<new Date(d.getFullYear(),8,30))y--;document.querySelectorAll('[data-years]').forEach(function(e){e.textContent=y})}
+var T=document.title,M=document.querySelector('meta[name=description]'),MD=M.content;
+var TE='About us, Soda La Bomba',MDE='A family business with years of experience on Route 4 in Horquetas de Sarapiquí. Soda La Bomba, Pollos La Bomba and Papea.';
+function apply(){document.documentElement.lang=L;document.querySelectorAll('[data-en]').forEach(function(e){if(e.dataset.es===undefined)e.dataset.es=e.innerHTML;e.innerHTML=L==='en'?e.dataset.en:e.dataset.es});
+document.querySelectorAll('.t').forEach(function(t){var b=t.dataset;t.setAttribute('aria-label',(L==='en'?b.ael:b.ales)+(t.classList.contains('off')?(L==='en'?' (coming soon)':' (próximamente)'):''))});
+document.getElementById('b-es').setAttribute('aria-pressed',L==='es');document.getElementById('b-en').setAttribute('aria-pressed',L==='en');
+document.title=L==='en'?TE:T;M.content=L==='en'?MDE:MD;years()}
+function setLang(l){L=l;try{localStorage.setItem(LK,l)}catch(e){}apply()}
+document.getElementById('b-es').addEventListener('click',function(){setLang('es')});document.getElementById('b-en').addEventListener('click',function(){setLang('en')});
+function track(n){try{if(window.goatcounter&&window.goatcounter.count)window.goatcounter.count({path:n,title:n,event:true})}catch(e){}}
+document.addEventListener('click',function(e){var a=e.target.closest('[data-track]');if(a)track(a.dataset.track)});
+apply()})();
 </script>
 <script data-goatcounter="https://sodalabomba.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body></html>
