@@ -2,13 +2,13 @@
 <html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Quiénes somos, Soda La Bomba</title>
 <meta name="description" content="Empresa familiar con 14 años de experiencia en la Ruta 4, Horquetas de Sarapiquí. Soda La Bomba, Pollos La Bomba y Papea.">
-<meta name="theme-color" content="#171212">
+<meta name="theme-color" content="#B81622">
 <link rel="canonical" href="https://www.sodalabomba.com/nosotros/">
 <link rel="icon" href="../favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;700;800;900&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#171212;--fg:#FFFFFF;--btn:#F3A62C;--btn-ink:#171212;--card:#2a2222;--soft:#2a2222}
+:root{--bg:#B81622;--fg:#FFFFFF;--btn:#F3A62C;--btn-ink:#171212;--card:#8F0F1A;--soft:#8F0F1A}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--fg);font:400 18px/1.55 'Figtree',system-ui,sans-serif}
 a{color:inherit}
@@ -63,13 +63,16 @@ footer{text-align:center;font-weight:800;padding:0 20px 36px}
 <div class="row"><a class="b" href="https://www.google.com/maps/place/La+Bomba/@10.3339795,-83.9500609,17z/data=!4m6!3m5!1s0x8fa097240bc8c507:0xffa580b8cf09d520!8m2!3d10.3339795!4d-83.9500609" target="_blank" rel="noopener">Cómo llegar</a></div>
 
 <div id="redes-wrap" hidden><h2>Síguenos</h2><div class="row" id="redes"></div></div>
+<div id="res-wrap" hidden><h2>Tu opinión cuenta</h2><p>Tu reseña en Google ayuda a que más gente nos encuentre en la ruta.</p><div class="row"><a class="b" id="res" href="#" target="_blank" rel="noopener">Déjanos tu reseña en Google</a></div></div>
 </main>
 <footer>Soda La Bomba · <a href="../privacidad/index.html">Aviso de privacidad</a></footer>
 <script>
 /* Enlaces de redes: se activan al escribir la dirección. Vacío = no se muestra. */
 var REDES=[{t:'Instagram',u:''},{t:'Facebook',u:''}];
+var RESENA='https://search.google.com/local/writereview?placeid=ChIJB8XICySXoI8RINUJz7iApf8'; /* enlace de reseña en Google; vacío = no se muestra */
 (function(){var h='';REDES.forEach(function(x){if(x.u)h+='<a class="b l" href="'+x.u+'" target="_blank" rel="noopener">'+x.t+'</a>'});
 if(h){document.getElementById('redes').innerHTML=h;document.getElementById('redes-wrap').hidden=false}
+if(RESENA){var r=document.getElementById('res');r.href=RESENA;document.getElementById('res-wrap').hidden=false}
 var d=new Date(),y=d.getFullYear()-2012;if(d<new Date(d.getFullYear(),8,30))y--;
 document.querySelectorAll('[data-years]').forEach(function(e){e.textContent=y})})();
 </script>
