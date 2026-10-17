@@ -71,10 +71,9 @@ footer.bar a,footer.bar button{color:inherit;font:inherit;font-weight:800;backgr
 .logo .l-tapa{top:0;transform-origin:100% 100%;animation:lid 8s cubic-bezier(.3,.7,.3,1) infinite}
 .logo .l-plato{top:51.36%}.logo .l-texto{top:56.79%}
 .logo .glow{position:absolute;left:50%;top:52.5%;width:150%;height:34%;transform:translate(-50%,-50%);background:radial-gradient(ellipse at center,rgba(255,196,90,.85),rgba(243,166,44,.35) 40%,transparent 68%);opacity:0;animation:glow 8s ease-in-out infinite;pointer-events:none}
-.logo .steam{position:absolute;left:-10%;width:120%;top:-14%;height:68%;opacity:0;overflow:visible;animation:glow 8s ease-in-out infinite;pointer-events:none}
-.logo .steam path{fill:none;stroke:#fff;stroke-linecap:round;stroke-dasharray:.62 1.6;stroke-dashoffset:.62;opacity:0;filter:blur(1.2px);animation:wisp 3.4s ease-in-out infinite}
-.logo .steam path:nth-child(1){animation-delay:0s}.logo .steam path:nth-child(2){animation-delay:.7s}.logo .steam path:nth-child(3){animation-delay:1.4s}.logo .steam path:nth-child(4){animation-delay:2.1s}.logo .steam path:nth-child(5){animation-delay:2.8s}.logo .steam path:nth-child(6){animation-delay:1.1s}.logo .steam path:nth-child(7){animation-delay:1.9s}
-@keyframes wisp{0%{stroke-dashoffset:.62;opacity:0}18%{opacity:.8}70%{opacity:.55}100%{stroke-dashoffset:-1.2;opacity:0}}
+.logo .steam{position:absolute;left:0;right:0;top:20%;height:34%;opacity:0;animation:glow 8s ease-in-out infinite;pointer-events:none}
+.logo .steam i{position:absolute;bottom:0;width:34%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.32),rgba(255,255,255,0) 68%);filter:blur(4px);opacity:0;animation:puff 2.6s ease-out infinite}
+.logo .steam i:nth-child(1){left:6%;animation-delay:0s}.logo .steam i:nth-child(2){left:28%;animation-delay:.5s}.logo .steam i:nth-child(3){left:46%;animation-delay:1.1s}.logo .steam i:nth-child(4){left:62%;animation-delay:1.6s}.logo .steam i:nth-child(5){left:18%;animation-delay:2.1s}
 .logo .sweep{position:absolute;inset:0;pointer-events:none;-webkit-mask:url(img/logo-soda-amarillo.png) center/100% 100% no-repeat;mask:url(img/logo-soda-amarillo.png) center/100% 100% no-repeat;background:linear-gradient(105deg,transparent 42%,rgba(255,255,255,.9) 50%,transparent 58%) 160% 0/260% 100% no-repeat;animation:sweep 8s linear infinite}
 @keyframes lid{0%,9%{transform:none}24%{transform:translateY(-17%) rotate(2.4deg)}30%{transform:translateY(-15%) rotate(2deg)}66%{transform:translateY(-15%) rotate(2deg)}82%,100%{transform:none}}
 @keyframes glow{0%,10%{opacity:0}26%,64%{opacity:1}80%,100%{opacity:0}}
@@ -92,7 +91,7 @@ footer.bar a,footer.bar button{color:inherit;font:inherit;font-weight:800;backgr
 <span class="soon">Muy pronto</span>
 <div class="logo" role="img" aria-label="Soda La Bomba">
 <div class="glow"></div>
-<svg class="steam" viewBox="0 0 168 100" aria-hidden="true"><path pathLength="1" style="stroke-width:1.8" d="M24 100C15 86 33 74 24 60S15 34 24 20S30.3 8 24 0"/><path pathLength="1" style="stroke-width:2.4" d="M46 100C36 86 56 74 46 60S36 34 46 20S53.0 8 46 0"/><path pathLength="1" style="stroke-width:1.6" d="M70 100C61 86 79 74 70 60S61 34 70 20S76.3 8 70 0"/><path pathLength="1" style="stroke-width:2.5" d="M94 100C83 86 105 74 94 60S83 34 94 20S101.7 8 94 0"/><path pathLength="1" style="stroke-width:1.7" d="M118 100C109 86 127 74 118 60S109 34 118 20S124.3 8 118 0"/><path pathLength="1" style="stroke-width:2.2" d="M142 100C132 86 152 74 142 60S132 34 142 20S149.0 8 142 0"/><path pathLength="1" style="stroke-width:1.5" d="M10 100C2 86 18 74 10 60S2 34 10 20S15.6 8 10 0"/></svg>
+<div class="steam"><i></i><i></i><i></i><i></i><i></i></div>
 <img class="l-plato" src="img/soda-plato.png" width="700" height="40" alt="">
 <img class="l-tapa" src="img/soda-tapa.png" width="700" height="378" alt="">
 <img class="l-texto" src="img/soda-texto.png" width="700" height="318" alt="">
