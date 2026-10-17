@@ -604,7 +604,7 @@ function restore(o){if(!o)return;Object.keys(o.w||{}).forEach(function(k){var v=
 function pq(x){var n=0;Object.keys(qty).forEach(function(k){if(k.indexOf(x[0]+'|')===0)n+=qty[k]});return n}
 function okO(o,x){return !(x.ex&&x.ex.indexOf(o.lb)<0)}
 function ao(x){return x.o.filter(function(o){return okO(o,x)})}
-function priceLine(x){if(x.W)return (x.CP?S('desde')+' ':'')+fm(x.W)+' / kg';var A=ao(x);if(!A.length)return '';if(A.length>1){var ps=A.map(function(o){return o.pr}).filter(function(v){return v!=null});if(!ps.length)return S('Precio por confirmar');var mn=Math.min.apply(null,ps),mx=Math.max.apply(null,ps);return (mn<mx?S('desde')+' ':'')+fm(mn)}var o=A[0];return (o.lb?S(o.lb)+' ':'')+(o.pr==null?S('Precio por confirmar'):fm(o.pr))}
+function priceLine(x){if(x.W)return (x.CP?S('desde')+' ':'')+fm(x.W)+' / kg';var A=ao(x);if(!A.length)return '';if(A.length>1){var ps=A.map(function(o){return o.pr}).filter(function(v){return v!=null});if(!ps.length)return S('Precio por confirmar');if(ps.length===1&&ps.length<A.length){var po=A.filter(function(o){return o.pr!=null})[0];return (po.lb?S(po.lb)+' ':'')+fm(po.pr)}var mn=Math.min.apply(null,ps),mx=Math.max.apply(null,ps);return (mn<mx?S('desde')+' ':'')+fm(mn)}var o=A[0];return (o.lb?S(o.lb)+' ':'')+(o.pr==null?S('Precio por confirmar'):fm(o.pr))}
 function ctlHtml(x){
  var A=ao(x);
  if(!x.W&&!A.length)return '<div class="np">'+S('Consúltalo en las notas o por WhatsApp')+'</div>';
