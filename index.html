@@ -356,6 +356,8 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <div class="hd1">
 <a class="hlogo" href="#top" data-up="1" aria-label="Soda La Bomba, volver al inicio" data-en-aria="Soda La Bomba, back to the top"><img src="img/logo-soda-rojo.png" width="700" height="736" alt=""></a>
 <span class="hname" aria-hidden="true">Soda La Bomba</span>
+<button type="button" class="hsb" id="hsb" aria-label="Buscar en el menú" data-en-aria="Search the menu"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5L21 21"/></svg></button>
+<div class="hq" id="hq" role="search" hidden><input id="hqi" type="text" enterkeyhint="search" autocomplete="off" aria-label="Buscar en el menú" data-en-aria="Search the menu" placeholder="Buscar en el menú" data-en-ph="Search the menu"><button type="button" id="hqx" aria-label="Cerrar búsqueda" data-en-aria="Close search"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg></button></div>
 
 </div>
 </header>
@@ -910,6 +912,16 @@ restore(get(sessionStorage,KS));applyLang();setInterval(status,60000);
 setTimeout(function(){var hm=/^#(?:menu-|s-)(\d+)$/.exec(location.hash);var t=hm&&document.getElementById('s-'+hm[1]);if(t)t.scrollIntoView();else if(location.hash&&document.getElementById(location.hash.slice(1)))document.getElementById(location.hash.slice(1)).scrollIntoView()},60);
 </script>
 <script>
+(function(){var h=document.getElementById('top'),b=document.getElementById('hsb'),w=document.getElementById('hq'),i=document.getElementById('hqi'),x=document.getElementById('hqx'),q=document.getElementById('q'),r=document.getElementById('mres');if(!h||!b||!w||!i||!x||!q||!r)return;
+function op(){h.classList.add('bq');w.hidden=false;b.hidden=true;i.value=q.value;i.focus()}
+function cl(){h.classList.remove('bq');w.hidden=true;b.hidden=false;if(q.value){q.value='';i.value='';q.dispatchEvent(new Event('input'))}}
+b.addEventListener('click',op);
+x.addEventListener('click',function(){cl();b.focus()});
+i.addEventListener('input',function(){var was=!r.hidden;q.value=i.value;q.dispatchEvent(new Event('input'));if(!was&&!r.hidden)r.scrollIntoView()});
+i.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();i.blur()}else if(e.key==='Escape'){cl();b.focus()}});
+q.addEventListener('input',function(){if(i.value!==q.value)i.value=q.value});
+r.addEventListener('click',function(){setTimeout(function(){if(!q.value&&h.classList.contains('bq'))cl()},0)});
+})();
 (function(){var h=document.getElementById('top'),l=document.querySelector('.hero .logo img');if(!h||!l)return;
 if(!('IntersectionObserver' in window)){h.classList.remove('nologo');return}
 new IntersectionObserver(function(e){h.classList.toggle('nologo',e[0].isIntersecting)},{rootMargin:'-57px 0px 0px 0px'}).observe(l)})();
@@ -977,5 +989,5 @@ dlg.addEventListener('close',function(){if(from&&from.focus&&document.contains(f
 .st .zlk{border:1.5px solid #fff;border-radius:999px;padding:0 14px;min-height:38px;font-size:13px;font-weight:800;text-decoration:none;background:rgba(255,255,255,.14);margin:2px 0 2px}.st{align-items:center}
 .topbar .lg button{min-width:44px!important;min-height:44px!important;height:44px!important;border:6px solid transparent!important;background-clip:padding-box!important;background-color:transparent!important;box-shadow:inset 0 0 0 1px rgba(255,255,255,.5)!important;color:#fff!important;font-size:13px!important;font-weight:700!important;border-radius:12px!important;padding:0!important}
 .sites{justify-content:center;gap:6px}.sites a{min-width:44px;justify-content:center;padding:0 8px}.sites img{width:28px;height:28px;border-radius:7px}
-</style><style id="hname">.hd1{position:relative}.hname{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);max-width:calc(100% - 140px);font-weight:800;font-size:19px;line-height:1.1;letter-spacing:.2px;color:#171212;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;pointer-events:none}</style></body>
+</style><style id="hname">.hd1{position:relative}.hname{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);max-width:calc(100% - 140px);font-weight:800;font-size:19px;line-height:1.1;letter-spacing:.2px;color:#171212;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;pointer-events:none}</style><style id="hbus">.hlogo{margin-right:0}.hsb{margin-left:auto;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border:0;border-radius:12px;background:transparent;color:#171212;cursor:pointer}.hsb:hover{background:#F1EAE2}.hsb:focus-visible,.hq button:focus-visible{outline:3px solid #B81622;outline-offset:2px}.hq input:focus-visible{outline:0;border-color:#B81622}.hq{display:flex;align-items:center;gap:6px;flex:1;min-width:0;margin-left:8px}.hq input{flex:1;min-width:0;height:44px;font:400 17px var(--body);padding:0 14px;border-radius:999px;border:2px solid #8a7a70;background:#fff;color:#171212}.hq input::placeholder{color:#5a4a4a}.hq button{flex:none;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border:0;border-radius:12px;background:transparent;color:#171212;cursor:pointer}.hsb[hidden],.hq[hidden]{display:none!important}.hd.bq .hname{display:none}#mres{scroll-margin-top:72px}</style></body>
 </html>
