@@ -42,12 +42,32 @@ h1,h2{font-weight:800;text-transform:uppercase;letter-spacing:.01em;margin:0;lin
 .hero h1{font-size:clamp(30px,6.4vw,64px);max-width:16em;color:var(--gold)}
 .hero h1 em{font-style:normal;color:#fff}
 .lema{font-size:clamp(17px,2.4vw,22px);font-weight:700;margin:0;color:#fff}
-.way{width:min(560px,92%);height:auto;overflow:visible}
-.way .road{stroke:#F3A62C;opacity:.55;stroke-width:3;stroke-linecap:round;stroke-dasharray:2 12;fill:none}
-.way .trip{fill:var(--gold);animation:trip 3.4s ease-in-out infinite}
-.way .pin{fill:#171212}.way .home{fill:none;stroke:var(--gold);stroke-width:3;stroke-linejoin:round;stroke-linecap:round}
-@keyframes trip{0%{transform:translateX(0);opacity:0}12%{opacity:1}88%{opacity:1}100%{transform:translateX(404px);opacity:0}}
-@media(prefers-reduced-motion:reduce){.way .trip{animation:none;transform:translateX(202px)}}
+.scene{width:min(760px,96vw);height:auto;display:block;overflow:visible;margin:6px 0 0}
+.scene .dash{stroke-dasharray:18 16;animation:dash .7s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-34}}
+.scene .ride{animation:ride 6.4s cubic-bezier(.45,.05,.3,1) infinite;opacity:0}
+@keyframes ride{0%{transform:translateX(0);opacity:0}5%{opacity:1}62%{transform:translateX(292px);opacity:1}80%{transform:translateX(292px);opacity:1}88%{transform:translateX(292px);opacity:0}100%{transform:translateX(0);opacity:0}}
+.scene .bob{animation:bob .32s ease-in-out infinite alternate}
+@keyframes bob{to{transform:translateY(-2px)}}
+.scene .wheel{transform-box:fill-box;transform-origin:center;animation:spin .45s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.scene .speed{animation:speed 6.4s linear infinite;opacity:0}
+@keyframes speed{0%,6%{opacity:0;transform:translateX(0)}12%{opacity:.9}20%{opacity:.4;transform:translateX(-10px)}28%{opacity:.9;transform:translateX(0)}36%{opacity:.4;transform:translateX(-10px)}44%{opacity:.9;transform:translateX(0)}52%{opacity:.4;transform:translateX(-10px)}60%,100%{opacity:0}}
+.scene .steam{animation:steam 1.6s ease-out infinite;opacity:0}
+.scene .steam.b{animation-delay:.55s}
+@keyframes steam{0%{opacity:0;transform:translateY(4px)}30%{opacity:.9}100%{opacity:0;transform:translateY(-16px)}}
+.scene .ring{transform-box:fill-box;transform-origin:center;animation:ring 6.4s ease-out infinite;opacity:0}
+@keyframes ring{0%,60%{opacity:0;transform:scale(.2)}62%{opacity:.95}78%{opacity:0;transform:scale(3.2)}100%{opacity:0}}
+.scene .ok{transform-box:fill-box;transform-origin:center;animation:ok 6.4s ease-out infinite;opacity:0}
+@keyframes ok{0%,60%{opacity:0;transform:scale(0) translateY(10px)}67%{opacity:1;transform:scale(1.2) translateY(0)}71%{transform:scale(1)}86%{opacity:1;transform:scale(1)}92%,100%{opacity:0;transform:scale(1)}}
+.scene .lamp{animation:lamp 6.4s ease-in-out infinite}
+@keyframes lamp{0%,62%{fill:#171212}66%,86%{fill:#fff}92%,100%{fill:#171212}}
+.soon::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--gold);margin-right:9px;vertical-align:1px;animation:blink 1.2s ease-in-out infinite}
+@keyframes blink{50%{opacity:.25}}
+.hero>*{animation:up .8s cubic-bezier(.2,.7,.2,1) both}
+.hero>:nth-child(2){animation-delay:.1s}.hero>:nth-child(3){animation-delay:.25s}.hero>:nth-child(4){animation-delay:.45s}.hero>:nth-child(5){animation-delay:.6s}
+@keyframes up{from{opacity:0;transform:translateY(18px)}}
+@media(prefers-reduced-motion:reduce){.scene *,.hero>*,.soon::before{animation:none!important}.scene .ride{opacity:1;transform:translateX(150px)}.scene .ok{opacity:1}}
 .sec{color:var(--gold);font-size:clamp(24px,4vw,34px);text-align:center;padding:44px 20px 22px;letter-spacing:.06em}
 .info{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:#8f1019}
 .info>div{background:var(--bg);padding:26px 24px;text-align:center}
@@ -71,7 +91,29 @@ footer.bar a,footer.bar button{color:inherit;font:inherit;font-weight:800;backgr
 <span class="soon">Muy pronto</span>
 <div class="logo"><img src="img/logo-soda-amarillo.png" width="700" height="736" alt="Soda La Bomba"></div>
 <h1 id="t-h" >Estamos trabajando para llevarte <em>el mejor servicio</em> hasta la puerta de tu casa</h1>
-<svg class="way" viewBox="0 0 460 70" role="img" aria-label="De la Soda La Bomba hasta la puerta de tu casa"><path class="road" d="M40 38H420"/><circle class="pin" cx="30" cy="38" r="12"/><circle cx="30" cy="38" r="4.5" fill="#fff"/><path class="home" d="M410 42V20l18-14 18 14v22zM436 42V30h-16v12"/><circle class="trip" cx="46" cy="38" r="7"/></svg>
+<svg class="scene" viewBox="0 0 640 210" role="img" aria-label="Un repartidor lleva la comida desde la Soda La Bomba hasta la puerta de una casa" focusable="false">
+<rect x="0" y="170" width="640" height="26" rx="13" fill="#171212"/>
+<line class="dash" x1="14" y1="183" x2="626" y2="183" stroke="#F3A62C" stroke-width="3" stroke-linecap="round"/>
+<g><rect x="22" y="96" width="104" height="74" fill="#F3A62C"/><rect x="14" y="80" width="120" height="20" rx="3" fill="#fff"/><rect x="14" y="80" width="24" height="20" fill="#171212"/><rect x="62" y="80" width="24" height="20" fill="#171212"/><rect x="110" y="80" width="24" height="20" fill="#171212"/><rect x="38" y="118" width="26" height="52" rx="3" fill="#171212"/><rect x="76" y="114" width="36" height="26" rx="3" fill="#171212"/><text x="94" y="132" text-anchor="middle" font-family="Figtree,system-ui,sans-serif" font-weight="800" font-size="13" fill="#F3A62C">24h</text></g>
+<g><rect x="530" y="108" width="82" height="62" fill="#F3A62C"/><path d="M518 110L571 62L624 110Z" fill="#171212"/><rect x="590" y="70" width="12" height="22" fill="#171212"/><rect x="558" y="128" width="26" height="42" rx="3" fill="#171212"/><circle class="lamp" cx="576" cy="150" r="2.6"/><rect x="540" y="122" width="14" height="14" rx="2" fill="#171212"/></g>
+<circle class="ring" cx="571" cy="150" r="14" fill="none" stroke="#fff" stroke-width="3"/>
+<g class="ok"><circle cx="571" cy="34" r="17" fill="#fff"/><path d="M562 34l6 6 11-13" fill="none" stroke="#B81622" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g transform="translate(128 0)"><g class="ride">
+<g class="speed" stroke="#fff" stroke-width="3" stroke-linecap="round"><line x1="-18" y1="112" x2="-40" y2="112"/><line x1="-14" y1="126" x2="-46" y2="126"/><line x1="-12" y1="140" x2="-36" y2="140"/></g>
+<g class="bob">
+<g class="steam" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"><path d="M-2 92c-4-5 4-8 0-13"/></g>
+<g class="steam b" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"><path d="M10 92c-4-5 4-8 0-13"/></g>
+<rect x="-12" y="94" width="38" height="30" rx="4" fill="#F3A62C" stroke="#171212" stroke-width="3"/><rect x="-12" y="104" width="38" height="5" fill="#B81622"/>
+<rect x="26" y="126" width="48" height="18" rx="7" fill="#F3A62C"/><rect x="20" y="119" width="30" height="9" rx="4" fill="#171212"/>
+<path d="M72 126L76 104L88 102" fill="none" stroke="#171212" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="76" y1="110" x2="82" y2="152" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+<line x1="40" y1="120" x2="52" y2="98" stroke="#fff" stroke-width="10" stroke-linecap="round"/><line x1="52" y1="100" x2="80" y2="106" stroke="#fff" stroke-width="5" stroke-linecap="round"/><line x1="40" y1="122" x2="58" y2="144" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+<circle cx="54" cy="88" r="9" fill="#F3A62C"/><path d="M45 88a9 9 0 0 1 18 0z" fill="#171212"/>
+</g>
+<g class="wheel"><circle cx="20" cy="156" r="14" fill="#171212" stroke="#fff" stroke-width="3"/><line x1="20" y1="144" x2="20" y2="168" stroke="#fff" stroke-width="2.5"/><line x1="8" y1="156" x2="32" y2="156" stroke="#fff" stroke-width="2.5"/></g>
+<g class="wheel"><circle cx="82" cy="156" r="14" fill="#171212" stroke="#fff" stroke-width="3"/><line x1="82" y1="144" x2="82" y2="168" stroke="#fff" stroke-width="2.5"/><line x1="70" y1="156" x2="94" y2="156" stroke="#fff" stroke-width="2.5"/></g>
+</g></g>
+</svg>
 <p class="lema">La Soda 24 Horas de la Ruta 4</p>
 </section>
 <h2 class="sec" id="t-info">Información</h2>
