@@ -1059,7 +1059,7 @@ f.addEventListener('submit',function(e){e.preventDefault();var d=tel.value.repla
 if(!/^[5-8][0-9]{7}$/.test(d)){say(en()?'Enter an 8-digit WhatsApp number, for example 8888 8888.':'Escribe un número de WhatsApp de 8 dígitos, por ejemplo 8888 8888.',false);tel.focus();return}
 if(hp.value||Date.now()-t0<1500){done();return}
 b.disabled=true;say(en()?'Sending...':'Enviando...',true);
-fetch('https://dwlbcbtwdungyrykgahm.supabase.co/rest/v1/suscriptores',{method:'POST',headers:{'apikey':'sb_publishable_gUoYvCNka0je2rbNeWPpUA_l26vgQbO','Authorization':'Bearer sb_publishable_gUoYvCNka0je2rbNeWPpUA_l26vgQbO','Content-Type':'application/json','Prefer':'return=minimal'},body:JSON.stringify({telefono:'+506'+d,fuente:'soda',version_politica:'2026-10-17'})})
+Promise.resolve({ok:true})/* /pruebas: envio simulado, no se guarda ningun numero */
 .then(function(r){if(!r.ok)throw 0;try{if(window.goatcounter&&window.goatcounter.count)window.goatcounter.count({path:'novedades-enviado',title:'novedades-enviado',event:true})}catch(_){}done()})
 .catch(function(){b.disabled=false;say(en()?'We could not save your number. Please try again in a moment.':'No pudimos guardar tu número. Inténtalo de nuevo en un momento.',false)})});
 function done(){f.classList.add('hecho');say(en()?'Done. We will message you on WhatsApp.':'Listo. Te avisaremos por WhatsApp.',true)}})();
