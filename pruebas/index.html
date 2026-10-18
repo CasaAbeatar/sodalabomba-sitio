@@ -276,7 +276,19 @@ section.cat[id],.pap{scroll-margin-top:calc(var(--hh,0px) + var(--ch,60px) + 8px
 @media(max-width:759px){.hero{padding:12px 20px 4px;gap:8px}.logo img{width:150px}.lema{font-size:19px}.tag{font-size:13px}.menu>h2{margin-bottom:4px}.hero .tag{display:none}.disp{margin:-8px auto 8px}.menu>.sub{margin-bottom:10px}}
 .ch{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px}.ch .ct{margin:0}.mth{flex:0 0 72px;width:72px;height:72px;object-fit:cover;border-radius:14px}
 .rdt{display:block;font-weight:400;font-size:13px;line-height:1.35;margin-top:2px;opacity:.9}
-.sh .hh h2{min-width:0;overflow-wrap:break-word}.cl .cdt{font-weight:400;font-size:14px;line-height:1.35;opacity:.85;margin-top:3px}</style>
+.sh .hh h2{min-width:0;overflow-wrap:break-word}.cl .cdt{font-weight:400;font-size:14px;line-height:1.35;opacity:.85;margin-top:3px}.novs{padding:36px 20px;text-align:center}
+.nov{width:min(300px,88vw);display:flex;flex-direction:column;align-items:center;gap:7px;text-align:center;margin:0 auto}
+.nov label{font-weight:800;font-size:15px}
+.nov .row{display:flex;gap:6px;align-items:stretch;width:100%;justify-content:center}
+.nov input[type=tel]{flex:1 1 0;min-width:0;width:0;min-height:42px;border-radius:10px;padding:0 10px;font:700 16px var(--body);text-align:center}
+.nov button{flex:none;min-height:42px;padding:0 14px;border:0;border-radius:10px;font:800 14px var(--body);cursor:pointer;white-space:nowrap}
+.nov button:disabled{opacity:.6;cursor:default}
+.nov .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.nov .msg{margin:0;font-weight:700;font-size:14px}.nov .msg:empty{display:none}
+.nov .fine{margin:0;font-size:12px;line-height:1.4}
+.nov.hecho .row,.nov.hecho label,.nov.hecho .fine{display:none}.nov.hecho .msg{font-size:20px}
+.novs{background:#fff}.nov{color:#171212}.nov label{color:#B81622}.nov input[type=tel]{border:2px solid #171212;color:#171212;background:#FFF6E0}.nov button{background:#B81622;color:#fff}.nov .fine a{color:#171212}.nov .msg.err{color:#8f1019}.nov.hecho .msg{color:#B81622}
+.info .novs{padding:20px 0 0;background:none}</style>
 <link rel="preconnect" href="https://casaabeatar.github.io" crossorigin>
 <link rel="stylesheet" href="https://casaabeatar.github.io/carrito-la-bomba/v1/carrito.css">
 <style id="hib">
@@ -408,7 +420,16 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 </section>
 
 <section class="info" id="info" aria-label="Datos de la soda">
-<div><h2 data-en="Contact">Contacto</h2><p><a href="tel:+50689825035">8982-5035</a> · <a href="tel:+50685798383">8579-8383</a></p><div class="ib"><a class="btn wa" href="https://wa.me/message/LABL4IYZ6R6LE1" target="_blank" rel="noopener" data-track="info-wa"><svg class="ic" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg><span data-en="Questions on WhatsApp">Consultas por WhatsApp</span></a></div></div>
+<div><h2 data-en="Contact">Contacto</h2><p><a href="tel:+50689825035">8982-5035</a> · <a href="tel:+50685798383">8579-8383</a></p><div class="ib"><a class="btn wa" href="https://wa.me/message/LABL4IYZ6R6LE1" target="_blank" rel="noopener" data-track="info-wa"><svg class="ic" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg><span data-en="Questions on WhatsApp">Consultas por WhatsApp</span></a></div><div class="novs" aria-labelledby="t-nov">
+<form class="nov" id="nov" novalidate>
+<label id="t-nov" for="tel" data-en="Get offers and news by WhatsApp">Recibe ofertas y novedades por WhatsApp</label>
+<div class="row"><input id="tel" name="tel" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="8888 8888" maxlength="17" aria-describedby="fine"><button type="submit" data-en="Keep me posted">Quiero enterarme</button></div>
+<input class="hp" name="web" tabindex="-1" autocomplete="off" aria-hidden="true">
+<p class="msg" role="status" aria-live="polite"></p>
+<p class="fine" id="fine" data-en="By sending you accept the &lt;a href=&quot;privacidad/index.html&quot;&gt;Privacy policy&lt;/a&gt;">Al enviar aceptas la <a href="privacidad/index.html">Política de privacidad</a></p>
+</form>
+</div>
+</div>
 <div><h2 data-en="Hours">Horarios</h2><p data-en="&lt;b&gt;In-store:&lt;/b&gt; 24 hours, 7 days a week&lt;br&gt;&lt;b&gt;Express:&lt;/b&gt; every day from 7 a.m. to 10 p.m."><b>Local:</b> las 24 horas los 7 días de la semana<br><b>Express:</b> todos los días de 7 a. m. a 10 p. m.</p></div>
 <div><h2 data-en="Where we are">Dónde estamos</h2><p data-en="On Route 4 in Horquetas de Sarapiquí.&lt;br&gt;Next to the JyJ gas station.">Sobre la Ruta 4 en Horquetas de Sarapiquí.<br>A un costado de la Gasolinera JyJ.</p><div class="ib"><a class="btn gold" href="https://maps.app.goo.gl/78mgMANsBCJFxBLe8" target="_blank" rel="noopener" data-track="info-maps"><svg class="ic" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg><span>Google Maps</span></a><a class="btn line" href="https://waze.com/ul?ll=10.3339795,-83.9500609&amp;navigate=yes&amp;zoom=17" target="_blank" rel="noopener" data-track="info-waze"><svg class="ic" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg><span>Waze</span></a></div></div>
 </section>
@@ -1030,5 +1051,18 @@ p.addEventListener('click',function(e){if(e.target.closest('a'))st(false)});
 .pay{border-color:#B81622!important;background:#FBE9EA!important}
 section.fam{background:#8E101A!important}
 #pol .bd,#zona .bd,p.bd{background:#8E101A!important}
-</style></body>
+</style><script>
+(function(){var f=document.getElementById('nov');if(!f)return;function en(){return document.documentElement.lang==='en'}var t0=Date.now(),tel=f.querySelector('[name=tel]'),hp=f.querySelector('[name=web]'),b=f.querySelector('button'),m=f.querySelector('.msg');
+tel.addEventListener('input',function(){var d=tel.value.replace(/\D/g,'');if(d.length>11)d=d.slice(0,11);if(d.length===11&&d.indexOf('506')===0)d=d.slice(3);tel.value=d.length>4?d.slice(0,4)+' '+d.slice(4,8):d});
+function say(x,ok){m.textContent=x;m.className='msg '+(ok?'ok':'err')}
+f.addEventListener('submit',function(e){e.preventDefault();var d=tel.value.replace(/\D/g,'');if(d.length===11&&d.indexOf('506')===0)d=d.slice(3);
+if(!/^[5-8][0-9]{7}$/.test(d)){say(en()?'Enter an 8-digit WhatsApp number, for example 8888 8888.':'Escribe un número de WhatsApp de 8 dígitos, por ejemplo 8888 8888.',false);tel.focus();return}
+if(hp.value||Date.now()-t0<1500){done();return}
+b.disabled=true;say(en()?'Sending...':'Enviando...',true);
+Promise.resolve({ok:true})/* /pruebas: envio simulado, no se guarda ningun numero */
+.then(function(r){if(!r.ok)throw 0;try{if(window.goatcounter&&window.goatcounter.count)window.goatcounter.count({path:'novedades-enviado',title:'novedades-enviado',event:true})}catch(_){}done()})
+.catch(function(){b.disabled=false;say(en()?'We could not save your number. Please try again in a moment.':'No pudimos guardar tu número. Inténtalo de nuevo en un momento.',false)})});
+function done(){f.classList.add('hecho');say(en()?'Done. We will message you on WhatsApp.':'Listo. Te avisaremos por WhatsApp.',true)}})();
+</script>
+</body>
 </html>
