@@ -82,18 +82,16 @@ footer.bar a,footer.bar button{color:inherit;font:inherit;font-weight:800;backgr
 .hero h1 .w{display:inline-block;opacity:0;filter:blur(10px);transform:translateY(14px);animation:wd .9s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:calc(.5s + var(--i)*.09s)}
 @keyframes wd{to{opacity:1;filter:none;transform:none}}
 @media(prefers-reduced-motion:reduce){.hero *,.soon::before{animation:none!important}.hero h1 .w{opacity:1;filter:none;transform:none}.logo .glow,.logo .steam,.logo .sweep,.embers{display:none}}
-.nov{width:min(460px,92vw);display:flex;flex-direction:column;gap:8px;text-align:center;margin-top:6px}
-.nov label{font-weight:800;font-size:clamp(17px,2.4vw,20px);color:var(--gold)}
-.nov .row{display:flex;gap:8px;align-items:stretch}
-.nov .pre{display:inline-flex;align-items:center;padding:0 12px;background:#8f1019;color:#fff;border-radius:12px;font-weight:700}
-.nov input[type=tel]{flex:1;min-width:0;min-height:48px;border-radius:12px;border:2px solid transparent;padding:0 14px;font:700 18px var(--body);color:#171212;background:#fff}
-.nov button{min-height:48px;padding:0 16px;border:0;border-radius:12px;background:var(--gold);color:#171212;font:800 16px var(--body);cursor:pointer}
+.nov{width:min(300px,88vw);display:flex;flex-direction:column;align-items:center;gap:7px;text-align:center;margin:2px auto 0}
+.nov label{font-weight:800;font-size:15px;color:var(--gold)}
+.nov .row{display:flex;gap:6px;align-items:stretch;width:100%;justify-content:center}
+.nov input[type=tel]{flex:1 1 0;min-width:0;width:0;min-height:42px;border-radius:10px;border:2px solid transparent;padding:0 10px;font:700 16px var(--body);color:#171212;background:#fff;text-align:center}
+.nov button{flex:none;min-height:42px;padding:0 14px;border:0;border-radius:10px;background:var(--gold);color:#171212;font:800 14px var(--body);cursor:pointer;white-space:nowrap}
 .nov button:disabled{opacity:.6;cursor:default}
 .nov .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
-.nov .msg{min-height:1.4em;margin:0;font-weight:700;font-size:15px}.nov .msg.err{color:#FFE9B8}
-.nov .fine{margin:0;font-size:13px;line-height:1.45;color:#fff;opacity:.92}
+.nov .msg{min-height:0;margin:0;font-weight:700;font-size:14px}.nov .msg:empty{display:none}.nov .msg.err{color:#FFE9B8}
+.nov .fine{margin:0;font-size:12px;line-height:1.4;color:#fff;opacity:.92}
 .nov.hecho .row,.nov.hecho label,.nov.hecho .fine{display:none}.nov.hecho .msg{font-size:20px;color:var(--gold)}
-@media(max-width:420px){.nov .row{flex-wrap:wrap}.nov .pre{display:none}.nov button{flex:1 1 100%}}
 </style>
 </head>
 <body>
