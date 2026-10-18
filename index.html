@@ -82,6 +82,18 @@ footer.bar a,footer.bar button{color:inherit;font:inherit;font-weight:800;backgr
 .hero h1 .w{display:inline-block;opacity:0;filter:blur(10px);transform:translateY(14px);animation:wd .9s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:calc(.5s + var(--i)*.09s)}
 @keyframes wd{to{opacity:1;filter:none;transform:none}}
 @media(prefers-reduced-motion:reduce){.hero *,.soon::before{animation:none!important}.hero h1 .w{opacity:1;filter:none;transform:none}.logo .glow,.logo .steam,.logo .sweep,.embers{display:none}}
+.nov{width:min(460px,92vw);display:flex;flex-direction:column;gap:8px;text-align:center;margin-top:6px}
+.nov label{font-weight:800;font-size:clamp(17px,2.4vw,20px);color:var(--gold)}
+.nov .row{display:flex;gap:8px;align-items:stretch}
+.nov .pre{display:inline-flex;align-items:center;padding:0 12px;background:#8f1019;color:#fff;border-radius:12px;font-weight:700}
+.nov input[type=tel]{flex:1;min-width:0;min-height:48px;border-radius:12px;border:2px solid transparent;padding:0 14px;font:700 18px var(--body);color:#171212;background:#fff}
+.nov button{min-height:48px;padding:0 16px;border:0;border-radius:12px;background:var(--gold);color:#171212;font:800 16px var(--body);cursor:pointer}
+.nov button:disabled{opacity:.6;cursor:default}
+.nov .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.nov .msg{min-height:1.4em;margin:0;font-weight:700;font-size:15px}.nov .msg.err{color:#FFE9B8}
+.nov .fine{margin:0;font-size:13px;line-height:1.45;color:#fff;opacity:.92}
+.nov.hecho .row,.nov.hecho label,.nov.hecho .fine{display:none}.nov.hecho .msg{font-size:20px;color:var(--gold)}
+@media(max-width:420px){.nov .row{flex-wrap:wrap}.nov .pre{display:none}.nov button{flex:1 1 100%}}
 </style>
 </head>
 <body>
@@ -99,6 +111,13 @@ footer.bar a,footer.bar button{color:inherit;font:inherit;font-weight:800;backgr
 </div>
 <h1 id="t-h" ><span class="w" style="--i:0">Estamos</span> <span class="w" style="--i:1">trabajando</span> <span class="w" style="--i:2">para</span> <span class="w" style="--i:3">llevarte</span> <em><span class="w" style="--i:4">el</span> <span class="w" style="--i:5">mejor</span> <span class="w" style="--i:6">servicio</span></em> <span class="w" style="--i:7">hasta</span> <span class="w" style="--i:8">la</span> <span class="w" style="--i:9">puerta</span> <span class="w" style="--i:10">de</span> <span class="w" style="--i:11">tu</span> <span class="w" style="--i:12">casa</span></h1>
 <p class="lema">La Soda 24 Horas de la Ruta 4</p>
+<form class="nov" id="nov" novalidate>
+<label for="tel">Recibe ofertas y novedades por WhatsApp</label>
+<div class="row"><span class="pre" aria-hidden="true">+506</span><input id="tel" name="tel" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="8888 8888" maxlength="17" aria-describedby="fine"><button type="submit">Quiero enterarme</button></div>
+<input class="hp" name="web" tabindex="-1" autocomplete="off" aria-hidden="true">
+<p class="msg" role="status" aria-live="polite"></p>
+<p class="fine" id="fine">Al enviar tu número aceptas recibir ofertas y novedades de Soda La Bomba y Pollos La Bomba por WhatsApp. Puedes darte de baja cuando quieras escribiendo BAJA. <a href="privacidad/index.html">Política de privacidad</a></p>
+</form>
 </section>
 <h2 class="sec" id="t-info">Información</h2>
 <div class="info" id="info">
@@ -123,6 +142,19 @@ rs();for(var i=0;i<(W<600?26:48);i++)P.push(mk(true));addEventListener('resize',
 function f(){x.clearRect(0,0,W,H);for(var i=0;i<P.length;i++){var p=P[i];p.y-=p.v;p.s+=.012;p.x+=Math.sin(p.s)*.25;if(p.y<-10)P[i]=mk(false);
 var t=Math.min(1,p.y/(H*.3),(H-p.y)/40);x.globalAlpha=Math.max(0,p.a*t);x.shadowBlur=8;x.shadowColor='#F3A62C';x.fillStyle=p.w?'#fff':'#F3A62C';x.beginPath();x.arc(p.x,p.y,p.r,0,6.283);x.fill()}requestAnimationFrame(f)}
 f()})();
+</script>
+<script>
+(function(){var f=document.getElementById('nov');if(!f)return;var t0=Date.now(),tel=f.querySelector('[name=tel]'),hp=f.querySelector('[name=web]'),b=f.querySelector('button'),m=f.querySelector('.msg');
+tel.addEventListener('input',function(){var d=tel.value.replace(/\D/g,'');if(d.length>11)d=d.slice(0,11);if(d.length===11&&d.indexOf('506')===0)d=d.slice(3);tel.value=d.length>4?d.slice(0,4)+' '+d.slice(4,8):d});
+function say(x,ok){m.textContent=x;m.className='msg '+(ok?'ok':'err')}
+f.addEventListener('submit',function(e){e.preventDefault();var d=tel.value.replace(/\D/g,'');if(d.length===11&&d.indexOf('506')===0)d=d.slice(3);
+if(!/^[5-8][0-9]{7}$/.test(d)){say('Escribe un número de WhatsApp de 8 dígitos, por ejemplo 8888 8888.',false);tel.focus();return}
+if(hp.value||Date.now()-t0<1500){done();return}
+b.disabled=true;say('Enviando...',true);
+fetch('https://dwlbcbtwdungyrykgahm.supabase.co/rest/v1/suscriptores',{method:'POST',headers:{'apikey':'sb_publishable_gUoYvCNka0je2rbNeWPpUA_l26vgQbO','Authorization':'Bearer sb_publishable_gUoYvCNka0je2rbNeWPpUA_l26vgQbO','Content-Type':'application/json','Prefer':'return=minimal'},body:JSON.stringify({telefono:'+506'+d,fuente:'soda',version_politica:'2026-10-17'})})
+.then(function(r){if(!r.ok)throw 0;try{if(window.goatcounter&&window.goatcounter.count)window.goatcounter.count({path:'novedades-enviado',title:'novedades-enviado',event:true})}catch(_){}done()})
+.catch(function(){b.disabled=false;say('No pudimos guardar tu número. Inténtalo de nuevo en un momento.',false)})});
+function done(){f.classList.add('hecho');say('Listo. Te avisaremos por WhatsApp.',true)}})();
 </script>
 <script data-goatcounter="https://sodalabomba.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
