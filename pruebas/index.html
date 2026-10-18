@@ -424,6 +424,15 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <div><h2 data-en="Hours">Horarios</h2><p data-en="&lt;b&gt;In-store:&lt;/b&gt; 24 hours, 7 days a week&lt;br&gt;&lt;b&gt;Express:&lt;/b&gt; every day from 7 a.m. to 10 p.m."><b>Local:</b> las 24 horas los 7 días de la semana<br><b>Express:</b> todos los días de 7 a. m. a 10 p. m.</p></div>
 <div><h2 data-en="Where we are">Dónde estamos</h2><p data-en="On Route 4 in Horquetas de Sarapiquí.&lt;br&gt;Next to the JyJ gas station.">Sobre la Ruta 4 en Horquetas de Sarapiquí.<br>A un costado de la Gasolinera JyJ.</p><div class="ib"><a class="btn gold" href="https://maps.app.goo.gl/78mgMANsBCJFxBLe8" target="_blank" rel="noopener" data-track="info-maps"><svg class="ic" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg><span>Google Maps</span></a><a class="btn line" href="https://waze.com/ul?ll=10.3339795,-83.9500609&amp;navigate=yes&amp;zoom=17" target="_blank" rel="noopener" data-track="info-waze"><svg class="ic" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg><span>Waze</span></a></div></div>
 </section>
+<section class="novs" aria-labelledby="t-nov">
+<form class="nov" id="nov" novalidate>
+<label id="t-nov" for="tel" data-en="Get offers and news by WhatsApp">Recibe ofertas y novedades por WhatsApp</label>
+<div class="row"><input id="tel" name="tel" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="8888 8888" maxlength="17" aria-describedby="fine"><button type="submit" data-en="Keep me posted">Quiero enterarme</button></div>
+<input class="hp" name="web" tabindex="-1" autocomplete="off" aria-hidden="true">
+<p class="msg" role="status" aria-live="polite"></p>
+<p class="fine" id="fine" data-en="By sending you accept the &lt;a href=&quot;privacidad/index.html&quot;&gt;Privacy policy&lt;/a&gt;">Al enviar aceptas la <a href="privacidad/index.html">Política de privacidad</a></p>
+</form>
+</section>
 <nav class="bbar" id="bbar" aria-label="Acciones rápidas"><a class="p" href="#menu" data-en="Menu &amp; order">Menú y pedir</a><a href="#info" data-track="bbar-info" data-en="Info">Información</a></nav>
 <div class="shw" id="shw" hidden></div>
 <div class="toast" id="toast" role="status" hidden></div>
@@ -435,15 +444,6 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <div class="soc" id="soc" role="list"></div>
 </section>
 
-<section class="novs" aria-labelledby="t-nov">
-<form class="nov" id="nov" novalidate>
-<label id="t-nov" for="tel" data-en="Get offers and news by WhatsApp">Recibe ofertas y novedades por WhatsApp</label>
-<div class="row"><input id="tel" name="tel" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="8888 8888" maxlength="17" aria-describedby="fine"><button type="submit" data-en="Keep me posted">Quiero enterarme</button></div>
-<input class="hp" name="web" tabindex="-1" autocomplete="off" aria-hidden="true">
-<p class="msg" role="status" aria-live="polite"></p>
-<p class="fine" id="fine" data-en="By sending you accept the &lt;a href=&quot;privacidad/index.html&quot;&gt;Privacy policy&lt;/a&gt;">Al enviar aceptas la <a href="privacidad/index.html">Política de privacidad</a></p>
-</form>
-</section>
 <section class="fam" aria-labelledby="t-fam">
 <p class="lead" id="t-fam" data-en="We are a family business with &lt;span data-years&gt;14&lt;/span&gt; years of experience on Route 4, Horquetas de Sarapiquí.">Somos una empresa familiar con <span data-years>14</span> años de experiencia en la Ruta 4 Horquetas de Sarapiquí.</p>
 <div class="nos"><p class="ref" id="ref" lang="es"></p></div>
