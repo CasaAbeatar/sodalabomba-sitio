@@ -301,7 +301,9 @@ form label.fc,.frm label.fc{display:flex!important;flex-direction:row!important;
 .shw2{display:flex;justify-content:center;margin:10px 0}.shw2 .btn{min-height:44px;display:inline-flex;align-items:center;gap:8px}
 .fe[hidden]{display:none}.fk{border:0;margin:0;padding:0;display:flex;flex-wrap:wrap;column-gap:20px;row-gap:0}.fk legend{font-weight:800;font-size:15px;padding:0 0 2px;width:100%}
 .rt .hh{margin-bottom:12px}.rt p{margin:0 0 12px;line-height:1.45}.rt .rl2{margin:0 0 14px;padding:0;list-style:none;font-size:15px;line-height:1.5}.rt .btns{display:grid;gap:10px;margin:14px 0 6px}.rt .btns .btn{width:100%;text-align:center}.rt .ox{margin:14px 0 4px;font-size:14px;text-align:center;opacity:.85}.rt .ox a{text-decoration:underline;display:inline;min-height:0;padding:0}
-.kst{justify-content:flex-start}.kst .kb{min-width:56px;min-height:56px;border-radius:12px;border:2px solid currentColor;background:transparent;color:inherit;font:800 26px var(--body);cursor:pointer}.kst .kb[disabled]{opacity:.35;cursor:not-allowed}.kst output{min-width:96px;text-align:center;font:800 22px var(--body)}
+.wrow{cursor:default;padding:6px 8px 6px 12px}.wrow.on{border-color:var(--red);background:rgba(184,22,34,.08)}.wrow.on .rd{border-color:var(--red)}.wrow.on .rd::after{content:'';width:12px;height:12px;border-radius:50%;background:var(--red)}.wsel{flex:1;min-width:0;display:flex;gap:12px;align-items:center;min-height:44px;padding:0;border:0;background:transparent;color:inherit;font:inherit;text-align:left;cursor:pointer}.kst{display:flex;align-items:center;gap:4px;flex:none}.kst .kb{width:44px;height:44px;border-radius:10px;border:2px solid currentColor;background:transparent;color:inherit;font:800 22px var(--body);cursor:pointer;padding:0}.kst .kb[disabled]{opacity:.3;cursor:not-allowed}.kst output{min-width:52px;text-align:center;font:800 18px var(--body)}.cmb{display:flex;align-items:center;gap:4px;flex:none;font-weight:800}.cmb input{width:112px;min-height:44px;padding:6px 10px;border:2px solid #8a7a70;border-radius:10px;font:700 18px var(--body);background:#fff;color:#171212}#cm-n:empty{display:none}
+input.hsx{padding-right:52px!important}input.hsx::-webkit-search-cancel-button{-webkit-appearance:none;appearance:none}.sx{position:absolute;right:2px;top:50%;transform:translateY(-50%);width:44px;height:44px;border:0;background:transparent;padding:0;cursor:pointer;display:flex;align-items:center;justify-content:center}.sx[hidden]{display:none}.sx span{width:28px;height:28px;border-radius:50%;background:#171212;color:#fff;display:flex;align-items:center;justify-content:center}
+#cm-in::-webkit-outer-spin-button,#cm-in::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}#cm-in{-moz-appearance:textfield}
 </style>
 <link rel="preconnect" href="https://casaabeatar.github.io" crossorigin>
 <link rel="stylesheet" href="https://casaabeatar.github.io/carrito-la-bomba/v1/carrito.css">
@@ -467,7 +469,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 
 <section class="rec" aria-labelledby="t-rec">
 <h2 id="t-rec" data-en="Did you enjoy your meal?">¿Te gustó la comida?</h2>
-<p data-en="Tell us on Google. Your review helps more people find us on the road.">Cuéntalo en Google. Tu reseña ayuda a que más personas nos encuentren en la ruta.</p>
+<p data-en="Tell us on Google. Your review helps more people find us.">Cuéntalo en Google. Tu reseña nos ayuda a que más personas nos encuentren.</p>
 <div class="soc" id="soc" role="list"></div>
 </section>
 
@@ -830,6 +832,8 @@ function runSearch(inp,r,pg){
 function doSearch(){runSearch($('#q'),$('#mres'),true)}
 function doBus(){runSearch($('#bq'),$('#bres'),false);$('#bhint').hidden=!$('#bres').hidden}
 $('#q').addEventListener('input',doSearch);
+/* Botón X para borrar la búsqueda y volver al menú */
+(function(){[['q',doSearch],['bq',doBus]].forEach(function(a){var i=document.getElementById(a[0]);if(!i)return;var p=i.parentNode;if(getComputedStyle(p).position==='static')p.style.position='relative';i.classList.add('hsx');var b=document.createElement('button');b.type='button';b.className='sx';b.setAttribute('aria-label',S('Borrar búsqueda'));b.innerHTML='<span aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 2l10 10M12 2L2 12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>';p.insertBefore(b,i.nextSibling);var up=function(){b.hidden=!i.value};up();i.addEventListener('input',up);b.addEventListener('click',function(){i.value='';a[1]();up();try{i.focus({preventScroll:true})}catch(e){i.focus()}})})})();
 (function(){var o=$('#bus'),i=$('#bq'),R=$('#bres'),from=null,IN='header.hd,main,.topbar,.st,.bbar,.cbar';
 function lock(on){document.documentElement.classList.toggle('bopen',on)}
 var sy=0;function ui(){if(o.hidden)return;o.hidden=true;lock(false);i.value='';doBus();window.scrollTo({top:sy,behavior:'instant'});if(from&&from.focus)try{from.focus({preventScroll:true})}catch(e){}}
@@ -908,7 +912,7 @@ function wBody(x,n0){var g=cur.g;
 function gF(g){var s=String(g).replace(/\B(?=(\d{3})+(?!\d))/g,'.');return document.documentElement.lang==='en'?s.replace(/\./g,','):s}
 function gK(g){var s=(g/1000).toFixed(3).replace(/0+$/,'').replace(/\.$/,'');return document.documentElement.lang==='en'?s:s.replace('.',',')}
 function gNote(x,g){return gOk(g)&&wKg(x)?'1 kg = '+gF(1000)+' g · '+fm(wKg(x))+'\n'+gF(g)+' g = '+gK(g)+' kg':S('Escribe entre 100 y 10.000 gramos.')}
-/* Venta por peso (22 oct): medio kilo, kilos enteros o un monto en colones (solo productos con monto:1) */
+/* Venta por peso (22 oct): medio kilo, kilos (con − y + a la vista) o un monto en colones (solo productos con monto:1) */
 function KPK(x){return typeof gK2==='function'?gK2(x):wKg(x)}
 function wSt(){if(cur&&cur.wm===undefined){cur.wm='';cur.kk=1;cur.cm=0}return cur}
 function wMax(x){return Math.floor(KPK(x)*10/500)*500}
@@ -916,22 +920,26 @@ function wG(x){var c=wSt();if(c.wm==='m')return 500;if(c.wm==='k')return c.kk*10
 function gOk(g){var c=wSt();if(!c)return false;var x=VAR[c.id];if(c.wm==='m')return true;if(c.wm==='k')return c.kk>=1&&c.kk<=10;if(c.wm==='c')return KPK(x)>0&&c.cm>=1000&&c.cm%500===0&&c.cm<=wMax(x);return false}
 function gPr(x,g){var c=wSt();if(c&&c.wm==='c')return c.cm;return Math.round(g*KPK(x)/1000/5)*5}
 function wF(n){var s=String(n).replace(/\B(?=(\d{3})+(?!\d))/g,'.');return document.documentElement.lang==='en'?s.replace(/\./g,','):s}
-function gLb(g){var c=wSt();if(c&&c.wm==='m')return S('medio kilo');if(c&&c.wm==='k')return c.kk+' kg';if(c&&c.wm==='c')return S('por monto de')+' '+fm(c.cm)+', '+S('aprox.')+' '+wF(g)+' g';return g+' g'}
-function wNote(x){var c=wSt(),k=KPK(x);if(!k)return S('Elige primero el tipo para ver el precio.');if(c.wm!=='c')return '';if(!gOk())return S('Escribe un monto desde ₡1.000, de ₡500 en ₡500.');return S('Con')+' '+fm(c.cm)+' '+S('te llevas aprox.')+' '+wF(wG(x))+' g ('+fm(k)+' '+S('el kilo')+'). '+S('Te pesaremos lo más cercano a ese monto.')}
+function gLb(g){var c=wSt();if(c&&c.wm==='m')return S('medio kilo');if(c&&c.wm==='k')return c.kk+' kg';if(c&&c.wm==='c')return fm(c.cm)+', '+wF(g)+' g';return g+' g'}
+function wNote(x){var c=wSt(),k=KPK(x);if(!k)return S('Elige primero el tipo para ver el precio.');if(c.wm!=='c'||!c.cm)return '';if(!gOk())return S('Escribe un monto desde ₡1.000, de ₡500 en ₡500.');return S('Con')+' '+fm(c.cm)+' '+S('te llevas aprox.')+' '+wF(wG(x))+' g ('+fm(k)+' '+S('el kilo')+').'}
 function wGo(x){var go=document.querySelector('.sh .go');if(!go)return;var ok=isReady(x);go.disabled=!ok;go.textContent=ok?S('Agregar al pedido')+' · '+fm(gPr(x,cur.g)*cur.q):S('Elige una opción')}
-function wBody(x,n0){var c=wSt(),k=KPK(x),mo=!!(x[4]&&x[4].monto),n=n0||(x.G.length+1);cur.g=wG(x);
- var r=function(v,lb,pr,extra){return '<button type="button" class="rop" role="radio" aria-checked="'+String(c.wm===v)+'" data-wm="'+v+'"'+(v==='c'&&!k?' disabled':'')+'><span class="rd"></span><span class="rl"><b>'+lb+'</b>'+(extra||'')+'</span>'+(pr?'<span class="rp">'+pr+'</span>':'')+'</button>'};
- var h=r('m',S('Medio kilo'),k?fm(Math.round(500*k/1000/5)*5):'')+r('k',S('Kilos enteros'),k?fm(k)+' / kg':'');
- if(mo)h+=r('c',S('Por monto en colones'),'','<small class="rdt">'+S('Dinos cuánto quieres gastar.')+'</small>');
- var out=stepHTML(n,S('¿Cómo lo quieres?'),h);
- if(c.wm==='k')out+='<div class="gin"><label>'+S('¿Cuántos kilos?')+'</label><div class="gbox kst"><button type="button" class="kb" data-kk="-1" aria-label="'+S('Un kilo menos')+'"'+(c.kk<=1?' disabled':'')+'>−</button><output aria-live="polite">'+c.kk+' kg</output><button type="button" class="kb" data-kk="1" aria-label="'+S('Un kilo más')+'"'+(c.kk>=10?' disabled':'')+'>+</button></div></div>';
- if(c.wm==='c')out+='<div class="gin"><label for="cm-in">'+S('Monto en colones')+'</label><div class="gbox"><span>₡</span><input id="cm-in" type="number" inputmode="numeric" min="1000" max="'+wMax(x)+'" step="500" placeholder="2000" value="'+(c.cm||'')+'"></div><p class="gnt" id="cm-n">'+wNote(x)+'</p></div>';
- else if(!k)out+='<p class="gnt">'+wNote(x)+'</p>';
- return out}
+function wSel(v){Array.prototype.forEach.call(document.querySelectorAll('.sh [data-wm]'),function(b){var on=b.dataset.wm===v;b.setAttribute('aria-checked',String(on));var w=b.closest('.wrow');if(w)w.classList.toggle('on',on)})}
+function wBody(x,n0){var c=wSt(),k=KPK(x),mo=!!(x[4]&&x[4].monto),n=n0||(x.G.length+1);cur.g=wG(x);var dz=!k?' disabled':'';
+ var rd='<span class="rd"></span>';
+ var h='<button type="button" class="rop" role="radio" aria-checked="'+String(c.wm==='m')+'" data-wm="m"'+dz+'>'+rd+'<span class="rl"><b>'+S('Medio kilo')+'</b></span>'+(k?'<span class="rp">'+fm(Math.round(500*k/1000/5)*5)+'</span>':'')+'</button>';
+ h+='<div class="rop wrow'+(c.wm==='k'?' on':'')+'"><button type="button" class="wsel" role="radio" aria-checked="'+String(c.wm==='k')+'" data-wm="k"'+dz+'>'+rd+'<span class="rl"><b>'+S('Kilos')+'</b>'+(k?'<small class="rdt">'+fm(k)+' '+S('el kilo')+'</small>':'')+'</span></button>'+
+  '<span class="kst"><button type="button" class="kb" data-kk="-1" aria-label="'+S('Un kilo menos')+'"'+(c.kk<=1||!k?' disabled':'')+'>−</button><output aria-live="polite">'+c.kk+' kg</output><button type="button" class="kb" data-kk="1" aria-label="'+S('Un kilo más')+'"'+(c.kk>=10||!k?' disabled':'')+'>+</button></span></div>';
+ if(mo)h+='<div class="rop wrow'+(c.wm==='c'?' on':'')+'"><button type="button" class="wsel" role="radio" aria-checked="'+String(c.wm==='c')+'" data-wm="c"'+dz+'>'+rd+'<span class="rl"><b>'+S('Por monto')+'</b><small class="rdt">'+S('Escribe cuánto quieres gastar.')+'</small></span></button>'+
+  '<span class="cmb"><span aria-hidden="true">₡</span><input id="cm-in" type="number" inputmode="numeric" min="1000" max="'+(k?wMax(x):'')+'" step="500" placeholder="2000" aria-label="'+S('Monto en colones')+'" value="'+(c.cm||'')+'"'+dz+'></span></div><p class="gnt" id="cm-n">'+wNote(x)+'</p>';
+ else if(!k)h+='<p class="gnt">'+wNote(x)+'</p>';
+ return stepHTML(n,S('¿Cómo lo quieres?'),h)}
 document.addEventListener('click',function(e){if(!cur)return;var b=e.target.closest('.sh [data-wm],.sh [data-kk]');if(!b||b.disabled)return;var x=VAR[cur.id];if(!x||!x.W)return;e.stopPropagation();var c=wSt();
  if(b.dataset.wm){c.wm=b.dataset.wm;cur.g=wG(x);drawSheet('[data-wm="'+c.wm+'"]');if(c.wm==='c'){var i=document.getElementById('cm-in');if(i)i.focus()}return}
- c.kk=Math.max(1,Math.min(10,c.kk+(+b.dataset.kk)));cur.g=wG(x);drawSheet('[data-kk="'+b.dataset.kk+'"]')},true);
-document.addEventListener('input',function(e){var t=e.target;if(!cur||!t||t.id!=='cm-in')return;var x=VAR[cur.id];if(!x||!x.W)return;var c=wSt();c.cm=t.value===''?0:Math.floor(Number(t.value));cur.g=wG(x);var n=document.getElementById('cm-n');if(n)n.textContent=wNote(x);wGo(x)});
+ c.wm='k';c.kk=Math.max(1,Math.min(10,c.kk+(+b.dataset.kk)));cur.g=wG(x);drawSheet('[data-kk="'+b.dataset.kk+'"]')},true);
+function wCm(e){var t=e.target;if(!cur||!t||t.id!=='cm-in')return;var x=VAR[cur.id];if(!x||!x.W)return;var c=wSt();if(c.wm!=='c'){c.wm='c';wSel('c')}c.cm=t.value===''?0:Math.floor(Number(t.value));cur.g=wG(x);var n=document.getElementById('cm-n');if(n)n.textContent=wNote(x);wGo(x);wShow(e.type==='focusin')}
+/* Al escribir el monto, la ventana baja para que se vea el cálculo de gramos y no quede tapado por el teclado ni por el botón de agregar */
+var wST=null;function wShow(f){clearTimeout(wST);wST=setTimeout(function(){var n=document.getElementById('cm-n'),t=n&&n.textContent?n:(document.getElementById('cm-in')||{}).closest&&document.getElementById('cm-in').closest('.wrow');if(t&&t.scrollIntoView)t.scrollIntoView({block:'center',behavior:'smooth'})},f?350:60)}
+document.addEventListener('input',wCm);document.addEventListener('focusin',wCm);
 function isReady(x){var ok=true;if(x.lk&&(!cur.L.length||cur.lk<0))ok=false;if(x.W){if(!gOk(cur.g))ok=false}else if(x.P.length>1&&cur.p<0)ok=false;x.G.forEach(function(g,j){var cd=g[2]&&g[2]['if'];if(cd&&cur.s[cd[0]]!==cd[1])return;if(cur.s[j]<0)ok=false});return ok}
 function cp(x){if(x.W)return gOk(cur.g)?gPr(x,cur.g):0;var o=curO(x);return o?o.pr:0}
 function gSteps(x,n,ok){var h='';ok=ok!==false;x.G.forEach(function(g,gi){var cd=g[2]&&g[2]['if'];if(cd&&cur.s[cd[0]]!==cd[1])return;var dz=!ok;h+=stepHTML(++n.v,S(g[0]),g[3].map(function(c,ci){var pc=c.pr?(c.pr[cur.p]!==undefined?c.pr[cur.p]:c.pr[0]):0;return '<button type="button" class="rop" role="radio" aria-checked="'+String(ci===cur.s[gi])+'"'+(dz?' disabled':'')+' data-pg="'+gi+'" data-pc="'+ci+'"><span class="rd"></span><span class="rl"><b>'+esc(S(c.n))+'</b>'+(c.d?'<small class="rdt">'+esc(S(c.d))+'</small>':'')+'</span>'+(pc&&!x.W?'<span class="rp">'+fm(pc)+'</span>':(pc&&x.W?'<span class="rp">'+fm(pc)+' / kg</span>':''))+'</button>'}).join(''));ok=ok&&cur.s[gi]>=0});return h}
@@ -1070,11 +1078,12 @@ var AGOTADO=[];function isAgN(n){return AGOTADO.indexOf(n)>=0}function isAg(x){r
 var _ch=ctlHtml;ctlHtml=function(x){return isAg(x)?'<span class="agt">'+S('Agotado')+'</span>':_ch(x)};
 window.setAgotado=function(l){AGOTADO=l||[];Object.keys(qty).forEach(function(k){if(isAgN(ITEMS[k].n))delete qty[k]});drawAll();refresh()};
 function catGroups(){return GR.map(function(g){return{n:g.t.length>1?g.n:'',l:g.t.map(function(t){return{t:t,id:'s-'+idx(t)}})}})}
-(function(){var s=document.querySelector('.srch'),w='afterend';if(!s){s=$('#chips');w='beforebegin'}if(!s)return;s.insertAdjacentHTML(w,'<div class="shw2"><button type="button" class="btn line" id="shr" data-track="share-menu"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7a1 1 0 001 1h14a1 1 0 001-1v-7M16 6l-4-4-4 4M12 2v14"/></svg> <span>'+S('Compartir menú')+'</span></button></div>');
-$('#shr').addEventListener('click',function(){var u=location.href.split('#')[0].split('?')[0];if(navigator.share){navigator.share({title:document.title,url:u}).catch(function(){})}else Carrito.copy(u,function(){Carrito.toast(S('Enlace copiado'))})})})();
 var DRINK=/^(Gaseosa|Refresco|Té|Agua|Batido|Milkshakes|Bebida caliente|Gallo pinto \+ bebida|Combo|Granizado)/;
+/* Aviso de bebida grande: pollo entero o 4 o más piezas sumando todo el carrito, sin ninguna bebida. Un cuarto son 2 piezas. */
+var PZ={'Cuarto frito':2,'Cuarto asado':2,'Pollo caribeño':1},SUGBG={v:0};
+function bigNeed(ks){var p=0,w=false;ks.forEach(function(k){var n=ITEMS[k].n;if(/^Pollo entero/.test(n))w=true;if(PZ[n])p+=PZ[n]*qty[k]});return w||p>=4}
 function sugHtml(){var ks=Object.keys(qty);if(!ks.length)return '';var has=function(re){return ks.some(function(k){return re.test(ITEMS[k].n)})},h='';
- if(!has(DRINK)&&!Object.keys(qty).some(function(k){return PRISMA[k]})){var b=[];['Refresco natural','Coca-Cola'].forEach(function(n){var i=vIdx(n);if(i>=0&&!isAg(VAR[i]))var x=VAR[i],pp=(x.o&&x.o.length===1&&x.o[0].pr>0)?' <span class="sgp">'+fm(x.o[0].pr)+'</span>':'';b.push('<button type="button" class="btn line" data-sg="'+i+'" data-track="sug-bebida"><span class="sgm" aria-hidden="true">+</span> '+esc(S(n))+pp+'</button>')});if(b.length)h+='<div class="sug"><p class="sgt">'+S('¿Algo para tomar?')+'</p><div class="sgr">'+b.join('')+'</div></div>'}
+ var nd=!has(DRINK)&&!ks.some(function(k){return PRISMA[k]});if(nd&&bigNeed(ks)){var bb=[];['Bebida de 1,5 L','Bebida de 2,5 L','Bebida de 3 L'].forEach(function(n){var i=vIdx(n);if(i<0||isAg(VAR[i]))return;bb.push('<button type="button" class="btn line" data-sg="'+i+'" data-track="sug-bebida-grande"><span class="sgm" aria-hidden="true">+</span> '+esc(S(n))+'</button>')});if(bb.length){SUGBG.v=1;h+='<div class="sug"><p class="sgt">'+S('¿No se te antoja una bebida grande?')+'</p><div class="sgr">'+bb.join('')+'</div></div>'}}else if(nd){var b=[];['Refresco natural','Coca-Cola'].forEach(function(n){var i=vIdx(n);if(i<0||isAg(VAR[i]))return;var x=VAR[i],pp=(x.o&&x.o.length===1&&x.o[0].pr>0)?' <span class="sgp">'+fm(x.o[0].pr)+'</span>':'';b.push('<button type="button" class="btn line" data-sg="'+i+'" data-track="sug-bebida"><span class="sgm" aria-hidden="true">+</span> '+esc(S(n))+pp+'</button>')});if(b.length)h+='<div class="sug"><p class="sgt">'+S('¿Algo para tomar?')+'</p><div class="sgr">'+b.join('')+'</div></div>'}
  
  return h}
 $('#sumry').addEventListener('click',function(e){var b=e.target.closest('[data-sg]');if(!b)return;var x=VAR[+b.dataset.sg];if(x.G.length||x.P.length>1||x.W)openSheet(x.id,b);else{change(x.o[0].k,1);Carrito.toast(S(x[0])+' '+S('agregado a tu pedido'))}});
