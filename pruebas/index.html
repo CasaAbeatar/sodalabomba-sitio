@@ -881,9 +881,9 @@ function pNum(){return PN.sig&&PN.sig===pSig()?PN.num:undefined}
 function crearPedido(cb){
  var T=total(),its=Object.keys(qty).map(function(k){var it=ITEMS[k],P=PRISMA[k];return P?{prisma_categoria:P.c,prisma_producto:P.p,prisma_modificador:P.m,cantidad:qty[k],precio_unitario:it.pr}:{producto:it.n,opcion:it.lb||null,cantidad:qty[k],precio_unitario:it.pr}});
  var notas=[$('#f-t').value.trim(),mode==='Retiro'&&$('#f-h').value.trim()?('Hora de retiro: '+$('#f-h').value.trim()):''].filter(Boolean).join(' | ');
- var body={p_sitio:SITIO,p_nombre:$('#f-n').value.trim(),p_telefono:$('#f-tel').value.trim(),p_direccion:mode==='Retiro'?'Retiro en el local':$('#f-a').value.trim(),p_items:its,p_total:T.t||null,p_notas:notas||null};
+ var body={p_sesion:CSID(),p_sitio:SITIO,p_nombre:$('#f-n').value.trim(),p_telefono:$('#f-tel').value.trim(),p_direccion:mode==='Retiro'?'Retiro en el local':$('#f-a').value.trim(),p_items:its,p_total:T.t||null,p_notas:notas||null};
  var done=false,fin=function(n){if(done)return;done=true;cb(n)},ac=window.AbortController?new AbortController():null,tm=setTimeout(function(){if(ac)ac.abort();fin(null)},7000);
- try{fetch(SBU+'/rest/v1/rpc/crear_pedido',{method:'POST',headers:{'apikey':SBK,'Content-Type':'application/json'},body:JSON.stringify(body),signal:ac?ac.signal:undefined}).then(function(r){return r.ok?r.json():Promise.reject()}).then(function(n){clearTimeout(tm);fin(typeof n==='string'?n:null)}).catch(function(){clearTimeout(tm);fin(null)})}catch(e){clearTimeout(tm);fin(null)}}
+ try{fetch(SBU+'/rest/v1/rpc/crear_pedido',{method:'POST',headers:{'apikey':SBK,'Content-Type':'application/json'},body:JSON.stringify(body),signal:ac?ac.signal:undefined}).then(function(r){return r.ok?r.json():Promise.reject()}).then(function(n){clearTimeout(tm);if(typeof n==='string')CSNEW();fin(typeof n==='string'?n:null)}).catch(function(){clearTimeout(tm);fin(null)})}catch(e){clearTimeout(tm);fin(null)}}
 function msg(num){
  var ks=Object.keys(qty),L=(num?['PEDIDO '+num,'']:(num===false?['PEDIDO SIN NÚMERO (no se pudo registrar)','']:[])).concat(['Hola, quiero hacer un pedido '+(mode==='Retiro'?'para retiro en el local':'Express a domicilio')+' en Soda La Bomba:','']);
  ks.forEach(function(k){if(PRISMA[k])return;var it=ITEMS[k],q=qty[k];L.push('- '+q+' x '+it.n+(it.lb?' ('+it.lb+')':'')+(it.pr==null?': precio por confirmar':': '+fm(it.pr*q)))});
@@ -1079,9 +1079,9 @@ var _ch=ctlHtml;ctlHtml=function(x){return isAg(x)?'<span class="agt">'+S('Agota
 window.setAgotado=function(l){AGOTADO=l||[];Object.keys(qty).forEach(function(k){if(isAgN(ITEMS[k].n))delete qty[k]});drawAll();refresh()};
 function catGroups(){return GR.map(function(g){return{n:g.t.length>1?g.n:'',l:g.t.map(function(t){return{t:t,id:'s-'+idx(t)}})}})}
 var DRINK=/^(Gaseosa|Refresco|Té|Agua|Batido|Milkshakes|Bebida caliente|Gallo pinto \+ bebida|Combo|Granizado)/;
-/* Aviso de bebida grande: pollo entero o 4 o más piezas sumando todo el carrito, sin ninguna bebida. Un cuarto son 2 piezas. Alitas: 2 pedidos de 5x (10 alitas). */
-var PZ={'Cuarto frito':2,'Cuarto asado':2,'Pollo caribeño':1},SUGBG={v:0};
-function bigNeed(ks){var p=0,a=0,w=false;ks.forEach(function(k){var n=ITEMS[k].n;if(/^Pollo entero/.test(n))w=true;if(PZ[n])p+=PZ[n]*qty[k];if(n==='Alitas 5x')a+=qty[k]});return w||p>=4||a>=2}
+/* Aviso de bebida grande: pollo entero o 4 o más piezas sumando todo el carrito, sin ninguna bebida. Un cuarto son 2 piezas y un pedido de alitas 5x cuenta como 2 piezas (23 oct). */
+var PZ={'Cuarto frito':2,'Cuarto asado':2,'Pollo caribeño':1,'Alitas 5x':2},SUGBG={v:0};
+function bigNeed(ks){var p=0,a=0,w=false;ks.forEach(function(k){var n=ITEMS[k].n;if(/^Pollo entero/.test(n))w=true;if(PZ[n])p+=PZ[n]*qty[k];if(n==='Alitas 5x')a+=qty[k]});return w||p>=4}
 function sugHtml(){var ks=Object.keys(qty);if(!ks.length)return '';var has=function(re){return ks.some(function(k){return re.test(ITEMS[k].n)})},h='';
  var nd=!has(DRINK)&&!ks.some(function(k){return PRISMA[k]});if(nd&&bigNeed(ks)){var bb=[];['Bebida de 1,5 L','Bebida de 2,5 L','Bebida de 3 L'].forEach(function(n){var i=vIdx(n);if(i<0||isAg(VAR[i]))return;bb.push('<button type="button" class="btn line" data-sg="'+i+'" data-track="sug-bebida-grande"><span class="sgm" aria-hidden="true">+</span> '+esc(S(n))+'</button>')});if(bb.length){SUGBG.v=1;h+='<div class="sug"><p class="sgt">'+S('¿No se te antoja una bebida grande?')+'</p><div class="sgr">'+bb.join('')+'</div></div>'}}else if(nd){var b=[];['Refresco natural','Coca-Cola'].forEach(function(n){var i=vIdx(n);if(i<0||isAg(VAR[i]))return;var x=VAR[i],pp=(x.o&&x.o.length===1&&x.o[0].pr>0)?' <span class="sgp">'+fm(x.o[0].pr)+'</span>':'';b.push('<button type="button" class="btn line" data-sg="'+i+'" data-track="sug-bebida"><span class="sgm" aria-hidden="true">+</span> '+esc(S(n))+pp+'</button>')});if(b.length)h+='<div class="sug"><p class="sgt">'+S('¿Algo para tomar?')+'</p><div class="sgr">'+b.join('')+'</div></div>'}
  
@@ -1245,6 +1245,16 @@ document.addEventListener('focusin',function(e){var t=e.target;if(!t||!/^(INPUT|
 ;(function(){function nf(e){if(e.dataset&&e.dataset.nf)return;var t=(e.type||'').toLowerCase();if(e.tagName==='INPUT'&&/^(radio|checkbox|hidden|submit|button|file|range|color)$/.test(t))return;e.dataset.nf='1';e.setAttribute('autocomplete','off');e.setAttribute('autocorrect','off');e.setAttribute('autocapitalize',e.getAttribute('autocapitalize')||'off');e.setAttribute('spellcheck','false');e.setAttribute('data-lpignore','true');e.setAttribute('data-1p-ignore','');e.setAttribute('data-bwignore','');e.setAttribute('data-form-type','other');if(e.name&&e.tagName!=='SELECT')e.name='n'+Math.random().toString(36).slice(2,9);if(e.tagName==='INPUT'&&(t==='tel'||t==='email')){e.type='text'}}
 function all(r){(r||document).querySelectorAll('input,textarea,select').forEach(nf);(r||document).querySelectorAll('form').forEach(function(f){f.setAttribute('autocomplete','off')})}
 all();try{new MutationObserver(function(ms){ms.forEach(function(m){m.addedNodes.forEach(function(n){if(n.nodeType===1){if(/^(INPUT|TEXTAREA|SELECT)$/.test(n.tagName))nf(n);else all(n)}})})}).observe(document.body,{childList:true,subtree:true})}catch(x){}})();
+
+/* Carritos: se guarda lo que la persona arma (sin nombre, teléfono ni dirección) para medir carritos abandonados */
+var CSK='lb_carrito_sesion',CSV=null;
+function CSID(){if(CSV)return CSV;try{CSV=sessionStorage.getItem(CSK)}catch(e){}if(!CSV){CSV=(window.crypto&&crypto.randomUUID)?crypto.randomUUID():'xxxxxxxx-xxxx-4xxx-8xxx-xxxxxxxxxxxx'.replace(/x/g,function(){return(Math.random()*16|0).toString(16)});try{sessionStorage.setItem(CSK,CSV)}catch(e){}}return CSV}
+function CSNEW(){CSV=null;try{sessionStorage.removeItem(CSK)}catch(e){}}
+var CST=null,CSL='';
+function cartItems(){return Object.keys(qty).map(function(k){var it=ITEMS[k],P=PRISMA[k];return P?{prisma_modificador:P.m,cantidad:qty[k],precio_unitario:it.pr}:{producto:it.n,opcion:it.lb||null,cantidad:qty[k],precio_unitario:it.pr}})}
+function cartSave(){clearTimeout(CST);CST=setTimeout(function(){var its=cartItems();if(!its.length)return;var j=JSON.stringify(its);if(j===CSL)return;CSL=j;
+ try{fetch(SBU+'/rest/v1/rpc/guardar_carrito',{method:'POST',keepalive:true,headers:{'apikey':SBK,'Content-Type':'application/json'},body:JSON.stringify({p_sesion:CSID(),p_sitio:SITIO,p_items:its,p_total:total().t||null})}).catch(function(){})}catch(e){}},3000)}
+(function(){var _rf=refresh;refresh=function(){var r=_rf.apply(this,arguments);try{cartSave()}catch(e){}return r}})();
 </script>
 </body>
 </html>
