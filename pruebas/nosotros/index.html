@@ -167,7 +167,7 @@ a.b.l{color:#171212;border-color:#171212}
 .rev{border-color:#E6DDD3}
 .side span.b{border-color:#171212}
 @media(max-width:899px){.side{margin:10px -20px 0}.side::after{background:linear-gradient(#fff,rgba(255,255,255,0))}}
-</style><style id="fixsoc">.t.fb{background:#1260CC}.t.ig{background:#C2185B}.t small{opacity:1}</style></head><body><main>
+</style><style id="fixsoc">.t.fb{background:#1260CC}.t.ig{background:#C2185B}.t small{opacity:1}</style><style id="socoficial">.t.ig,.t.fb{background:#fff!important;color:#171212!important;box-shadow:none!important}.t.fb svg{fill:#0866FF}.t.gg,.t.ig,.t.fb{border:1px solid #E3D8CC}</style></head><body><main>
 <div class="bar"><a class="back" href="../index.html" data-en="← Back to menu">← Volver al menú</a><div class="lang" role="group" aria-label="Idioma"><button type="button" id="b-es" aria-pressed="true">ES</button><button type="button" id="b-en" aria-pressed="false">EN</button></div></div>
 <div class="wrap">
 <div class="top"><img class="logo" src="../img/logo-soda-amarillo.png" alt="Soda La Bomba">
@@ -216,7 +216,8 @@ var st='';for(var k=0;k<5;k++)st+='<svg viewBox="0 0 24 24" aria-hidden="true"><
 function tile(u,cls,inner,es,en,tr){var a=u?'<a class="t '+cls+'" href="'+u+'" target="_blank" rel="noopener" data-track="'+tr+'"':'<div class="t off '+cls+'" role="img"';return a+' data-ales="'+es+'" data-ael="'+en+'" aria-label="'+es+'">'+inner+(u?'</a>':'</div>')}
 var SOON='<small data-en="Coming soon">Próximamente</small>';
 h+=tile(RESENA,'gg','<span class="g">'+GL+'</span><span class="st">'+st+'</span><span class="sm" data-en="Your review<br>helps us grow">Tu reseña<br>nos ayuda a crecer</span>'+(RESENA?'':SOON),'Reseña en Google','Google review','nosotros-resena');
-REDES.forEach(function(x){var c=x.t=='Instagram'?'ig':'fb';h+=tile(x.u,c,'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="'+x.d+'"/></svg><span>'+x.t+'</span>'+(x.u?'':SOON),x.t,x.t,'nosotros-'+x.t.toLowerCase())});
+var IGD='<defs><radialGradient id="igG" cx="0.15" cy="1.05" r="1.25"><stop offset="0" stop-color="#FFD600"/><stop offset=".25" stop-color="#FF7A00"/><stop offset=".5" stop-color="#FF0069"/><stop offset=".75" stop-color="#D300C5"/><stop offset="1" stop-color="#7638FA"/></radialGradient></defs>';
+REDES.forEach(function(x){var c=x.t=='Instagram'?'ig':'fb';h+=tile(x.u,c,'<svg viewBox="0 0 24 24" aria-hidden="true">'+(c=='ig'?IGD:'')+'<path d="'+x.d+'"'+(c=='ig'?' fill="url(#igG)"':'')+'/></svg><span>'+x.t+'</span>'+(x.u?'':SOON),x.t,x.t,'nosotros-'+x.t.toLowerCase())});
 document.getElementById('col').innerHTML=h;
 function years(){var d=new Date(),y=d.getFullYear()-2012;if(d<new Date(d.getFullYear(),8,30))y--;document.querySelectorAll('[data-years]').forEach(function(e){e.textContent=y})}
 var T=document.title,M=document.querySelector('meta[name=description]'),MD=M.content;
