@@ -1256,5 +1256,17 @@ function cartSave(){clearTimeout(CST);CST=setTimeout(function(){var its=cartItem
  try{fetch(SBU+'/rest/v1/rpc/guardar_carrito',{method:'POST',keepalive:true,headers:{'apikey':SBK,'Content-Type':'application/json'},body:JSON.stringify({p_sesion:CSID(),p_sitio:SITIO,p_items:its,p_total:total().t||null})}).catch(function(){})}catch(e){}},3000)}
 (function(){var _rf=refresh;refresh=function(){var r=_rf.apply(this,arguments);try{cartSave()}catch(e){}return r}})();
 </script>
+<script>
+/* Medición anónima (sin datos personales): productos abiertos y agregados, búsquedas, zona de entrega y sugerencias de bebida */
+(function(){
+ function sl(s){return String(s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,40)}
+ var SGF=null,vis={};
+ if(typeof openSheet==='function'){var _o=openSheet;openSheet=function(id){try{if(VAR[id])track('p-abrir/'+sl(VAR[id][0]))}catch(e){}return _o.apply(this,arguments)}}
+ if(typeof change==='function'){var _c=change;change=function(k,d){try{if(d>0&&ITEMS[k]){track('p-agregar/'+sl(ITEMS[k].n));if(SGF&&ITEMS[k].n===SGF.n){track(SGF.t+'-agregada');SGF=null}}}catch(e){}return _c.apply(this,arguments)}}
+ if(typeof runSearch==='function'){var _s=runSearch,tm=null,last='';runSearch=function(inp,r){var out=_s.apply(this,arguments);try{var v=sl(inp.value.trim());clearTimeout(tm);if(v.length>=3)tm=setTimeout(function(){if(v===last)return;last=v;var sin=r&&!r.hidden&&/Sin resultados|No results/.test(r.textContent);track((sin?'buscar-sin/':'buscar/')+v)},1500)}catch(e){}return out}}
+ document.addEventListener('click',function(e){var t=e.target.closest&&e.target.closest('[data-sg],[data-zona]');if(!t)return;if(t.hasAttribute('data-zona'))track('zona-entrega');if(t.hasAttribute('data-sg')){var i=+t.getAttribute('data-sg');try{SGF={n:VAR[i][0],t:t.getAttribute('data-track')||'sug-bebida'}}catch(_){}}},true);
+ new MutationObserver(function(){document.querySelectorAll('[data-track^="sug-"]').forEach(function(b){var t=b.getAttribute('data-track');if(!vis[t]&&b.offsetParent){vis[t]=1;track(t+'-visto')}})}).observe(document.body,{childList:true,subtree:true});
+})();
+</script>
 </body>
 </html>
