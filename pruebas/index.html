@@ -301,6 +301,7 @@ form label.fc,.frm label.fc{display:flex!important;flex-direction:row!important;
 .shw2{display:flex;justify-content:center;margin:10px 0}.shw2 .btn{min-height:44px;display:inline-flex;align-items:center;gap:8px}
 .fe[hidden]{display:none}.fk{border:0;margin:0;padding:0;display:flex;flex-wrap:wrap;column-gap:20px;row-gap:0}.fk legend{font-weight:800;font-size:15px;padding:0 0 2px;width:100%}
 .rt .hh{margin-bottom:12px}.rt p{margin:0 0 12px;line-height:1.45}.rt .rl2{margin:0 0 14px;padding:0;list-style:none;font-size:15px;line-height:1.5}.rt .btns{display:grid;gap:10px;margin:14px 0 6px}.rt .btns .btn{width:100%;text-align:center}.rt .ox{margin:14px 0 4px;font-size:14px;text-align:center;opacity:.85}.rt .ox a{text-decoration:underline;display:inline;min-height:0;padding:0}
+.kst{justify-content:flex-start}.kst .kb{min-width:56px;min-height:56px;border-radius:12px;border:2px solid currentColor;background:transparent;color:inherit;font:800 26px var(--body);cursor:pointer}.kst .kb[disabled]{opacity:.35;cursor:not-allowed}.kst output{min-width:96px;text-align:center;font:800 22px var(--body)}
 </style>
 <link rel="preconnect" href="https://casaabeatar.github.io" crossorigin>
 <link rel="stylesheet" href="https://casaabeatar.github.io/carrito-la-bomba/v1/carrito.css">
@@ -530,8 +531,8 @@ var MENU=[
   ['Sopa de mariscos',['grande '+m('5.800'),'mediana '+m('4.500'),'pequeña '+m('3.500')],'En Express solo porción grande.',[],{ex:['grande']}]
  ]},
  {h:'Cerdo',i:[
-  ['Chicharrón por kilo',[],'Elige la cantidad o escribe los gramos. Incluye banano y limón.',[['Tipo',['De carne@8500','De concha@9600','BBQ@9500']]],{kg:1}],
-  ['Lomo de cerdo al horno',[],'Elige la cantidad o escribe los gramos.',[],{kg:10975}]
+  ['Chicharrón por kilo',[],'Medio kilo, kilos enteros o el monto que quieras gastar. Incluye banano y limón.',[['Tipo',['De carne@8500','De concha@9600','BBQ@9500']]],{kg:1,monto:1}],
+  ['Lomo de cerdo al horno',[],'Por medio kilo o kilos enteros.',[],{kg:10975}]
  ]},
  {h:'Platos por porción o medio',i:[
   ['Medio de carne en salsa o mexicana',[m('4.850')],'',[['Preparación',['En salsa','Mexicana']]]],['Medio de mondongo',[m('3.800')]],
@@ -647,13 +648,49 @@ var MENU=[
  ]}
 ]},
 {t:'Bebidas y postres',g:[
- {h:'Bebidas',i:[
-  ['Refresco natural',[m('800')],FL.es],
-  ['Gaseosa',[''],'Elige la marca y el tamaño.',[['Marca',['Coca-Cola','Coca-Cola Zero','Sprite','Pepsi','Pepsi Zero','Pepsi Black','7UP','Mirinda Mandarina','Kolita']],['Tamaño',['355 ml','600 ml','1 L'],{if:[0,0]}],['Tamaño',['355 ml','600 ml'],{if:[0,1]}],['Tamaño',['355 ml','600 ml','1 L'],{if:[0,2]}],['Tamaño',['600 ml','2,5 L'],{if:[0,3]}],['Tamaño',['2,5 L'],{if:[0,4]}],['Tamaño',['600 ml'],{if:[0,5]}],['Tamaño',['600 ml'],{if:[0,6]}],['Tamaño',['2,5 L'],{if:[0,7]}],['Tamaño',['2,5 L'],{if:[0,8]}]]],
-  ['Té blanco (botella)',['500 ml','2 L']],
-  ['Agua 500 ml',['']],
-  ['Batido en leche',[m('2.250')],'',[['Sabor',['Crema','Chocolate','Papaya','Mora']]]],
-  ['Milkshakes',[m('2.975')],'',[['Sabor',['Conejo blanco','Oreo','Chicle','Fresa']]]]
+ {h:"Bebidas grandes",i:[
+  ["Bebida de 1,5 L",[''],"Para compartir.",[['Bebida',["Coca-Cola Menos Azúcar", "Fanta Uva", "Fanta Kolita", "Canada Dry Ginger Ale"]]]],
+  ["Bebida de 2,5 L",[''],"Para compartir.",[['Bebida',["Pepsi", "Tropical Manzana"]]]],
+  ["Bebida de 3 L",[''],"Para compartir.",[['Bebida',["Coca-Cola Original", "Canada Dry Ginger Ale", "Mirinda Piña"]]]]
+ ]},
+ {h:"Gaseosas",i:[
+  ["Coca-Cola",[''],"",[["Sabor y tamaño",["Original 355 mL", "Zero 355 mL", "Original 600 mL", "Zero 600 mL"]]]],
+  ["Fanta",[''],"",[["Sabor y tamaño",["Naranja 355 mL", "Uva 355 mL", "Kolita 355 mL", "Naranja 600 mL", "Uva 600 mL"]]]],
+  ["Fresca",[''],"",[["Sabor y tamaño",["Toronja 355 mL", "Toronja 600 mL"]]]],
+  ["Canada Dry",[''],"",[["Sabor y tamaño",["Ginger Ale 355 mL", "Ginger Ale 600 mL", "Zero 600 mL"]]]],
+  ["Pepsi 355 mL",['']]
+ ]},
+ {h:"Deportivas y energéticas",i:[
+  ["Gatorade",[''],"",[["Sabor",["Fruit Punch 600 mL", "Berry Blue 600 mL", "Grape 600 mL", "Zero Glacier Freeze 600 mL", "Zero Ponche de frutas 600 mL"]]]],
+  ["Powerade",[''],"",[["Sabor y tamaño",["Ponche de frutas 600 mL", "Zero Mixed Berry 591 mL"]]]],
+  ["Electrolit Fresa 625 mL",['']],
+  ["Maxxx Energy",[''],"",[["Sabor",["Apple Kiwi 350 mL", "Guaraná Fizz 350 mL", "Sandía Bite 350 mL", "Strawberry Savage 350 mL"]]]],
+  ["Maxi Malta Original 350 mL",['']],
+  ["Monster Mango Loco 473 mL",['']],
+  ["Fury Energy Gold Strike 500 mL",['']],
+  ["Jet Original 600 mL",['']]
+ ]},
+ {h:"Tés y jugos",i:[
+  ["Tropical",[''],"",[["Sabor",["Té blanco Cero arándano 500 mL", "Té blanco Cero frambuesa 500 mL", "Té blanco Cero frutas tropicales 500 mL", "Té blanco arándano, bajo en calorías 500 mL", "Té negro melocotón 500 mL", "Té negro limón 500 mL", "Té verde manzana verde 500 mL"]]]],
+  ["Hi-C Té limón 330 mL",['']],
+  ["del Valle",[''],"",[["Sabor",["Frutas mixtas 250 mL", "Manzana 250 mL", "Uva 250 mL"]]]],
+  ["Dos Pinos",[''],"",[["Sabor y tamaño",["Jugo de naranja 250 mL", "Jugo de naranja 500 mL"]]]],
+  ["Kern's",[''],"",[["Sabor",["Pera 330 mL", "Frutas tropicales 330 mL", "Manzana 330 mL"]]]]
+ ]},
+ {h:"Leches y aguas",i:[
+  ["Fresco Leche",[''],"",[["Sabor",["Fresa 250 mL", "Chocolate 250 mL", "Vainilla 250 mL"]]]],
+  ["Dos Pinos",[''],"",[["Sabor",["Bebida de leche con avena 250 mL", "Leche semidescremada 2% 250 mL"]]]],
+  ["Me Latte",[''],"",[["Sabor",["Cappuccino 250 mL", "Mocha 250 mL", "Vainilla 250 mL"]]]],
+  ["Cristal 600 mL",['']],
+  ["Alpina Agua Pura 1 L",['']],
+  ["Ecoverde Agua de pipa 500 mL",['']],
+  ["H2OH!",[''],"",[["Sabor",["Lima-limón 600 mL", "Toronja pink 600 mL"]]]],
+  ["Cielo con gas",[''],"",[["Sabor",["Maracuyá 670 mL", "Fresa kiwi 670 mL", "Limón 670 mL"]]]]
+ ]},
+ {h:"Refrescos y batidos",i:[
+    ['Refresco natural',[m('800')],FL.es],
+    ['Batido en leche',[m('2.250')],'',[['Sabor',['Crema','Chocolate','Papaya','Mora']]]],
+    ['Milkshakes',[m('2.975')],'',[['Sabor',['Conejo blanco','Oreo','Chicle','Fresa']]]]
  ]},
  {h:'Bebidas calientes',i:[
   ['Bebida caliente',[],'Agua dulce, chocolate, té o café.',[['Bebida',['Agua dulce@1200','Chocolate@1500','Té@1000','Café negro@1000','Café con leche@1200']]]]
@@ -678,6 +715,7 @@ function S(k){if(L!=='en')return k;if(EN[k])return EN[k];return typeof k==='stri
 var fm=Carrito.fm;
 var VAR=[];
 var ITEMS={},CD={};
+var PRISMA={"Bebida de 1,5 L|Coca-Cola Menos Azúcar": {"c": "Gaseosas", "p": "Gaseosas grandes", "m": "Coca-Cola Menos Azúcar", "o": 16}, "Bebida de 1,5 L|Fanta Uva": {"c": "Gaseosas", "p": "Gaseosas grandes", "m": "Fanta Uva 1,5 L", "o": 17}, "Bebida de 1,5 L|Fanta Kolita": {"c": "Gaseosas", "p": "Gaseosas grandes", "m": "Fanta Kolita 1,5 L", "o": 18}, "Bebida de 1,5 L|Canada Dry Ginger Ale": {"c": "Gaseosas", "p": "Gaseosas grandes", "m": "Canada Dry Ginger Ale 1,5 L", "o": 19}, "Bebida de 2,5 L|Pepsi": {"c": "Gaseosas", "p": "Gaseosas grandes", "m": "Pepsi 2,5 L", "o": 20}, "Bebida de 2,5 L|Tropical Manzana": {"c": "Tés, jugos y refrescos", "p": "Tés", "m": "Tropical Manzana", "o": 53}, "Bebida de 3 L|Coca-Cola Original": {"c": "Gaseosas", "p": "Gaseosas grandes", "m": "Coca-Cola Original 3 L", "o": 21}, "Bebida de 3 L|Canada Dry Ginger Ale": {"c": "Gaseosas", "p": "Gaseosas grandes", "m": "Canada Dry Ginger Ale 3 L", "o": 22}, "Bebida de 3 L|Mirinda Piña": {"c": "Gaseosas", "p": "Gaseosas grandes", "m": "Mirinda Piña", "o": 23}, "Coca-Cola|Original 355 mL": {"c": "Gaseosas", "p": "Gaseosas 355 mL", "m": "Coca-Cola Original 355 mL", "o": 1}, "Coca-Cola|Zero 355 mL": {"c": "Gaseosas", "p": "Gaseosas 355 mL", "m": "Coca-Cola Zero 355 mL", "o": 2}, "Coca-Cola|Original 600 mL": {"c": "Gaseosas", "p": "Gaseosas 600 mL", "m": "Coca-Cola Original 600 mL", "o": 9}, "Coca-Cola|Zero 600 mL": {"c": "Gaseosas", "p": "Gaseosas 600 mL", "m": "Coca-Cola Zero 600 mL", "o": 10}, "Fanta|Naranja 355 mL": {"c": "Gaseosas", "p": "Gaseosas 355 mL", "m": "Fanta Naranja 355 mL", "o": 3}, "Fanta|Uva 355 mL": {"c": "Gaseosas", "p": "Gaseosas 355 mL", "m": "Fanta Uva 355 mL", "o": 4}, "Fanta|Kolita 355 mL": {"c": "Gaseosas", "p": "Gaseosas 355 mL", "m": "Fanta Kolita 355 mL", "o": 5}, "Fanta|Naranja 600 mL": {"c": "Gaseosas", "p": "Gaseosas 600 mL", "m": "Fanta Naranja 600 mL", "o": 11}, "Fanta|Uva 600 mL": {"c": "Gaseosas", "p": "Gaseosas 600 mL", "m": "Fanta Uva 600 mL", "o": 12}, "Fresca|Toronja 355 mL": {"c": "Gaseosas", "p": "Gaseosas 355 mL", "m": "Fresca 355 mL", "o": 6}, "Fresca|Toronja 600 mL": {"c": "Gaseosas", "p": "Gaseosas 600 mL", "m": "Fresca 600 mL", "o": 13}, "Canada Dry|Ginger Ale 355 mL": {"c": "Gaseosas", "p": "Gaseosas 355 mL", "m": "Canada Dry Ginger Ale 355 mL", "o": 7}, "Canada Dry|Ginger Ale 600 mL": {"c": "Gaseosas", "p": "Gaseosas 600 mL", "m": "Canada Dry Ginger Ale 600 mL", "o": 14}, "Canada Dry|Zero 600 mL": {"c": "Gaseosas", "p": "Gaseosas 600 mL", "m": "Canada Dry Zero", "o": 15}, "Pepsi 355 mL|": {"c": "Gaseosas", "p": "Gaseosas 355 mL", "m": "Pepsi 355 mL", "o": 8}, "Gatorade|Fruit Punch 600 mL": {"c": "Deportivas y energéticas", "p": "Deportivas", "m": "Gatorade Fruit Punch", "o": 30}, "Gatorade|Berry Blue 600 mL": {"c": "Deportivas y energéticas", "p": "Deportivas", "m": "Gatorade Berry Blue", "o": 31}, "Gatorade|Grape 600 mL": {"c": "Deportivas y energéticas", "p": "Deportivas", "m": "Gatorade Grape", "o": 32}, "Gatorade|Zero Glacier Freeze 600 mL": {"c": "Deportivas y energéticas", "p": "Deportivas", "m": "Gatorade Zero Glacier Freeze", "o": 33}, "Gatorade|Zero Ponche de frutas 600 mL": {"c": "Deportivas y energéticas", "p": "Deportivas", "m": "Gatorade Zero Ponche de frutas", "o": 34}, "Powerade|Ponche de frutas 600 mL": {"c": "Deportivas y energéticas", "p": "Deportivas", "m": "Powerade Ponche de frutas", "o": 35}, "Powerade|Zero Mixed Berry 591 mL": {"c": "Deportivas y energéticas", "p": "Deportivas", "m": "Powerade Zero Mixed Berry", "o": 36}, "Electrolit Fresa 625 mL|": {"c": "Deportivas y energéticas", "p": "Deportivas", "m": "Electrolit Fresa", "o": 37}, "Maxxx Energy|Apple Kiwi 350 mL": {"c": "Deportivas y energéticas", "p": "Energéticas", "m": "Maxxx Apple Kiwi", "o": 38}, "Maxxx Energy|Guaraná Fizz 350 mL": {"c": "Deportivas y energéticas", "p": "Energéticas", "m": "Maxxx Guaraná Fizz", "o": 39}, "Maxxx Energy|Sandía Bite 350 mL": {"c": "Deportivas y energéticas", "p": "Energéticas", "m": "Maxxx Sandía Bite", "o": 40}, "Maxxx Energy|Strawberry Savage 350 mL": {"c": "Deportivas y energéticas", "p": "Energéticas", "m": "Maxxx Strawberry Savage", "o": 41}, "Maxi Malta Original 350 mL|": {"c": "Deportivas y energéticas", "p": "Energéticas", "m": "Maxi Malta Original", "o": 42}, "Monster Mango Loco 473 mL|": {"c": "Deportivas y energéticas", "p": "Energéticas", "m": "Monster Mango Loco", "o": 43}, "Fury Energy Gold Strike 500 mL|": {"c": "Deportivas y energéticas", "p": "Energéticas", "m": "Fury Energy Gold Strike", "o": 44}, "Jet Original 600 mL|": {"c": "Deportivas y energéticas", "p": "Energéticas", "m": "Jet Original", "o": 45}, "Tropical|Té blanco Cero arándano 500 mL": {"c": "Tés, jugos y refrescos", "p": "Tés", "m": "Tropical Cero arándano", "o": 46}, "Tropical|Té blanco Cero frambuesa 500 mL": {"c": "Tés, jugos y refrescos", "p": "Tés", "m": "Tropical Cero frambuesa", "o": 47}, "Tropical|Té blanco Cero frutas tropicales 500 mL": {"c": "Tés, jugos y refrescos", "p": "Tés", "m": "Tropical Cero frutas tropicales", "o": 48}, "Tropical|Té blanco arándano, bajo en calorías 500 mL": {"c": "Tés, jugos y refrescos", "p": "Tés", "m": "Tropical Blanco arándano bajo en calorías", "o": 49}, "Tropical|Té negro melocotón 500 mL": {"c": "Tés, jugos y refrescos", "p": "Tés", "m": "Tropical Negro melocotón", "o": 50}, "Tropical|Té negro limón 500 mL": {"c": "Tés, jugos y refrescos", "p": "Tés", "m": "Tropical Negro limón", "o": 51}, "Tropical|Té verde manzana verde 500 mL": {"c": "Tés, jugos y refrescos", "p": "Tés", "m": "Tropical Verde manzana verde", "o": 52}, "Hi-C Té limón 330 mL|": {"c": "Tés, jugos y refrescos", "p": "Tés", "m": "Hi-C Té limón", "o": 54}, "del Valle|Frutas mixtas 250 mL": {"c": "Tés, jugos y refrescos", "p": "Jugos y néctares", "m": "del Valle Frutas mixtas", "o": 55}, "del Valle|Manzana 250 mL": {"c": "Tés, jugos y refrescos", "p": "Jugos y néctares", "m": "del Valle Manzana", "o": 56}, "del Valle|Uva 250 mL": {"c": "Tés, jugos y refrescos", "p": "Jugos y néctares", "m": "del Valle Uva", "o": 57}, "Dos Pinos|Jugo de naranja 250 mL": {"c": "Tés, jugos y refrescos", "p": "Jugos y néctares", "m": "Dos Pinos Naranja 250 mL", "o": 58}, "Dos Pinos|Jugo de naranja 500 mL": {"c": "Tés, jugos y refrescos", "p": "Jugos y néctares", "m": "Dos Pinos Naranja 500 mL", "o": 59}, "Kern's|Pera 330 mL": {"c": "Tés, jugos y refrescos", "p": "Jugos y néctares", "m": "Kern's Pera", "o": 60}, "Kern's|Frutas tropicales 330 mL": {"c": "Tés, jugos y refrescos", "p": "Jugos y néctares", "m": "Kern's Frutas tropicales", "o": 61}, "Kern's|Manzana 330 mL": {"c": "Tés, jugos y refrescos", "p": "Jugos y néctares", "m": "Kern's Manzana", "o": 62}, "Fresco Leche|Fresa 250 mL": {"c": "Leches y aguas", "p": "Leches y cafés fríos", "m": "Fresco Leche Fresa", "o": 63}, "Fresco Leche|Chocolate 250 mL": {"c": "Leches y aguas", "p": "Leches y cafés fríos", "m": "Fresco Leche Chocolate", "o": 64}, "Fresco Leche|Vainilla 250 mL": {"c": "Leches y aguas", "p": "Leches y cafés fríos", "m": "Fresco Leche Vainilla", "o": 65}, "Dos Pinos|Bebida de leche con avena 250 mL": {"c": "Leches y aguas", "p": "Leches y cafés fríos", "m": "Dos Pinos Bebida de leche con avena", "o": 66}, "Dos Pinos|Leche semidescremada 2% 250 mL": {"c": "Leches y aguas", "p": "Leches y cafés fríos", "m": "Dos Pinos Leche semidescremada 2%", "o": 67}, "Me Latte|Cappuccino 250 mL": {"c": "Leches y aguas", "p": "Leches y cafés fríos", "m": "Me Latte Cappuccino", "o": 68}, "Me Latte|Mocha 250 mL": {"c": "Leches y aguas", "p": "Leches y cafés fríos", "m": "Me Latte Mocha", "o": 69}, "Me Latte|Vainilla 250 mL": {"c": "Leches y aguas", "p": "Leches y cafés fríos", "m": "Me Latte Vainilla", "o": 70}, "Cristal 600 mL|": {"c": "Leches y aguas", "p": "Agua", "m": "Cristal", "o": 71}, "Alpina Agua Pura 1 L|": {"c": "Leches y aguas", "p": "Agua", "m": "Alpina Agua Pura", "o": 72}, "Ecoverde Agua de pipa 500 mL|": {"c": "Leches y aguas", "p": "Agua", "m": "Ecoverde Agua de pipa", "o": 73}, "H2OH!|Lima-limón 600 mL": {"c": "Leches y aguas", "p": "Aguas saborizadas", "m": "H2OH! Lima-limón", "o": 74}, "H2OH!|Toronja pink 600 mL": {"c": "Leches y aguas", "p": "Aguas saborizadas", "m": "H2OH! Toronja pink", "o": 75}, "Cielo con gas|Maracuyá 670 mL": {"c": "Leches y aguas", "p": "Aguas saborizadas", "m": "Cielo con gas Maracuyá", "o": 76}, "Cielo con gas|Fresa kiwi 670 mL": {"c": "Leches y aguas", "p": "Aguas saborizadas", "m": "Cielo con gas Fresa kiwi", "o": 77}, "Cielo con gas|Limón 670 mL": {"c": "Leches y aguas", "p": "Aguas saborizadas", "m": "Cielo con gas Limón", "o": 78}};
 MENU.forEach(function(c){c.n=0;c.g.forEach(function(g){g.i.forEach(function(x){
  c.n++;
  x.P=(x[1]||[]).map(function(p){
@@ -828,9 +866,24 @@ function renderSum(){
  h+=(T.t?'<div class="tot"><span>'+S(T.u?'Subtotal de productos con precio':'Subtotal de productos')+'</span><span>'+fm(T.t)+'</span></div>':'')+(T.u?'<p class="foot" style="text-align:left;margin:0 0 8px">'+S('El precio de los productos “Por confirmar” lo cotizamos por WhatsApp y no está sumado en el subtotal.')+'</p>':'')+'<p class="foot" style="text-align:left;margin:0 0 8px">'+S('Todos los productos están sujetos a disponibilidad.')+'</p>'+(mode==='Express'?'<p class="foot" style="text-align:left;margin:0 0 8px">'+S('No incluye costo de envío (desde ₡3.000, según la distancia).')+'</p>':'')+'<p class="foot" style="text-align:left;margin:0 0 8px">'+S('El costo total final te lo confirmamos por WhatsApp.')+'</p>'+'<button type="button" class="btn line" data-clear="1" style="cursor:pointer">'+S('Borrar pedido')+'</button>';
  $('#sumry').innerHTML=h;
 }
-function msg(){
- var ks=Object.keys(qty),L=['Hola, quiero hacer un pedido '+(mode==='Retiro'?'para retiro en el local':'Express a domicilio')+' en Soda La Bomba:',''];
- ks.forEach(function(k){var it=ITEMS[k],q=qty[k];L.push('- '+q+' x '+it.n+(it.lb?' ('+it.lb+')':'')+(it.pr==null?': precio por confirmar':': '+fm(it.pr*q)))});
+function drinkBlock(){var agg={},any=false;Object.keys(qty).forEach(function(k){var P=PRISMA[k];if(!P)return;any=true;var e=agg[P.m]||(agg[P.m]={P:P,q:0});e.q+=qty[k]});if(!any)return [];
+ var list=Object.keys(agg).map(function(k){return agg[k]}).sort(function(a,b){return a.P.o-b.P.o}),out=[''],lc='',lp='';out.push('BEBIDAS (en el orden de la pantalla de Prisma)');
+ list.forEach(function(e){if(e.P.c!==lc){out.push('',e.P.c.toUpperCase());lc=e.P.c;lp=''}if(e.P.p!==lp){out.push('  '+e.P.p);lp=e.P.p}out.push('    '+e.q+' x '+e.P.m)});
+ return out}
+/* Número de pedido: se pide a la base de datos al pulsar enviar; si falla, el pedido sale igual sin número */
+var SBU='https://dwlbcbtwdungyrykgahm.supabase.co',SBK='sb_publishable_gUoYvCNka0je2rbNeWPpUA_l26vgQbO',SITIO='soda',PN={sig:'',num:null};
+function pSig(){return JSON.stringify([qty,$('#f-n').value,$('#f-tel').value,$('#f-a').value,$('#f-t').value,$('#f-h').value,mode])}
+function pNum(){return PN.sig&&PN.sig===pSig()?PN.num:undefined}
+function crearPedido(cb){
+ var T=total(),its=Object.keys(qty).map(function(k){var it=ITEMS[k],P=PRISMA[k];return P?{prisma_categoria:P.c,prisma_producto:P.p,prisma_modificador:P.m,cantidad:qty[k],precio_unitario:it.pr}:{producto:it.n,opcion:it.lb||null,cantidad:qty[k],precio_unitario:it.pr}});
+ var notas=[$('#f-t').value.trim(),mode==='Retiro'&&$('#f-h').value.trim()?('Hora de retiro: '+$('#f-h').value.trim()):''].filter(Boolean).join(' | ');
+ var body={p_sitio:SITIO,p_nombre:$('#f-n').value.trim(),p_telefono:$('#f-tel').value.trim(),p_direccion:mode==='Retiro'?'Retiro en el local':$('#f-a').value.trim(),p_items:its,p_total:T.t||null,p_notas:notas||null};
+ var done=false,fin=function(n){if(done)return;done=true;cb(n)},ac=window.AbortController?new AbortController():null,tm=setTimeout(function(){if(ac)ac.abort();fin(null)},7000);
+ try{fetch(SBU+'/rest/v1/rpc/crear_pedido',{method:'POST',headers:{'apikey':SBK,'Content-Type':'application/json'},body:JSON.stringify(body),signal:ac?ac.signal:undefined}).then(function(r){return r.ok?r.json():Promise.reject()}).then(function(n){clearTimeout(tm);fin(typeof n==='string'?n:null)}).catch(function(){clearTimeout(tm);fin(null)})}catch(e){clearTimeout(tm);fin(null)}}
+function msg(num){
+ var ks=Object.keys(qty),L=(num?['PEDIDO '+num,'']:(num===false?['PEDIDO SIN NÚMERO (no se pudo registrar)','']:[])).concat(['Hola, quiero hacer un pedido '+(mode==='Retiro'?'para retiro en el local':'Express a domicilio')+' en Soda La Bomba:','']);
+ ks.forEach(function(k){if(PRISMA[k])return;var it=ITEMS[k],q=qty[k];L.push('- '+q+' x '+it.n+(it.lb?' ('+it.lb+')':'')+(it.pr==null?': precio por confirmar':': '+fm(it.pr*q)))});
+ var DB=drinkBlock();if(DB.length&&L[L.length-1]==='')DB.shift();L.push.apply(L,DB);
  if(ks.length){var TT=total();L.push('');if(TT.t)L.push('Subtotal de productos'+(TT.u?' con precio':'')+': '+fm(TT.t));if(TT.u)L.push('El precio de los productos por confirmar lo cotizan por WhatsApp y no está sumado en el subtotal.');L.push('',mode==='Retiro'?'Por favor, confírmenme el total final por WhatsApp.':'Falta sumar el costo del Express. Por favor, confírmenme el total final por WhatsApp.','Precios del sitio web al momento del pedido.')}
  L.push('');
  var n=$('#f-n').value.trim(),a=$('#f-a').value.trim(),t=$('#f-t').value.trim();
@@ -855,6 +908,30 @@ function wBody(x,n0){var g=cur.g;
 function gF(g){var s=String(g).replace(/\B(?=(\d{3})+(?!\d))/g,'.');return document.documentElement.lang==='en'?s.replace(/\./g,','):s}
 function gK(g){var s=(g/1000).toFixed(3).replace(/0+$/,'').replace(/\.$/,'');return document.documentElement.lang==='en'?s:s.replace('.',',')}
 function gNote(x,g){return gOk(g)&&wKg(x)?'1 kg = '+gF(1000)+' g · '+fm(wKg(x))+'\n'+gF(g)+' g = '+gK(g)+' kg':S('Escribe entre 100 y 10.000 gramos.')}
+/* Venta por peso (22 oct): medio kilo, kilos enteros o un monto en colones (solo productos con monto:1) */
+function KPK(x){return typeof gK2==='function'?gK2(x):wKg(x)}
+function wSt(){if(cur&&cur.wm===undefined){cur.wm='';cur.kk=1;cur.cm=0}return cur}
+function wMax(x){return Math.floor(KPK(x)*10/500)*500}
+function wG(x){var c=wSt();if(c.wm==='m')return 500;if(c.wm==='k')return c.kk*1000;if(c.wm==='c'&&KPK(x))return Math.floor(c.cm*1000/KPK(x)/5)*5;return 0}
+function gOk(g){var c=wSt();if(!c)return false;var x=VAR[c.id];if(c.wm==='m')return true;if(c.wm==='k')return c.kk>=1&&c.kk<=10;if(c.wm==='c')return KPK(x)>0&&c.cm>=1000&&c.cm%500===0&&c.cm<=wMax(x);return false}
+function gPr(x,g){var c=wSt();if(c&&c.wm==='c')return c.cm;return Math.round(g*KPK(x)/1000/5)*5}
+function wF(n){var s=String(n).replace(/\B(?=(\d{3})+(?!\d))/g,'.');return document.documentElement.lang==='en'?s.replace(/\./g,','):s}
+function gLb(g){var c=wSt();if(c&&c.wm==='m')return S('medio kilo');if(c&&c.wm==='k')return c.kk+' kg';if(c&&c.wm==='c')return S('por monto de')+' '+fm(c.cm)+', '+S('aprox.')+' '+wF(g)+' g';return g+' g'}
+function wNote(x){var c=wSt(),k=KPK(x);if(!k)return S('Elige primero el tipo para ver el precio.');if(c.wm!=='c')return '';if(!gOk())return S('Escribe un monto desde ₡1.000, de ₡500 en ₡500.');return S('Con')+' '+fm(c.cm)+' '+S('te llevas aprox.')+' '+wF(wG(x))+' g ('+fm(k)+' '+S('el kilo')+'). '+S('Te pesaremos lo más cercano a ese monto.')}
+function wGo(x){var go=document.querySelector('.sh .go');if(!go)return;var ok=isReady(x);go.disabled=!ok;go.textContent=ok?S('Agregar al pedido')+' · '+fm(gPr(x,cur.g)*cur.q):S('Elige una opción')}
+function wBody(x,n0){var c=wSt(),k=KPK(x),mo=!!(x[4]&&x[4].monto),n=n0||(x.G.length+1);cur.g=wG(x);
+ var r=function(v,lb,pr,extra){return '<button type="button" class="rop" role="radio" aria-checked="'+String(c.wm===v)+'" data-wm="'+v+'"'+(v==='c'&&!k?' disabled':'')+'><span class="rd"></span><span class="rl"><b>'+lb+'</b>'+(extra||'')+'</span>'+(pr?'<span class="rp">'+pr+'</span>':'')+'</button>'};
+ var h=r('m',S('Medio kilo'),k?fm(Math.round(500*k/1000/5)*5):'')+r('k',S('Kilos enteros'),k?fm(k)+' / kg':'');
+ if(mo)h+=r('c',S('Por monto en colones'),'','<small class="rdt">'+S('Dinos cuánto quieres gastar.')+'</small>');
+ var out=stepHTML(n,S('¿Cómo lo quieres?'),h);
+ if(c.wm==='k')out+='<div class="gin"><label>'+S('¿Cuántos kilos?')+'</label><div class="gbox kst"><button type="button" class="kb" data-kk="-1" aria-label="'+S('Un kilo menos')+'"'+(c.kk<=1?' disabled':'')+'>−</button><output aria-live="polite">'+c.kk+' kg</output><button type="button" class="kb" data-kk="1" aria-label="'+S('Un kilo más')+'"'+(c.kk>=10?' disabled':'')+'>+</button></div></div>';
+ if(c.wm==='c')out+='<div class="gin"><label for="cm-in">'+S('Monto en colones')+'</label><div class="gbox"><span>₡</span><input id="cm-in" type="number" inputmode="numeric" min="1000" max="'+wMax(x)+'" step="500" placeholder="2000" value="'+(c.cm||'')+'"></div><p class="gnt" id="cm-n">'+wNote(x)+'</p></div>';
+ else if(!k)out+='<p class="gnt">'+wNote(x)+'</p>';
+ return out}
+document.addEventListener('click',function(e){if(!cur)return;var b=e.target.closest('.sh [data-wm],.sh [data-kk]');if(!b||b.disabled)return;var x=VAR[cur.id];if(!x||!x.W)return;e.stopPropagation();var c=wSt();
+ if(b.dataset.wm){c.wm=b.dataset.wm;cur.g=wG(x);drawSheet('[data-wm="'+c.wm+'"]');if(c.wm==='c'){var i=document.getElementById('cm-in');if(i)i.focus()}return}
+ c.kk=Math.max(1,Math.min(10,c.kk+(+b.dataset.kk)));cur.g=wG(x);drawSheet('[data-kk="'+b.dataset.kk+'"]')},true);
+document.addEventListener('input',function(e){var t=e.target;if(!cur||!t||t.id!=='cm-in')return;var x=VAR[cur.id];if(!x||!x.W)return;var c=wSt();c.cm=t.value===''?0:Math.floor(Number(t.value));cur.g=wG(x);var n=document.getElementById('cm-n');if(n)n.textContent=wNote(x);wGo(x)});
 function isReady(x){var ok=true;if(x.lk&&(!cur.L.length||cur.lk<0))ok=false;if(x.W){if(!gOk(cur.g))ok=false}else if(x.P.length>1&&cur.p<0)ok=false;x.G.forEach(function(g,j){var cd=g[2]&&g[2]['if'];if(cd&&cur.s[cd[0]]!==cd[1])return;if(cur.s[j]<0)ok=false});return ok}
 function cp(x){if(x.W)return gOk(cur.g)?gPr(x,cur.g):0;var o=curO(x);return o?o.pr:0}
 function gSteps(x,n,ok){var h='';ok=ok!==false;x.G.forEach(function(g,gi){var cd=g[2]&&g[2]['if'];if(cd&&cur.s[cd[0]]!==cd[1])return;var dz=!ok;h+=stepHTML(++n.v,S(g[0]),g[3].map(function(c,ci){var pc=c.pr?(c.pr[cur.p]!==undefined?c.pr[cur.p]:c.pr[0]):0;return '<button type="button" class="rop" role="radio" aria-checked="'+String(ci===cur.s[gi])+'"'+(dz?' disabled':'')+' data-pg="'+gi+'" data-pc="'+ci+'"><span class="rd"></span><span class="rl"><b>'+esc(S(c.n))+'</b>'+(c.d?'<small class="rdt">'+esc(S(c.d))+'</small>':'')+'</span>'+(pc&&!x.W?'<span class="rp">'+fm(pc)+'</span>':(pc&&x.W?'<span class="rp">'+fm(pc)+' / kg</span>':''))+'</button>'}).join(''));ok=ok&&cur.s[gi]>=0});return h}
@@ -893,7 +970,7 @@ function refresh(){var fz=document.querySelector('ul.facts');if(fz)fz.style.disp
  drawOrder();renderSum();
  var T=total();
  $('#cbar').hidden=!T.c||inView;$('#bbar').hidden=!$('#cbar').hidden;$('#cinfo').textContent=T.c+' '+S(T.c===1?'producto':'productos')+(T.t?' · '+S('Subtotal')+' '+fm(T.t)+(T.u?' '+S('+ por confirmar'):''):' · '+S('por confirmar'));
- var m=msg();$('#wa').href='https://wa.me/'+WA+'?text='+encodeURIComponent(m);
+ var m=msg(pNum());$('#wa').href='https://wa.me/'+WA+'?text='+encodeURIComponent(m);
  var ok=ready();$('#wa').setAttribute('aria-disabled',ok?'false':'true');if(!$('#miss').hidden)showMiss(false);
  save();
 }
@@ -947,7 +1024,12 @@ function showMiss(go){var m=missing(),b=$('#miss');
  b.textContent=S('Falta')+': '+m.map(function(x){return x.t}).join(', ')+'.';b.hidden=false;
  if(go){var f=m[0],tg=f.k==='items'?$('#menu'):$('#'+f.k);if(window.Carrito&&Carrito.goMissing)Carrito.goMissing(tg);else if(f.k==='items')tg.scrollIntoView();else tg.focus()}
  return true}
-$('#wa').addEventListener('click',function(e){if(!ready()){e.preventDefault();showMiss(true);return}});
+$('#wa').addEventListener('click',function(e){if(!ready()){e.preventDefault();showMiss(true);return}
+ e.preventDefault();waAt=Date.now();Carrito.toast(S('Abriendo WhatsApp…'));
+ var w=null;try{w=window.open('about:blank','_blank')}catch(x){}
+ var go=function(num){var url='https://wa.me/'+WA+'?text='+encodeURIComponent(msg(num===null?false:num));$('#wa').href=url;if(w&&!w.closed){try{w.opener=null}catch(x){}w.location.href=url}else{location.href=url}};
+ var pn=pNum();if(pn!==undefined&&pn!==null){go(pn);return}
+ var sg=pSig();crearPedido(function(num){PN={sig:sg,num:num};go(num)})});
 $('#pcopy').addEventListener('click',function(){var b=this,n=$('#pn').textContent.replace(/\D/g,'');Carrito.copy(n,function(){Carrito.flash(b,S('Copiado'),S('Copiar número'))})});
 if('IntersectionObserver' in window){new IntersectionObserver(function(en){inView=en[0].isIntersecting;var T=total();$('#cbar').hidden=!T.c||inView;$('#bbar').hidden=!$('#cbar').hidden},{threshold:.15}).observe($('#resumen'))}
 setMode('Express');
@@ -992,7 +1074,7 @@ function catGroups(){return GR.map(function(g){return{n:g.t.length>1?g.n:'',l:g.
 $('#shr').addEventListener('click',function(){var u=location.href.split('#')[0].split('?')[0];if(navigator.share){navigator.share({title:document.title,url:u}).catch(function(){})}else Carrito.copy(u,function(){Carrito.toast(S('Enlace copiado'))})})})();
 var DRINK=/^(Gaseosa|Refresco|Té|Agua|Batido|Milkshakes|Bebida caliente|Gallo pinto \+ bebida|Combo|Granizado)/;
 function sugHtml(){var ks=Object.keys(qty);if(!ks.length)return '';var has=function(re){return ks.some(function(k){return re.test(ITEMS[k].n)})},h='';
- if(!has(DRINK)){var b=[];['Refresco natural','Gaseosa'].forEach(function(n){var i=vIdx(n);if(i>=0&&!isAg(VAR[i]))var x=VAR[i],pp=(x.o&&x.o.length===1&&x.o[0].pr>0)?' <span class="sgp">'+fm(x.o[0].pr)+'</span>':'';b.push('<button type="button" class="btn line" data-sg="'+i+'" data-track="sug-bebida"><span class="sgm" aria-hidden="true">+</span> '+esc(S(n))+pp+'</button>')});if(b.length)h+='<div class="sug"><p class="sgt">'+S('¿Algo para tomar?')+'</p><div class="sgr">'+b.join('')+'</div></div>'}
+ if(!has(DRINK)&&!Object.keys(qty).some(function(k){return PRISMA[k]})){var b=[];['Refresco natural','Coca-Cola'].forEach(function(n){var i=vIdx(n);if(i>=0&&!isAg(VAR[i]))var x=VAR[i],pp=(x.o&&x.o.length===1&&x.o[0].pr>0)?' <span class="sgp">'+fm(x.o[0].pr)+'</span>':'';b.push('<button type="button" class="btn line" data-sg="'+i+'" data-track="sug-bebida"><span class="sgm" aria-hidden="true">+</span> '+esc(S(n))+pp+'</button>')});if(b.length)h+='<div class="sug"><p class="sgt">'+S('¿Algo para tomar?')+'</p><div class="sgr">'+b.join('')+'</div></div>'}
  
  return h}
 $('#sumry').addEventListener('click',function(e){var b=e.target.closest('[data-sg]');if(!b)return;var x=VAR[+b.dataset.sg];if(x.G.length||x.P.length>1||x.W)openSheet(x.id,b);else{change(x.o[0].k,1);Carrito.toast(S(x[0])+' '+S('agregado a tu pedido'))}});
